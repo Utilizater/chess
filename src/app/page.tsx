@@ -1,5 +1,7 @@
+import { auth } from "@clerk/nextjs/server";
 import { CourseCard } from "@/components/chess/CourseCard";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { Landing } from "@/components/marketing/Landing";
 import { courseRepository } from "@/lib/chess/openingRepository";
 
 // Course data now lives in MongoDB, not compile-time JSON, so this page
@@ -7,6 +9,17 @@ import { courseRepository } from "@/lib/chess/openingRepository";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return (
+      <div className="flex flex-1 flex-col">
+        <SiteHeader />
+        <Landing />
+      </div>
+    );
+  }
+
   const courses = await courseRepository.listCourses();
 
   return (

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { auth } from "@clerk/nextjs/server";
 import { ChessTrainerBoardLoader } from "@/components/chess/ChessTrainerBoardLoader";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
@@ -9,6 +10,8 @@ type CoursePageProps = {
 };
 
 export default async function CoursePage({ params }: CoursePageProps) {
+  await auth.protect();
+
   const { courseId } = await params;
   const course = await courseRepository.getCourseById(courseId);
 
