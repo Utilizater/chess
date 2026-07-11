@@ -13,7 +13,7 @@ const ChessTrainerBoard = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex min-h-[400px] flex-1 items-center justify-center text-slate-500 dark:text-slate-400">
+      <div className="flex min-h-[400px] flex-1 items-center justify-center text-stone-500 dark:text-stone-400">
         Loading trainer...
       </div>
     ),

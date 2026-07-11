@@ -2,14 +2,23 @@ import type { TrainerStatus } from "@/lib/chess/useOpeningTrainer";
 import { STATUS_LABELS } from "@/lib/chess/useOpeningTrainer";
 import { MoveHistory } from "./MoveHistory";
 
-const STATUS_BADGE_STYLES: Record<TrainerStatus, string> = {
-  "your-move":
-    "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
-  "opponent-thinking":
-    "bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300",
-  incorrect: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
-  "line-complete":
-    "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+const STATUS_STYLES: Record<TrainerStatus, { badge: string; dot: string }> = {
+  "your-move": {
+    badge: "bg-amber-50 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300",
+    dot: "bg-amber-500",
+  },
+  "opponent-thinking": {
+    badge: "bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-300",
+    dot: "bg-stone-400",
+  },
+  incorrect: {
+    badge: "bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300",
+    dot: "bg-rose-500",
+  },
+  "line-complete": {
+    badge: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300",
+    dot: "bg-emerald-500",
+  },
 };
 
 export type TrainingPanelProps = {
@@ -39,37 +48,38 @@ export function TrainingPanel({
   onNextLine,
   hintDisabled,
 }: TrainingPanelProps) {
+  const statusStyle = STATUS_STYLES[status];
+
   return (
-    <div className="flex h-full flex-col gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 dark:border-slate-700 dark:bg-slate-800">
+    <div className="flex h-full flex-col gap-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-md sm:p-5 dark:border-stone-700 dark:bg-stone-900">
       <div>
-        <p className="text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+        <p className="text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500">
           {courseTitle}
         </p>
-        <h2 className="text-base font-semibold text-slate-900 sm:text-lg dark:text-slate-100">
+        <h2 className="font-serif text-base font-semibold text-stone-900 sm:text-lg dark:text-stone-100">
           {currentLineLabel}
         </h2>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
         <span
-          className={`rounded-full px-3 py-1 text-sm font-medium ${STATUS_BADGE_STYLES[status]}`}
+          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${statusStyle.badge}`}
         >
+          <span aria-hidden className={`size-1.5 rounded-full ${statusStyle.dot}`} />
           {STATUS_LABELS[status]}
         </span>
       </div>
 
-      <p className="min-h-[1.5rem] text-sm text-slate-700 dark:text-slate-300">
-        {feedback}
-      </p>
+      <p className="min-h-[1.5rem] text-sm text-stone-700 dark:text-stone-300">{feedback}</p>
 
       {explanation && (
-        <p className="rounded-lg bg-slate-50 p-3 text-sm text-slate-600 dark:bg-slate-900 dark:text-slate-400">
+        <p className="rounded-lg border-l-2 border-amber-400 bg-amber-50/60 p-3 text-sm text-stone-700 italic dark:border-amber-600 dark:bg-amber-950/20 dark:text-stone-300">
           {explanation}
         </p>
       )}
 
       <div>
-        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500">
           Moves
         </p>
         <MoveHistory moves={moveHistory} />
@@ -80,7 +90,7 @@ export function TrainingPanel({
           type="button"
           onClick={onHint}
           disabled={hintDisabled}
-          className="rounded-lg bg-slate-100 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+          className="rounded-lg border border-stone-300 px-4 py-3 text-sm font-medium text-stone-700 transition hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-stone-600 dark:text-stone-200 dark:hover:bg-stone-800"
         >
           Hint
         </button>
@@ -88,21 +98,21 @@ export function TrainingPanel({
           type="button"
           onClick={onShowAnswer}
           disabled={hintDisabled}
-          className="rounded-lg bg-slate-100 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+          className="rounded-lg border border-stone-300 px-4 py-3 text-sm font-medium text-stone-700 transition hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-stone-600 dark:text-stone-200 dark:hover:bg-stone-800"
         >
           Show Answer
         </button>
         <button
           type="button"
           onClick={onRestartLine}
-          className="rounded-lg bg-slate-800 px-4 py-3 text-sm font-medium text-white transition hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="rounded-lg bg-stone-800 px-4 py-3 text-sm font-medium text-white transition hover:bg-stone-700 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white"
         >
           Restart Line
         </button>
         <button
           type="button"
           onClick={onNextLine}
-          className="rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-blue-500"
+          className="rounded-lg bg-amber-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-amber-500"
         >
           Next Line
         </button>

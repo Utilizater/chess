@@ -52,14 +52,14 @@ export function CourseLinesEditor({
         value={text}
         onChange={(event) => setText(event.target.value)}
         spellCheck={false}
-        className="h-[60vh] w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+        className="h-[60vh] w-full rounded-lg border border-stone-300 bg-white p-3 font-mono text-sm text-stone-800 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200"
       />
       <div className="flex items-center gap-3">
         <button
           type="button"
           onClick={handleSave}
           disabled={status === "saving"}
-          className="rounded-lg bg-slate-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-700 disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+          className="rounded-lg bg-stone-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-stone-700 disabled:opacity-50 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white"
         >
           {status === "saving" ? "Saving..." : "Save"}
         </button>
