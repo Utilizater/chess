@@ -10,12 +10,14 @@
     "seed:courses": "node --env-file=.env scripts/seedCourses.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.5.17",
     "chess.js": "^1.4.0",
     "mongodb": "^7.4.0",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-chessboard": "^5.10.0",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "svix": "^1.96.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
