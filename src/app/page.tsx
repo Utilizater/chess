@@ -3,6 +3,8 @@ import { CourseCard } from "@/components/chess/CourseCard";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Landing } from "@/components/marketing/Landing";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { computeCourseProgressSummary } from "@/lib/chess/progress";
+import { progressRepository } from "@/lib/chess/progressRepository";
 
 // Course data now lives in MongoDB, not compile-time JSON, so this page
 // must not be statically frozen at build time.
@@ -20,7 +22,10 @@ export default async function Home() {
     );
   }
 
-  const courses = await courseRepository.listCourses();
+  const [courses, progressByCourse] = await Promise.all([
+    courseRepository.listCourses(),
+    progressRepository.listForUser(userId),
+  ]);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -35,7 +40,14 @@ export default async function Home() {
 
         <div className="mt-10 flex flex-col gap-3">
           {courses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+            <CourseCard
+              key={course.id}
+              course={course}
+              progress={computeCourseProgressSummary(
+                course.lineIds,
+                progressByCourse.get(course.id),
+              )}
+            />
           ))}
         </div>
       </main>

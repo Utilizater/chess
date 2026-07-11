@@ -13,6 +13,8 @@ export type CourseSummary = {
   title: string;
   shortDescription?: string;
   colorToTrain: PieceColor;
+  /** Every OpeningLine.id in the course, for progress aggregation. */
+  lineIds: string[];
 };
 
 interface CourseDataSource {
@@ -37,9 +39,27 @@ class MongoCourseDataSource implements CourseDataSource {
   async listCourses(): Promise<CourseSummary[]> {
     const collection = await getCoursesCollection();
     const courses = await collection
-      .find({}, { projection: { _id: 0, id: 1, title: 1, shortDescription: 1, colorToTrain: 1 } })
+      .find(
+        {},
+        {
+          projection: {
+            _id: 0,
+            id: 1,
+            title: 1,
+            shortDescription: 1,
+            colorToTrain: 1,
+            "lines.id": 1,
+          },
+        },
+      )
       .toArray();
-    return courses as unknown as CourseSummary[];
+    return courses.map((course) => ({
+      id: course.id,
+      title: course.title,
+      shortDescription: course.shortDescription,
+      colorToTrain: course.colorToTrain,
+      lineIds: course.lines.map((line) => line.id),
+    }));
   }
 
   async getCourseById(id: string): Promise<Course | undefined> {

@@ -58,27 +58,38 @@ number of additional courses with no code changes — see
 
 ## 5. Vision: getting to "spaced repetition," not just "random drill"
 
-Today, line selection is uniform random per session — there's no notion of
-a line being "due," no tracking of past performance, and no scheduling.
-That's the gap between what exists now (a solid drilling MVP) and the
-"Free Spaced Repetition Scheduler" this is meant to become. Planned steps,
-roughly in order of value:
+Today, line selection is still uniform random per session — there's no
+notion of a line being "due," and past performance is tracked but doesn't
+yet feed back into scheduling. That's the gap between what exists now (a
+solid drilling MVP with basic progress tracking) and the "Free Spaced
+Repetition Scheduler" this is meant to become. Planned steps, roughly in
+order of value:
 
 1. **Per-line performance tracking** — record correct/incorrect attempts per
-   line, per user, so the app has something to schedule against.
+   line, per user, so the app has something to schedule against. **Done**:
+   every course card on the home page now shows a per-course status ("Not
+   started" / "Learning" / "Mastered") and a mastered-lines progress bar,
+   backed by a `user_course_progress` record per user/course tracking
+   correct moves, mistakes, hints used, and completions per line. See
+   [docs/TECHNICAL.md §6](./TECHNICAL.md#6-learner-progress). What's still
+   missing: the tracked data doesn't drive anything yet (below) and mastery
+   is a flat streak rule, not a graded score.
 2. **Actual spaced-repetition scheduling** (e.g. an SM-2-style interval
    algorithm) driving which line "Next Line" actually picks, instead of
    uniform random.
 3. **Weighted opponent replies** — surface the trickier/less-practiced
    branches more often instead of every prepared reply being equally
    likely.
-4. **Multi-user support** — the above only makes sense per learner; right
-   now the tool is single-user with no accounts.
+4. **Multi-user support** — the above only makes sense per learner. **Done**:
+   Clerk auth now gates the app and progress is tracked per `userId`, so
+   each signed-in learner gets their own course/line progress.
 5. **More courses**, contributed as pure data (JSON), requiring no code
    changes.
 6. **Auth in front of the admin editor**, if this ever moves off a trusted
-   local/single-user setup.
+   local/single-user setup. Still open — `/admin` remains unauthenticated
+   even though the rest of the app is behind Clerk now.
 
-None of the above is built yet. This section exists so the current
+Items 1 and 4 above are partially built (tracking exists; scheduling off of
+it doesn't yet). This section exists so the current
 "random drill" MVP is understood as a step toward the scheduler, not the
 end state.

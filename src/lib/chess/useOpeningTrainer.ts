@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Chess, type Square } from "chess.js";
 import type { Course } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
+import { recordProgressEvent } from "./progressClient";
 import {
   attemptMove,
   buildOpeningTree,
@@ -62,6 +63,12 @@ export function useOpeningTrainer(course: Course) {
   // effect" pattern (which would also risk a hydration mismatch).
   const [biasLineId] = useState<string>(() => pickStartingLineId(course.lines));
   const activeLineIdsRef = useRef<string[]>([biasLineId]);
+  // The line id the current drill run is being recorded against (distinct
+  // from biasLineId, which is fixed at mount for opponent-reply biasing).
+  const sessionLineIdRef = useRef<string>(biasLineId);
+  // Whether any mistake or hint has occurred so far in the current drill
+  // run — determines whether a completion counts as "clean" for mastery.
+  const sessionHadMistakeOrHintRef = useRef(false);
   const [fen, setFen] = useState(startingFen);
   const [moveHistory, setMoveHistory] = useState<string[]>([]);
   const [activeLineIds, setActiveLineIds] = useState<string[]>([biasLineId]);
@@ -82,6 +89,8 @@ export function useOpeningTrainer(course: Course) {
       sessionIdRef.current += 1;
       chessRef.current = new Chess(startingFen);
       activeLineIdsRef.current = [lineId];
+      sessionLineIdRef.current = lineId;
+      sessionHadMistakeOrHintRef.current = false;
 
       setFen(startingFen);
       setMoveHistory([]);
@@ -130,6 +139,12 @@ export function useOpeningTrainer(course: Course) {
       setLastMoveComment(chosen.comment);
 
       if (isLineComplete(tree, newFenKey)) {
+        recordProgressEvent(
+          course.id,
+          sessionLineIdRef.current,
+          "complete",
+          !sessionHadMistakeOrHintRef.current,
+        );
         setStatus("line-complete");
         setFeedback(`Opponent replied: ${chosen.san}. Line complete!`);
       } else {
@@ -139,7 +154,7 @@ export function useOpeningTrainer(course: Course) {
     }, OPPONENT_REPLY_DELAY_MS);
 
     return () => clearTimeout(timeout);
-  }, [status, tree]);
+  }, [status, tree, course.id]);
 
   // Shared by drag-and-drop and tap-to-move: validates and applies a
   // from/to move, updating trainer state accordingly.
@@ -153,6 +168,8 @@ export function useOpeningTrainer(course: Course) {
       const match = findPreparedMoveByResultingFen(tree, currentFenKey, resultingFenKey);
 
       if (!match) {
+        recordProgressEvent(course.id, sessionLineIdRef.current, "mistake");
+        sessionHadMistakeOrHintRef.current = true;
         setStatus("incorrect");
         setFeedback("Not this line.");
         return false;
@@ -170,7 +187,15 @@ export function useOpeningTrainer(course: Course) {
       setRevealedAnswer(undefined);
       setLastMoveComment(match.comment);
 
+      recordProgressEvent(course.id, sessionLineIdRef.current, "correct");
+
       if (isLineComplete(tree, newFenKey)) {
+        recordProgressEvent(
+          course.id,
+          sessionLineIdRef.current,
+          "complete",
+          !sessionHadMistakeOrHintRef.current,
+        );
         setStatus("line-complete");
         setFeedback("Correct! Line complete!");
       } else {
@@ -179,7 +204,7 @@ export function useOpeningTrainer(course: Course) {
       }
       return true;
     },
-    [tree],
+    [tree, course.id],
   );
 
   const onPieceDrop = useCallback(
@@ -250,14 +275,18 @@ export function useOpeningTrainer(course: Course) {
   }, [beginSession, biasLineId, course.lines]);
 
   const requestHint = useCallback(() => {
+    recordProgressEvent(course.id, sessionLineIdRef.current, "hint");
+    sessionHadMistakeOrHintRef.current = true;
     setFeedback(getHintText(preparedMoves));
-  }, [preparedMoves]);
+  }, [preparedMoves, course.id]);
 
   const requestShowAnswer = useCallback(() => {
+    recordProgressEvent(course.id, sessionLineIdRef.current, "hint");
+    sessionHadMistakeOrHintRef.current = true;
     const answer = getAnswerText(preparedMoves);
     setRevealedAnswer(answer);
     setFeedback(`Expected: ${answer}`);
-  }, [preparedMoves]);
+  }, [preparedMoves, course.id]);
 
   const lineNames = getActiveLineNames(course, activeLineIds);
   const currentLineLabel =

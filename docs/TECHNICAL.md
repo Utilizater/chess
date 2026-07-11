@@ -11,10 +11,10 @@ For product context (what this is and why), see [docs/BUSINESS.md](./BUSINESS.md
 | Chess rules / FEN / SAN | [chess.js](https://github.com/jhlywa/chess.js) |
 | Board UI | [react-chessboard](https://github.com/Clariity/react-chessboard) v5 |
 | Data store | MongoDB (Atlas), via the official `mongodb` driver |
+| Auth | [Clerk](https://clerk.com) |
 | Course authoring | JSON files (seed data) → migrated into MongoDB via a one-off script |
 
-No chess engine, no auth provider, no ORM — deliberately kept minimal for a
-single-user tool.
+No chess engine, no ORM — deliberately kept minimal.
 
 ## 2. Getting Started
 
@@ -66,7 +66,7 @@ npm run lint    # eslint
    code.
 
 To edit an *existing* course's lines without touching JSON files or
-re-running the seed script, use the admin UI (see [§7](#7-admin-tooling))
+re-running the seed script, use the admin UI (see [§8](#8-admin-tooling))
 instead.
 
 ## 4. Architecture
@@ -139,7 +139,59 @@ side to move, castling rights, and en-passant square, with the half-move
 clock and full-move number stripped off. Two positions reached via
 different move orders or move counts are treated as the same tree node.
 
-## 6. Data integrity & validation
+## 6. Learner progress
+
+Defined in `src/lib/chess/progressTypes.ts` (data shape) and
+`src/lib/chess/progress.ts` (pure status derivation).
+
+Every training event — a correct move, a mistake (move attempted outside
+the prepared tree), a hint/Show Answer use, or reaching "Line complete" —
+is recorded via `POST /api/courses/[courseId]/progress`
+(`{ lineId, kind, clean? }`), called from `useOpeningTrainer` through the
+fire-and-forget `recordProgressEvent` helper in `progressClient.ts`. A
+dropped event never blocks or fails the training UI.
+
+`progressRepository.ts` (the only module that talks to the
+`user_course_progress` collection) upserts one document per
+`(userId, courseId)` pair:
+
+```ts
+type LineProgress = {
+  correctMoves: number;
+  mistakes: number;
+  hintsUsed: number;
+  completions: number;
+  cleanStreak: number;   // consecutive completions with 0 mistakes/hints
+  lastAttemptAt: Date;
+};
+
+type UserCourseProgressDoc = {
+  userId: string;
+  courseId: string;
+  lines: Record<string, LineProgress>;  // keyed by OpeningLine.id
+  createdAt: Date;
+  updatedAt: Date;
+};
+```
+
+`progress.ts` derives learner-facing status from those counters, storage-
+and framework-agnostic like `openingTrainer.ts`:
+
+- **Line status** — `not-started` (no recorded activity), `mastered` (
+  `cleanStreak >= 3`), otherwise `learning`. The streak threshold is a
+  single constant (`MASTERY_CLEAN_STREAK`); retuning mastery doesn't touch
+  anything else.
+- **Course status** (`computeCourseProgressSummary`) — `not-started` if no
+  line has any activity, `mastered` if every line in the course is
+  mastered, otherwise `learning`. Also returns `masteredLines`/`totalLines`
+  and a `percentComplete` used for the progress bar on each `CourseCard` on
+  the home page.
+
+This is an intentionally simple first cut — see
+[docs/BUSINESS.md §5](./BUSINESS.md#5-vision-getting-to-spaced-repetition-not-just-random-drill)
+for the fuller per-line scheduling this is a step toward.
+
+## 7. Data integrity & validation
 
 Every line is validated as legal chess before it can be persisted:
 `buildOpeningTree` replays each line's SAN sequence through a real
@@ -151,7 +203,7 @@ Every line is validated as legal chess before it can be persisted:
   the tree with the candidate lines *before* writing to MongoDB — an invalid
   line is rejected with a 400 and the database is left untouched).
 
-## 7. Admin tooling
+## 8. Admin tooling
 
 A minimal, unauthenticated editor for course content, meant for trusted
 local/single-admin use — **do not expose this publicly without adding
@@ -166,7 +218,7 @@ auth first.**
   via `buildOpeningTree`, and either persists or returns a 400 with the
   validation error.
 
-## 8. Trainer session logic
+## 9. Trainer session logic
 
 `useOpeningTrainer` (`src/lib/chess/useOpeningTrainer.ts`) is the only React
 hook that touches game state; it's a thin adapter over the pure functions in
@@ -196,7 +248,7 @@ On any legal-but-unprepared move, the board simply doesn't update (the
 line." — the position is never mutated, so `canInteract`/`Restart Line`
 always reflect real game state, never a rejected attempt.
 
-## 9. Project structure
+## 10. Project structure
 
 ```
 src/
@@ -205,6 +257,7 @@ src/
     courses/[courseId]/page.tsx    Training page
     admin/                         Minimal course-editing UI
     api/admin/courses/[courseId]/  Admin write API
+    api/courses/[courseId]/progress/  Progress-event write API
   components/
     chess/                         Board, panel, move list, course card
     admin/                         CourseLinesEditor
@@ -216,6 +269,10 @@ src/
       openingTrainer.ts            Pure trainer logic (tree, matching, hints)
       useOpeningTrainer.ts         React hook wiring trainer logic to the board
       openingRepository.ts         Data access layer (MongoDB-backed)
+      progressTypes.ts             Learner progress data shape
+      progress.ts                  Pure status derivation (line/course mastery)
+      progressRepository.ts        Progress data access layer (MongoDB-backed)
+      progressClient.ts            Client-side helper that POSTs progress events
       pgnImport.ts                 PGN → OpeningMove[] helper (not wired into any UI yet)
     db/
       mongo.ts                     Cached MongoClient singleton
@@ -225,13 +282,18 @@ scripts/
   seedCourses.mjs                  One-off upsert of seed JSON into MongoDB
 ```
 
-## 10. Known simplifications (intentional, for a single-user MVP)
+## 11. Known simplifications (intentional, for a single-user MVP)
 
 - Pawn promotion always defaults to queen (`attemptMove` in
   `openingTrainer.ts`) — covers the vast majority of opening-phase
   promotions without a promotion-choice UI.
 - Opponent reply selection is uniform random, not weighted.
-- No authentication anywhere, including `/admin`.
+- No authentication on `/admin` — the rest of the app is behind Clerk, but
+  the course editor is still a trusted-access tool (see §8).
 - No spaced-repetition/scheduling layer — "Next Line" is a random pick, not
   a due-card queue. See [docs/BUSINESS.md §5](./BUSINESS.md#5-vision-getting-to-spaced-repetition-not-just-random-drill)
   for where this is headed.
+- Mastery (§6) is a flat "3 clean completions in a row" rule with no decay
+  over time and no per-mistake weighting — a good-enough signal for "has
+  this been learned at all," not yet the graded difficulty a real
+  scheduler would want.
