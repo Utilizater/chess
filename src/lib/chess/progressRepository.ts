@@ -82,4 +82,14 @@ export const progressRepository = {
     const docs = await collection.find({ userId }, { projection: { _id: 0 } }).toArray();
     return new Map(docs.map((doc) => [doc.courseId, doc]));
   },
+
+  /** A single user's progress document for one course, if any activity exists. */
+  async getForUserAndCourse(
+    userId: string,
+    courseId: string,
+  ): Promise<UserCourseProgressDoc | undefined> {
+    const collection = await getProgressCollection();
+    const doc = await collection.findOne({ userId, courseId }, { projection: { _id: 0 } });
+    return doc ?? undefined;
+  },
 };

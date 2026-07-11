@@ -187,6 +187,19 @@ and framework-agnostic like `openingTrainer.ts`:
   and a `percentComplete` used for the progress bar on each `CourseCard` on
   the home page.
 
+Each `CourseCard` also links to `GET /courses/[courseId]/progress`
+(`src/app/courses/[courseId]/progress/page.tsx`), a read-only per-course
+breakdown: the course-level status/percent, plus a `LineProgressTable`
+listing every line with its own status and raw counters (correct moves,
+mistakes, hints, completions, clean streak, last attempt date). This is
+reachable straight from the course list, without entering a training
+session — `getForUserAndCourse` in `progressRepository.ts` fetches the one
+document needed rather than the full `listForUser` map the home page uses.
+`LineProgressTable` is a small client component (`"use client"`, the sort
+state can't live on the server) — every column header is clickable to sort
+by it, toggling direction on repeat clicks; it defaults to "Last attempt",
+descending.
+
 This is an intentionally simple first cut — see
 [docs/BUSINESS.md §5](./BUSINESS.md#5-vision-getting-to-spaced-repetition-not-just-random-drill)
 for the fuller per-line scheduling this is a step toward.
@@ -253,13 +266,15 @@ always reflect real game state, never a rejected attempt.
 ```
 src/
   app/
-    page.tsx                       Home: course list
-    courses/[courseId]/page.tsx    Training page
-    admin/                         Minimal course-editing UI
-    api/admin/courses/[courseId]/  Admin write API
-    api/courses/[courseId]/progress/  Progress-event write API
+    page.tsx                              Home: course list
+    courses/[courseId]/page.tsx           Training page
+    courses/[courseId]/progress/page.tsx  Per-course line-by-line progress table
+    admin/                                Minimal course-editing UI
+    api/admin/courses/[courseId]/         Admin write API
+    api/courses/[courseId]/progress/      Progress-event write API
   components/
-    chess/                         Board, panel, move list, course card
+    chess/                         Board, panel, move list, course card,
+                                    status badge, line progress table
     admin/                         CourseLinesEditor
     layout/                        SiteHeader
   lib/
