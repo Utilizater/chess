@@ -5,7 +5,7 @@
 // to import chess.js or walk the opening tree themselves.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Chess } from "chess.js";
+import { Chess, type Square } from "chess.js";
 import type { Course } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
 import {
@@ -30,6 +30,16 @@ export { STATUS_LABELS } from "./openingTrainer";
 export type PieceDropArgs = {
   sourceSquare: string;
   targetSquare: string | null;
+};
+
+export type SquareClickArgs = {
+  square: string;
+  piece: { pieceType: string } | null;
+};
+
+export type LegalTarget = {
+  square: string;
+  capture: boolean;
 };
 
 const OPPONENT_REPLY_DELAY_MS = 500;
@@ -62,6 +72,7 @@ export function useOpeningTrainer(course: Course) {
   const [feedback, setFeedback] = useState<string>(sessionStart.feedback);
   const [revealedAnswer, setRevealedAnswer] = useState<string | undefined>();
   const [lastMoveComment, setLastMoveComment] = useState<string | undefined>();
+  const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
 
   const fenKey = normalizeFen(fen);
   const preparedMoves = getPreparedMoves(tree, fenKey);
@@ -77,6 +88,7 @@ export function useOpeningTrainer(course: Course) {
       setActiveLineIds([lineId]);
       setRevealedAnswer(undefined);
       setLastMoveComment(undefined);
+      setSelectedSquare(null);
 
       const start = getSessionStartState(tree, startingFen, userColor);
       setStatus(start.status);
@@ -129,13 +141,10 @@ export function useOpeningTrainer(course: Course) {
     return () => clearTimeout(timeout);
   }, [status, tree]);
 
-  const onPieceDrop = useCallback(
-    ({ sourceSquare, targetSquare }: PieceDropArgs): boolean => {
-      if (status === "opponent-thinking" || status === "line-complete") {
-        return false;
-      }
-      if (!targetSquare) return false;
-
+  // Shared by drag-and-drop and tap-to-move: validates and applies a
+  // from/to move, updating trainer state accordingly.
+  const applyUserMove = useCallback(
+    (sourceSquare: string, targetSquare: string): boolean => {
       const attempt = attemptMove(chessRef.current.fen(), sourceSquare, targetSquare);
       if (!attempt.legal) return false;
 
@@ -170,7 +179,65 @@ export function useOpeningTrainer(course: Course) {
       }
       return true;
     },
-    [status, tree],
+    [tree],
+  );
+
+  const onPieceDrop = useCallback(
+    ({ sourceSquare, targetSquare }: PieceDropArgs): boolean => {
+      if (status === "opponent-thinking" || status === "line-complete") {
+        return false;
+      }
+      if (!targetSquare) return false;
+      setSelectedSquare(null);
+      return applyUserMove(sourceSquare, targetSquare);
+    },
+    [status, applyUserMove],
+  );
+
+  // Legal destination squares (by chess rules, not just prepared lines) for
+  // the currently selected square, so tap-to-move can highlight them like a
+  // mobile chess app.
+  const legalTargets = useMemo<LegalTarget[]>(() => {
+    if (!selectedSquare) return [];
+    try {
+      // Built from the `fen` state rather than chessRef so this stays a
+      // pure render-time computation (no ref reads during render).
+      return new Chess(fen)
+        .moves({ square: selectedSquare as Square, verbose: true })
+        .map((move) => ({
+          square: move.to,
+          capture: Boolean(move.captured) || move.flags.includes("e"),
+        }));
+    } catch {
+      return [];
+    }
+  }, [selectedSquare, fen]);
+
+  const onSquareClick = useCallback(
+    ({ square, piece }: SquareClickArgs) => {
+      if (status === "opponent-thinking" || status === "line-complete") return;
+
+      const isOwnPiece = piece !== null && piece.pieceType[0] === userColor;
+
+      if (!selectedSquare) {
+        if (isOwnPiece) setSelectedSquare(square);
+        return;
+      }
+
+      if (square === selectedSquare) {
+        setSelectedSquare(null);
+        return;
+      }
+
+      if (legalTargets.some((target) => target.square === square)) {
+        setSelectedSquare(null);
+        applyUserMove(selectedSquare, square);
+        return;
+      }
+
+      setSelectedSquare(isOwnPiece ? square : null);
+    },
+    [status, selectedSquare, legalTargets, userColor, applyUserMove],
   );
 
   const restartLine = useCallback(() => {
@@ -213,6 +280,9 @@ export function useOpeningTrainer(course: Course) {
     boardOrientation: course.colorToTrain,
     canInteract: status === "your-move" || status === "incorrect",
     onPieceDrop,
+    selectedSquare,
+    legalTargets,
+    onSquareClick,
     restartLine,
     nextLine,
     requestHint,
