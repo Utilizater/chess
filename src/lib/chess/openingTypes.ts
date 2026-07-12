@@ -31,6 +31,8 @@ export type Course = {
   id: string;
   title: string;
   shortDescription?: string;
+  /** Path to the course's cover image under /public, e.g. "/course-images/italian-game.png". */
+  image?: string;
   /** Which side the user plays/trains in this course. */
   colorToTrain: PieceColor;
   /** "startpos" for the standard initial position, or a custom FEN. */

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CourseSummary } from "@/lib/chess/openingRepository";
 import type { CourseProgressSummary } from "@/lib/chess/progress";
@@ -17,12 +18,22 @@ export function CourseCard({
   return (
     <div className="group rounded-xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-stone-700 dark:bg-stone-900 dark:hover:border-amber-700">
       <Link href={`/courses/${course.id}`} className="flex items-center gap-4">
-        <span
-          aria-hidden
-          className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-2xl text-amber-700 dark:bg-amber-950/60 dark:text-amber-500"
-        >
-          ♟
-        </span>
+        {course.image ? (
+          <Image
+            src={course.image}
+            alt=""
+            width={64}
+            height={64}
+            className="size-16 shrink-0 rounded-lg object-cover"
+          />
+        ) : (
+          <span
+            aria-hidden
+            className="flex size-16 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-3xl text-amber-700 dark:bg-amber-950/60 dark:text-amber-500"
+          >
+            ♟
+          </span>
+        )}
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-3">

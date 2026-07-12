@@ -2,6 +2,7 @@
   "id": "blackmar-diemer-gambit",
   "title": "Blackmar-Diemer Gambit",
   "shortDescription": "A tactical gambit starting 1.d4 d5 2.e4, sacrificing a pawn for rapid development and open lines.",
+  "image": "/course-images/blackmar-diemer-gambit.png",
   "colorToTrain": "white",
   "startingFen": "startpos",
   "lines": [

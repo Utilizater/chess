@@ -12,6 +12,7 @@ export type CourseSummary = {
   id: string;
   title: string;
   shortDescription?: string;
+  image?: string;
   colorToTrain: PieceColor;
   /** id + tier for every OpeningLine in the course, for progress/tier aggregation. */
   lines: Pick<OpeningLine, "id" | "tier">[];
@@ -47,6 +48,7 @@ class MongoCourseDataSource implements CourseDataSource {
             id: 1,
             title: 1,
             shortDescription: 1,
+            image: 1,
             colorToTrain: 1,
             "lines.id": 1,
             "lines.tier": 1,
@@ -58,6 +60,7 @@ class MongoCourseDataSource implements CourseDataSource {
       id: course.id,
       title: course.title,
       shortDescription: course.shortDescription,
+      image: course.image,
       colorToTrain: course.colorToTrain,
       lines: course.lines.map((line) => ({ id: line.id, tier: line.tier })),
     }));
