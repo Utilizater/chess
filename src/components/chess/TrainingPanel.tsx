@@ -61,31 +61,7 @@ export function TrainingPanel({
         </h2>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <span
-          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${statusStyle.badge}`}
-        >
-          <span aria-hidden className={`size-1.5 rounded-full ${statusStyle.dot}`} />
-          {STATUS_LABELS[status]}
-        </span>
-      </div>
-
-      <p className="min-h-[1.5rem] text-sm text-stone-700 dark:text-stone-300">{feedback}</p>
-
-      {explanation && (
-        <p className="rounded-lg border-l-2 border-amber-400 bg-amber-50/60 p-3 text-sm text-stone-700 italic dark:border-amber-600 dark:bg-amber-950/20 dark:text-stone-300">
-          {explanation}
-        </p>
-      )}
-
-      <div>
-        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500">
-          Moves
-        </p>
-        <MoveHistory moves={moveHistory} />
-      </div>
-
-      <div className="mt-auto grid grid-cols-2 gap-2 pt-2">
+      <div className="grid grid-cols-2 gap-2 lg:order-last lg:mt-auto lg:pt-2">
         <button
           type="button"
           onClick={onHint}
@@ -116,6 +92,32 @@ export function TrainingPanel({
         >
           Next Line
         </button>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-medium ${statusStyle.badge}`}
+          >
+            <span aria-hidden className={`size-1.5 rounded-full ${statusStyle.dot}`} />
+            {STATUS_LABELS[status]}
+          </span>
+        </div>
+
+        <p className="min-h-[1.5rem] text-sm text-stone-700 dark:text-stone-300">{feedback}</p>
+
+        {explanation && (
+          <p className="rounded-lg border-l-2 border-amber-400 bg-amber-50/60 p-3 text-sm text-stone-700 italic dark:border-amber-600 dark:bg-amber-950/20 dark:text-stone-300">
+            {explanation}
+          </p>
+        )}
+
+        <div>
+          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-stone-400 dark:text-stone-500">
+            Moves
+          </p>
+          <MoveHistory moves={moveHistory} />
+        </div>
       </div>
     </div>
   );
