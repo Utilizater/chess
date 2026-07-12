@@ -1,0 +1,1807 @@
+{
+  "id": "sicilian-defense",
+  "title": "Sicilian Defense",
+  "shortDescription": "Black's sharpest reply to 1.e4, fighting for the center asymmetrically with 1...c5 and rich winning chances for both sides.",
+  "image": "/course-images/sicilian-defense.png",
+  "colorToTrain": "black",
+  "startingFen": "startpos",
+  "lines": [
+    {
+      "id": "open-sicilian-basic",
+      "name": "Open Sicilian: Basic Setup",
+      "description": "Black exchanges the c-pawn for White's d-pawn and gains an asymmetric central structure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4",
+          "comment": "White occupies the center."
+        },
+        {
+          "san": "c5",
+          "comment": "The Sicilian Defense attacks d4 from the flank."
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6",
+          "comment": "Black supports ...Nf6 and keeps several major Sicilian systems available."
+        },
+        {
+          "san": "d4",
+          "comment": "White opens the center."
+        },
+        {
+          "san": "cxd4",
+          "comment": "Black trades the c-pawn for White's central d-pawn."
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6",
+          "comment": "Black develops with tempo against e4."
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6",
+          "comment": "The Najdorf move prevents Nb5 and prepares ...b5."
+        }
+      ]
+    },
+    {
+      "id": "najdorf-basic",
+      "name": "Najdorf: Classical Development",
+      "description": "A simple Najdorf setup with ...e5, ...Be7 and kingside castling.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "e5",
+          "comment": "Black gains space and attacks the d4 knight."
+        },
+        {
+          "san": "Nb3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "classical-basic",
+      "name": "Classical Sicilian: Basic Setup",
+      "description": "Black develops both knights quickly and keeps ...e6 or ...g6 flexible.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6",
+          "comment": "The Classical Sicilian develops naturally."
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Be7"
+        }
+      ]
+    },
+    {
+      "id": "dragon-basic",
+      "name": "Dragon Variation: Basic Setup",
+      "description": "Black fianchettos the dark-squared bishop and pressures the long diagonal.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "g6",
+          "comment": "The Dragon begins with a kingside fianchetto."
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "accelerated-dragon-basic",
+      "name": "Accelerated Dragon: Basic Setup",
+      "description": "Black skips ...d6 and uses ...d5 in one move when possible.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "g6",
+          "comment": "Black enters the Accelerated Dragon."
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Nf6"
+        }
+      ]
+    },
+    {
+      "id": "scheveningen-basic",
+      "name": "Scheveningen: Basic Setup",
+      "description": "Black builds the flexible small center with pawns on d6 and e6.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e6",
+          "comment": "The Scheveningen structure controls d5 and f5."
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "closed-sicilian-basic",
+      "name": "Closed Sicilian: Basic Response",
+      "description": "Against Nc3 and g3, Black develops with ...Nc6, ...g6 and ...Bg7.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nc3",
+          "comment": "White avoids the Open Sicilian."
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        }
+      ]
+    },
+    {
+      "id": "alapin-basic",
+      "name": "Alapin Variation: Basic Response",
+      "description": "Black immediately challenges White's d4 plan with ...d5.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3",
+          "comment": "White prepares d4 with a strong pawn center."
+        },
+        {
+          "san": "d5",
+          "comment": "Black strikes in the center before White can consolidate."
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        }
+      ]
+    },
+    {
+      "id": "rossolimo-basic",
+      "name": "Rossolimo: Basic Response",
+      "description": "Black answers Bb5 with ...g6 and prepares to recapture with the b-pawn.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5",
+          "comment": "White pins the knight and avoids main Open Sicilian theory."
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bxc6"
+        },
+        {
+          "san": "bxc6",
+          "comment": "Black accepts doubled pawns for the bishop pair and central control."
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bg7"
+        }
+      ]
+    },
+    {
+      "id": "smith-morra-basic",
+      "name": "Smith-Morra Gambit: Decline with ...Nf6",
+      "description": "Black declines the gambit and transposes toward an Alapin structure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "c3",
+          "comment": "White offers a pawn for development."
+        },
+        {
+          "san": "Nf6",
+          "comment": "Black declines the pawn and attacks e4."
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "najdorf-english-attack",
+      "name": "Najdorf: English Attack",
+      "description": "Black meets Be3, f3 and Qd2 with a standard ...e5 and ...Be6 setup.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nb3"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "najdorf-bg5",
+      "name": "Najdorf: 6.Bg5",
+      "description": "Black responds to the pin with ...e6 and prepares ...Be7 or ...b5.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "e6",
+          "comment": "Black breaks the pin's tactical force and controls d5."
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "Qc7"
+        }
+      ]
+    },
+    {
+      "id": "najdorf-adams",
+      "name": "Najdorf: 6.h3",
+      "description": "White prepares g4; Black reacts with ...e5 and controlled development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "h3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nde2"
+        },
+        {
+          "san": "h5"
+        }
+      ]
+    },
+    {
+      "id": "classical-rauzer",
+      "name": "Classical Sicilian: Richter-Rauzer",
+      "description": "Black meets Bg5 with ...e6 and develops against queenside castling.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "dragon-yugoslav",
+      "name": "Dragon: Yugoslav Attack",
+      "description": "Black develops the standard Dragon formation against long castling.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bd7"
+        }
+      ]
+    },
+    {
+      "id": "accelerated-maroczy",
+      "name": "Accelerated Dragon: Maroczy Bind",
+      "description": "Black develops actively against White's c4 bind.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "c4",
+          "comment": "White establishes the Maroczy Bind."
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "scheveningen-keres",
+      "name": "Scheveningen: Keres Attack",
+      "description": "Black meets g4 with active queenside play and controlled kingside development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "g4",
+          "comment": "The Keres Attack begins immediate kingside expansion."
+        },
+        {
+          "san": "h6"
+        },
+        {
+          "san": "h4"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "sveshnikov-basic",
+      "name": "Sveshnikov: Main Setup",
+      "description": "Black accepts a backward d6 pawn for active piece play and control of key squares.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e5",
+          "comment": "The Sveshnikov gains space and attacks d4."
+        },
+        {
+          "san": "Ndb5"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Na3"
+        },
+        {
+          "san": "b5"
+        }
+      ]
+    },
+    {
+      "id": "kan-basic",
+      "name": "Kan Variation: Basic Setup",
+      "description": "Black delays ...Nf6 and uses ...a6, ...Qc7 and ...b5 flexibly.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "a6",
+          "comment": "The Kan prevents Nb5 and keeps the structure flexible."
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "Nb3"
+        },
+        {
+          "san": "Ba7"
+        }
+      ]
+    },
+    {
+      "id": "taimanov-basic",
+      "name": "Taimanov Variation: Basic Setup",
+      "description": "Black develops with ...Nc6 and ...Qc7 while keeping the center flexible.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nc6",
+          "comment": "The Taimanov develops naturally and eyes d4."
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qc7"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Nf6"
+        }
+      ]
+    },
+    {
+      "id": "closed-sicilian-f5",
+      "name": "Closed Sicilian: Kingside Expansion",
+      "description": "Black meets f4 with ...g6, ...Bg7 and central counterplay.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "alapin-mainline",
+      "name": "Alapin: 2...d5 Main Line",
+      "description": "Black exchanges in the center and attacks White's pawn structure.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "grand-prix-basic",
+      "name": "Grand Prix Attack: Basic Response",
+      "description": "Black develops with ...Nc6, ...g6 and strikes in the center.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "f4",
+          "comment": "White begins the Grand Prix Attack."
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Nd4"
+        }
+      ]
+    },
+    {
+      "id": "wing-gambit-basic",
+      "name": "Wing Gambit: Basic Response",
+      "description": "Black accepts the b-pawn and challenges White's center.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "b4",
+          "comment": "White offers a flank pawn to distract Black's c-pawn."
+        },
+        {
+          "san": "cxb4",
+          "comment": "Black accepts the gambit."
+        },
+        {
+          "san": "a3"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        }
+      ]
+    },
+    {
+      "id": "najdorf-poisoned-pawn",
+      "name": "Najdorf: Poisoned Pawn Variation",
+      "description": "Black accepts the b2 pawn and enters one of the sharpest opening battles in chess.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "Qb6",
+          "comment": "Black attacks b2 and enters the Poisoned Pawn Variation."
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Qxb2"
+        },
+        {
+          "san": "Rb1"
+        },
+        {
+          "san": "Qa3"
+        }
+      ]
+    },
+    {
+      "id": "najdorf-english-deep",
+      "name": "Najdorf: English Attack Main Line",
+      "description": "Both sides castle on opposite wings and begin a direct attacking race.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nb3"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "Nbd7"
+        }
+      ]
+    },
+    {
+      "id": "dragon-yugoslav-deep",
+      "name": "Dragon: Yugoslav Attack Main Line",
+      "description": "Black enters the classic opposite-side castling battle.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bd7"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "Rc8"
+        }
+      ]
+    },
+    {
+      "id": "accelerated-dragon-d5",
+      "name": "Accelerated Dragon: Central ...d5 Break",
+      "description": "Black uses the key strategic advantage of playing ...d5 in one move.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bb3"
+        },
+        {
+          "san": "d5",
+          "comment": "Black achieves the thematic freeing break."
+        }
+      ]
+    },
+    {
+      "id": "sveshnikov-mainline",
+      "name": "Sveshnikov: Main Line",
+      "description": "Black accepts structural weaknesses for dynamic piece activity.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Ndb5"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Na3"
+        },
+        {
+          "san": "b5"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "Be7"
+        }
+      ]
+    },
+    {
+      "id": "kalashnikov",
+      "name": "Kalashnikov Variation",
+      "description": "Black plays an early ...e5 without ...Nf6 and gains space immediately.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "e5",
+          "comment": "The Kalashnikov attacks d4 before developing the kingside knight."
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "N1c3"
+        },
+        {
+          "san": "a6"
+        }
+      ]
+    },
+    {
+      "id": "taimanov-english",
+      "name": "Taimanov: English Attack Setup",
+      "description": "Black meets Be3 and Qd2 with flexible development and queenside play.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qc7"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "Bb4"
+        }
+      ]
+    },
+    {
+      "id": "kan-maroczy",
+      "name": "Kan: Maroczy Structure",
+      "description": "Black maneuvers against White's space advantage and prepares ...b5.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "c4",
+          "comment": "White establishes a Maroczy-style bind."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bb4"
+        }
+      ]
+    },
+    {
+      "id": "scheveningen-classical",
+      "name": "Scheveningen: Classical Main Line",
+      "description": "Black uses the small center and waits for the correct pawn break.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Bd7"
+        }
+      ]
+    },
+    {
+      "id": "rossolimo-mainline",
+      "name": "Rossolimo: Main Line with ...g6",
+      "description": "Black accepts doubled pawns and uses the bishop pair and central control.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bxc6"
+        },
+        {
+          "san": "bxc6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Re1"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "alapin-2nf6",
+      "name": "Alapin: 2...Nf6",
+      "description": "Black immediately attacks e4 and invites White to advance.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "smith-morra-accepted",
+      "name": "Smith-Morra Gambit Accepted",
+      "description": "Black takes the pawn and relies on accurate development to neutralize White's initiative.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "dxc3",
+          "comment": "Black accepts the gambit pawn."
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nf6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2044 @@
+{
+  "id": "london-system",
+  "title": "London System",
+  "shortDescription": "A solid 1.d4 setup with Bf4, e3, Nf3, Bd3, and Nbd2, reaching a comparable structure against almost any Black defense.",
+  "image": "/course-images/london-system.png",
+  "colorToTrain": "white",
+  "startingFen": "startpos",
+  "lines": [
+    {
+      "id": "classical-setup",
+      "name": "Classical London Setup",
+      "description": "The standard London move order with Bf4, e3, Nf3, Bd3 and Nbd2.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4",
+          "comment": "White claims the center with the queen's pawn."
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3",
+          "comment": "A flexible developing move that keeps several systems available."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4",
+          "comment": "The defining London move: develop the bishop before playing e3."
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3",
+          "comment": "White builds a solid pawn chain and frees the dark-squared bishop."
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bd3",
+          "comment": "The bishop points toward h7 and supports kingside attacking ideas."
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nbd2",
+          "comment": "White completes the core London setup."
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3",
+          "comment": "The center is reinforced and b4 ideas become harder for Black."
+        }
+      ]
+    },
+    {
+      "id": "classical-h3",
+      "name": "Classical Setup with h3",
+      "description": "White gives the bishop a retreat square and prevents ...Nh5 from gaining the bishop pair.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "h3",
+          "comment": "A useful waiting move that preserves the bishop on g3."
+        }
+      ]
+    },
+    {
+      "id": "early-c5-c3",
+      "name": "Early ...c5: Solid c3 Setup",
+      "description": "White supports d4 and keeps the familiar London structure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5",
+          "comment": "Black immediately attacks the center."
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c3",
+          "comment": "White reinforces d4 and prepares Nbd2."
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "early-qb6-qc1",
+      "name": "Early ...Qb6: Qc1 Defense",
+      "description": "White protects b2 without abandoning the London setup.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6",
+          "comment": "Black pressures b2."
+        },
+        {
+          "san": "Qc1",
+          "comment": "A simple way to defend b2 while keeping the pawn structure intact."
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "early-qb6-b3",
+      "name": "Early ...Qb6: b3 Setup",
+      "description": "White protects b2 with b3 and prepares a stable queenside structure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "b3",
+          "comment": "White protects b2 and prepares c4 or a queenside fianchetto."
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "against-kings-indian",
+      "name": "Against the King's Indian Setup",
+      "description": "White keeps the London structure against ...g6 and ...Bg7.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "against-slav",
+      "name": "Against the Slav Setup",
+      "description": "White develops normally against ...c6 and ...d5.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bxd3"
+        },
+        {
+          "san": "Qxd3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "against-dutch",
+      "name": "Against the Dutch Defense",
+      "description": "White uses the London bishop to challenge Black's kingside setup.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "f5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "c5"
+        }
+      ]
+    },
+    {
+      "id": "against-queens-indian-style",
+      "name": "Against a Queen's Indian Style Setup",
+      "description": "White completes the London shell before deciding on c4 or c3.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bb7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d5"
+        }
+      ]
+    },
+    {
+      "id": "simple-kingside-attack",
+      "name": "Basic Kingside Attack",
+      "description": "A typical London attacking plan with Ne5, Qf3 and kingside pressure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "Ne5",
+          "comment": "The knight occupies its ideal London outpost."
+        },
+        {
+          "san": "Bb7"
+        },
+        {
+          "san": "Qf3",
+          "comment": "White builds pressure on the kingside."
+        }
+      ]
+    },
+    {
+      "id": "mainline-qb6-qb3",
+      "name": "Main Line: ...Qb6 and Qb3",
+      "description": "White meets pressure on b2 by offering a queen trade.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Nh5"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "Nxg3"
+        },
+        {
+          "san": "hxg3"
+        },
+        {
+          "san": "Be6"
+        }
+      ]
+    },
+    {
+      "id": "mainline-c4",
+      "name": "London with c4",
+      "description": "White temporarily leaves the pure system setup to challenge Black's center directly.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c4",
+          "comment": "White attacks d5 and can transpose toward Queen's Gambit structures."
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "cxd4"
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Bb4"
+        }
+      ]
+    },
+    {
+      "id": "carlsbad-structure",
+      "name": "London into a Carlsbad Structure",
+      "description": "White exchanges on d5 and plays against the resulting queenside structure.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bxd6"
+        },
+        {
+          "san": "Qxd6"
+        },
+        {
+          "san": "dxc5"
+        },
+        {
+          "san": "Qxc5"
+        }
+      ]
+    },
+    {
+      "id": "ne5-attack",
+      "name": "Ne5 and Kingside Pressure",
+      "description": "A thematic London attack built around Ne5, Qf3 and h4.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Qc7"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Nd7"
+        },
+        {
+          "san": "Qh5",
+          "comment": "White immediately creates threats around h7."
+        }
+      ]
+    },
+    {
+      "id": "h4-attack",
+      "name": "Thematic h4 Attack",
+      "description": "White expands on the kingside after completing development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Bb7"
+        },
+        {
+          "san": "h4",
+          "comment": "White begins a direct kingside expansion."
+        }
+      ]
+    },
+    {
+      "id": "against-kid-c3",
+      "name": "King's Indian Setup: c3 and e4 Plan",
+      "description": "White prepares e4 while keeping the bishop outside the pawn chain.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Nxe5"
+        },
+        {
+          "san": "Nxe5"
+        },
+        {
+          "san": "Bxe5"
+        }
+      ]
+    },
+    {
+      "id": "against-grunfeld-style",
+      "name": "Against a Grünfeld-Style Setup",
+      "description": "White maintains the London structure while Black attacks the center with ...c5.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nd7"
+        }
+      ]
+    },
+    {
+      "id": "against-slav-qb3",
+      "name": "Slav Setup: Qb3 Pressure",
+      "description": "White targets b7 after Black develops the light-squared bishop.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "Qb3",
+          "comment": "White attacks b7 and increases pressure on d5."
+        },
+        {
+          "san": "Qb6"
+        }
+      ]
+    },
+    {
+      "id": "against-dutch-stonewall",
+      "name": "Against the Dutch Stonewall",
+      "description": "White exchanges the dangerous dark-squared bishop and targets weakened squares.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "f5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qe7"
+        }
+      ]
+    },
+    {
+      "id": "against-early-nh5",
+      "name": "Against Early ...Nh5",
+      "description": "White preserves the London bishop or gives it up only under favorable conditions.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Nh5",
+          "comment": "Black immediately questions the bishop."
+        },
+        {
+          "san": "Bg5",
+          "comment": "The bishop stays active and creates an awkward pin."
+        },
+        {
+          "san": "h6"
+        },
+        {
+          "san": "Bh4"
+        },
+        {
+          "san": "g5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "gxh4"
+        },
+        {
+          "san": "Nxh4",
+          "comment": "The knight recaptures the advanced pawn and restores material balance."
+        }
+      ]
+    },
+    {
+      "id": "against-early-bf5",
+      "name": "Mirror London: Early ...Bf5",
+      "description": "White challenges Black's mirror setup and prepares c4 or Bd3.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bxd3"
+        },
+        {
+          "san": "Qxd3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "queenside-expansion",
+      "name": "Queenside Expansion with b4",
+      "description": "White gains space on the queenside when Black's setup is passive.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bb7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "b4",
+          "comment": "White grabs queenside space and limits ...cxb4 ideas."
+        }
+      ]
+    },
+    {
+      "id": "minority-style-b4",
+      "name": "Minority-Style b4 Plan",
+      "description": "White uses c3 and b4 to gain space and restrain Black's queenside.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bxd6"
+        },
+        {
+          "san": "Qxd6"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "b4"
+        }
+      ]
+    },
+    {
+      "id": "central-break-e4",
+      "name": "Central Break with e4",
+      "description": "White prepares the thematic e4 break after completing development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "b6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bb7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "Rc8"
+        },
+        {
+          "san": "e4",
+          "comment": "White finally strikes in the center."
+        }
+      ]
+    },
+    {
+      "id": "poisoned-b2",
+      "name": "Poisoned b2 Pawn",
+      "description": "A sharp line where Black grabs b2 and White gains development and tactical chances.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qxb2",
+          "comment": "Black accepts the poisoned pawn."
+        },
+        {
+          "san": "Rb1",
+          "comment": "White attacks the exposed queen and gains time for development."
+        },
+        {
+          "san": "Qa3"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "Na6"
+        },
+        {
+          "san": "Rb3"
+        },
+        {
+          "san": "Qa5+"
+        }
+      ]
+    },
+    {
+      "id": "qb6-nc3-mainline",
+      "name": "Main Line with Nc3 and ...Qb6",
+      "description": "White develops quickly and accepts a more tactical version of the London.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Nh5"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "Nxg3"
+        },
+        {
+          "san": "hxg3"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "Ng5"
+        }
+      ]
+    },
+    {
+      "id": "jobava-transition",
+      "name": "Jobava-London Transition",
+      "description": "White uses Nc3 and Nb5 ideas, entering a more aggressive London structure.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nc3",
+          "comment": "The Jobava move order creates immediate tactical ideas."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Ne4"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc7+"
+        },
+        {
+          "san": "Kd8"
+        },
+        {
+          "san": "Nxd5"
+        }
+      ]
+    },
+    {
+      "id": "greek-gift-pattern",
+      "name": "Greek Gift Pattern",
+      "description": "A model attacking pattern where Bxh7+ becomes possible after Black weakens the kingside.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Qc7"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Nxe5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Bxe5"
+        },
+        {
+          "san": "Bxh7+",
+          "comment": "The classic bishop sacrifice begins."
+        },
+        {
+          "san": "Nxh7"
+        },
+        {
+          "san": "Qh5"
+        }
+      ]
+    },
+    {
+      "id": "kingside-sacrifice-h7",
+      "name": "Kingside Sacrifice on h7",
+      "description": "White uses Qf3, Ne5 and h4 to build a direct attack.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bd6"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Qc7"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Nd7"
+        },
+        {
+          "san": "Qh5"
+        },
+        {
+          "san": "Ndxe5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Bxe5"
+        },
+        {
+          "san": "Bxh7+"
+        },
+        {
+          "san": "Kh8"
+        }
+      ]
+    },
+    {
+      "id": "anti-kid-e4",
+      "name": "Anti-King's Indian e4 Expansion",
+      "description": "White uses the London bishop outside the chain, then builds a broad center.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Bg5"
+        },
+        {
+          "san": "Qe8"
+        },
+        {
+          "san": "e4",
+          "comment": "White establishes a strong central pawn duo."
+        }
+      ]
+    },
+    {
+      "id": "slav-c4-sharp",
+      "name": "Sharp Slav-London Hybrid",
+      "description": "White combines Bf4 with c4 and Qb3 pressure against Black's queenside.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "Qb3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Qxb3"
+        },
+        {
+          "san": "axb3"
+        },
+        {
+          "san": "Be7"
+        }
+      ]
+    },
+    {
+      "id": "dutch-leningrad",
+      "name": "Against the Leningrad Dutch",
+      "description": "White keeps the London setup and attacks the weakened dark squares.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "f5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Qe8"
+        },
+        {
+          "san": "e4",
+          "comment": "White challenges Black's kingside structure through the center."
+        }
+      ]
+    },
+    {
+      "id": "early-c5-b5",
+      "name": "Early ...c5 with a Queenside Pin",
+      "description": "White responds to ...Qb6 by using Nc3 and Nb5 to create tactical pressure.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "dxe5"
+        },
+        {
+          "san": "Nh5"
+        },
+        {
+          "san": "Bg3"
+        },
+        {
+          "san": "Nxg3"
+        },
+        {
+          "san": "hxg3"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "Ng5"
+        },
+        {
+          "san": "O-O-O"
+        }
+      ]
+    },
+    {
+      "id": "endgame-queen-trade",
+      "name": "Queen-Trade Main Line",
+      "description": "White accepts an early queen trade and relies on the sound London structure.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "d4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "e3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c3"
+        },
+        {
+          "san": "Qb6"
+        },
+        {
+          "san": "Qb3",
+          "comment": "Now Qb3 is legal because the c-pawn has moved and the diagonal is open."
+        },
+        {
+          "san": "Qxb3"
+        },
+        {
+          "san": "axb3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Nbd2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "b4"
+        },
+        {
+          "san": "cxb4"
+        },
+        {
+          "san": "cxb4"
+        },
+        {
+          "san": "Bxb4"
+        }
+      ]
+    }
+  ]
+}

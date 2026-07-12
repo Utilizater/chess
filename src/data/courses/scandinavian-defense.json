@@ -1,0 +1,1678 @@
+{
+  "id": "scandinavian-defense",
+  "title": "Scandinavian Defense",
+  "shortDescription": "A direct reply to 1.e4 with 1...d5, trading the center pawn immediately for quick, simplified development.",
+  "image": "/course-images/scandinavian-defense.png",
+  "colorToTrain": "black",
+  "startingFen": "startpos",
+  "lines": [
+    {
+      "id": "mainline-qa5-basic",
+      "name": "Main Line: 3...Qa5",
+      "description": "The classical Scandinavian setup with ...c6, ...Bf5 and ...e6.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5",
+          "comment": "Black challenges the center immediately."
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5",
+          "comment": "Black recaptures at once."
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5",
+          "comment": "The queen retreats while remaining active."
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6",
+          "comment": "A useful move supporting ...Bf5 and giving the queen c7."
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        }
+      ]
+    },
+    {
+      "id": "mainline-qd8-basic",
+      "name": "Main Line: 3...Qd8",
+      "description": "A safe queen retreat followed by simple development.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd8"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        }
+      ]
+    },
+    {
+      "id": "mainline-qd6-basic",
+      "name": "Main Line: 3...Qd6",
+      "description": "The queen stays active and supports a later ...e5 break.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bg4"
+        }
+      ]
+    },
+    {
+      "id": "qa5-bd2",
+      "name": "3...Qa5: Bd2 Setup",
+      "description": "White prepares long castling; Black develops in standard fashion.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-nf3",
+      "name": "3...Qa5: Early Nf3",
+      "description": "A natural development line leading to the standard Scandinavian structure.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-bc4",
+      "name": "3...Qa5: Early Bc4",
+      "description": "Black answers quick development with ...Nf6 and ...c6.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Bf5"
+        }
+      ]
+    },
+    {
+      "id": "modern-3d4",
+      "name": "Modern Scandinavian: 3.d4",
+      "description": "Black delays the recapture and develops with tempo.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "Nb6"
+        }
+      ]
+    },
+    {
+      "id": "modern-3nf3",
+      "name": "Modern Scandinavian: 3.Nf3",
+      "description": "Black regains the pawn with the knight and prepares a fianchetto.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "Nb6"
+        }
+      ]
+    },
+    {
+      "id": "modern-3c4",
+      "name": "Modern Scandinavian: 3.c4",
+      "description": "White tries to keep the pawn; Black undermines it with ...c6.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "declined-e5",
+      "name": "Scandinavian Declined: 2.e5",
+      "description": "Black attacks the advanced center with ...c5.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bd7"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-classical-main",
+      "name": "3...Qa5: Classical Main Line",
+      "description": "A central theoretical setup with active bishop development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "Qd8"
+        }
+      ]
+    },
+    {
+      "id": "qa5-long-castle",
+      "name": "3...Qa5: Long-Castling Setup",
+      "description": "White castles queenside and Black develops toward a sharp middlegame.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Qe2"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-g4",
+      "name": "3...Qa5: Kingside Expansion",
+      "description": "White gains space with g4; Black preserves the bishop.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "g4"
+        },
+        {
+          "san": "Bg6"
+        },
+        {
+          "san": "h4"
+        },
+        {
+          "san": "h6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-ne5",
+      "name": "3...Qa5: Ne5 Jump",
+      "description": "White centralizes a knight; Black develops and challenges the center.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Nbd7"
+        }
+      ]
+    },
+    {
+      "id": "qd6-main",
+      "name": "3...Qd6: Main Development",
+      "description": "Black keeps the queen centralized and develops compactly.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Be6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "Qd8"
+        }
+      ]
+    },
+    {
+      "id": "qd6-g3",
+      "name": "3...Qd6: Fianchetto Setup",
+      "description": "White fianchettos while Black prepares a central break.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "qd8-classical",
+      "name": "3...Qd8: Classical Structure",
+      "description": "A solid setup with ...Nf6, ...c6, ...Bf5 and ...e6.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd8"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Re1"
+        },
+        {
+          "san": "Be7"
+        }
+      ]
+    },
+    {
+      "id": "qd8-bf4",
+      "name": "3...Qd8: Bf4 Development",
+      "description": "White develops the dark bishop early; Black uses a compact setup.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd8"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bf4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "e6"
+        }
+      ]
+    },
+    {
+      "id": "portuguese-main",
+      "name": "Portuguese Variation: 3...Bg4",
+      "description": "Black values rapid development and pressure over immediate pawn recovery.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bb5+"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        }
+      ]
+    },
+    {
+      "id": "portuguese-be2",
+      "name": "Portuguese Variation: 4.Be2",
+      "description": "White avoids weakening the kingside; Black recaptures and develops.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "Bxe2"
+        },
+        {
+          "san": "Qxe2"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "icelandic-gambit",
+      "name": "Icelandic Gambit",
+      "description": "Black offers a pawn for development and open lines.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "dxe6"
+        },
+        {
+          "san": "Bxe6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bb4+"
+        }
+      ]
+    },
+    {
+      "id": "modern-bb5",
+      "name": "Modern Scandinavian: 3.Bb5+",
+      "description": "Black blocks the check and attacks the extra pawn with development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bb5+"
+        },
+        {
+          "san": "Bd7"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "modern-knight-recapture",
+      "name": "Modern Scandinavian: Knight Recapture",
+      "description": "Black recaptures with the knight and prepares a kingside fianchetto.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "Nb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bg7"
+        }
+      ]
+    },
+    {
+      "id": "blackburne-kloosterboer",
+      "name": "Blackburne-Kloosterboer Gambit",
+      "description": "Black uses ...c6 to undermine White’s extra pawn.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "Bc5"
+        }
+      ]
+    },
+    {
+      "id": "qa5-main-deep",
+      "name": "3...Qa5: Deep Main Line",
+      "description": "A deeper classical sequence with structural imbalance after a knight exchange.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "Qd8"
+        },
+        {
+          "san": "Nxf6+"
+        },
+        {
+          "san": "gxf6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-opposite-castling",
+      "name": "3...Qa5: Opposite-Side Castling",
+      "description": "A sharp setup where both sides may launch pawn storms.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Qe2"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "O-O-O"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "Ne5"
+        },
+        {
+          "san": "Bg6"
+        }
+      ]
+    },
+    {
+      "id": "qa5-qxf6",
+      "name": "3...Qa5: Queen Recapture Structure",
+      "description": "Black accepts queen activity and the bishop pair after Nxf6+.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qa5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bd2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "Nd5"
+        },
+        {
+          "san": "Qd8"
+        },
+        {
+          "san": "Nxf6+"
+        },
+        {
+          "san": "Qxf6"
+        }
+      ]
+    },
+    {
+      "id": "qd6-e5-break",
+      "name": "3...Qd6: Central ...e5 Break",
+      "description": "Black prepares a direct central counterstrike.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qd6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "Be3"
+        },
+        {
+          "san": "Nbd7"
+        },
+        {
+          "san": "Qd2"
+        },
+        {
+          "san": "e5"
+        }
+      ]
+    },
+    {
+      "id": "portuguese-sharp",
+      "name": "Portuguese Variation: Sharp Main Line",
+      "description": "Black obtains rapid activity for delayed material recovery.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "f3"
+        },
+        {
+          "san": "Bf5"
+        },
+        {
+          "san": "Bb5+"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Ne2"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Be7"
+        }
+      ]
+    },
+    {
+      "id": "portuguese-nf3",
+      "name": "Portuguese Variation: 4.Nf3",
+      "description": "Black recaptures with the queen and keeps active piece play.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Qxd5"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "Qf5"
+        }
+      ]
+    },
+    {
+      "id": "icelandic-deep",
+      "name": "Icelandic Gambit: Main Line",
+      "description": "Black develops with tempo and castles queenside for attacking chances.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "e6"
+        },
+        {
+          "san": "dxe6"
+        },
+        {
+          "san": "Bxe6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Bb4+"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Qe7"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "O-O-O"
+        }
+      ]
+    },
+    {
+      "id": "modern-fianchetto-deep",
+      "name": "Modern Scandinavian: Fianchetto Main Line",
+      "description": "Black combines a knight recapture with kingside fianchetto development.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "Nb6"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bg7"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "modern-c4-deep",
+      "name": "Modern Scandinavian: 3.c4 Main Line",
+      "description": "Black undermines the pawn chain and gains active central play.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "c4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "Be2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Re8"
+        }
+      ]
+    },
+    {
+      "id": "modern-bb5-deep",
+      "name": "Modern Scandinavian: 3.Bb5+ Deep Line",
+      "description": "Black neutralizes the check and develops aggressively.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bb5+"
+        },
+        {
+          "san": "Bd7"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "c6"
+        },
+        {
+          "san": "dxc6"
+        },
+        {
+          "san": "Nxc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Bc5"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1565 @@
+{
+  "id": "vienna-game",
+  "title": "Vienna Game",
+  "shortDescription": "A flexible 1.e4 e5 2.Nc3 opening that can transpose into quiet positional play or sharp gambit lines with f4.",
+  "image": "/course-images/vienna-game.png",
+  "colorToTrain": "white",
+  "startingFen": "startpos",
+  "lines": [
+    {
+      "id": "vienna-gambit-basic",
+      "name": "Vienna Gambit: Basic Setup",
+      "description": "White plays f4 against ...Nf6 and aims for rapid kingside development.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4",
+          "comment": "White claims the center."
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3",
+          "comment": "The Vienna move: White develops while keeping f4 available."
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4",
+          "comment": "The Vienna Gambit challenges e5 and opens the f-file."
+        },
+        {
+          "san": "d5",
+          "comment": "Black strikes in the center immediately."
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Nf3",
+          "comment": "White develops and attacks the centralized knight."
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-bc4-basic",
+      "name": "Vienna Game: Bc4 Setup",
+      "description": "A simple attacking setup with Bc4, d3 and Nf3.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4",
+          "comment": "White develops toward f7 and keeps f4 ideas."
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "d3",
+          "comment": "White supports e4 and prepares Nf3."
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "vienna-g3-basic",
+      "name": "Vienna Game: Fianchetto Setup",
+      "description": "White develops quietly with g3 and Bg2.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "g3",
+          "comment": "White chooses a flexible kingside fianchetto."
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "bxc3"
+        }
+      ]
+    },
+    {
+      "id": "max-lange-defense",
+      "name": "Against 2...Nc6: Quiet Development",
+      "description": "White develops Bc4 and Nf3, often transposing to Four Knights structures.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bb5",
+          "comment": "White enters a Spanish Four Knights setup."
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "against-bc5",
+      "name": "Against Early ...Bc5",
+      "description": "White adopts a simple setup with Nf3, d3 and O-O.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "against-bb4",
+      "name": "Against Early ...Bb4",
+      "description": "White develops normally and prepares to challenge the pin.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "d4",
+          "comment": "White challenges the center immediately."
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Qxd4"
+        }
+      ]
+    },
+    {
+      "id": "against-d6",
+      "name": "Against 2...d6",
+      "description": "White develops Bc4 and d3, keeping both f4 and Nf3 available.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "vienna-four-knights",
+      "name": "Vienna into Four Knights",
+      "description": "A clean transposition to the Four Knights Game.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d3"
+        }
+      ]
+    },
+    {
+      "id": "vienna-center-game",
+      "name": "Vienna with Early d4",
+      "description": "White strikes in the center before committing the kingside pieces.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4",
+          "comment": "White immediately challenges e5."
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Qxd4"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Qd1"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-declined",
+      "name": "Vienna Gambit Declined",
+      "description": "Black avoids the main gambit by reinforcing e5; White develops naturally.",
+      "tier": 1,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bd7"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-mainline",
+      "name": "Vienna Gambit: Main Line",
+      "description": "White meets ...d5 with fxe5 and develops with tempo against the knight.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "dxc3"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-qh5",
+      "name": "Vienna Gambit: Qh5 Pressure",
+      "description": "White builds immediate pressure on e5 and f7.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Qf3",
+          "comment": "White attacks e4 and f7 at once."
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "dxc3"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-bc4",
+      "name": "Vienna Gambit: Bc4 Development",
+      "description": "White combines f4 with pressure on f7.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "dxc3"
+        },
+        {
+          "san": "Be7"
+        },
+        {
+          "san": "Bd3"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-accepted",
+      "name": "Vienna Gambit Accepted",
+      "description": "Black accepts with ...exf4; White develops quickly and targets f7.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "exf4"
+        },
+        {
+          "san": "e5",
+          "comment": "White drives the knight and gains space."
+        },
+        {
+          "san": "Qe7"
+        },
+        {
+          "san": "Qe2"
+        },
+        {
+          "san": "Ng8"
+        },
+        {
+          "san": "Nf3"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-c5",
+      "name": "Vienna Gambit: ...c5 Counterplay",
+      "description": "Black attacks the center from the flank; White continues active development.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "c5"
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Ng8"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bc4"
+        }
+      ]
+    },
+    {
+      "id": "vienna-bc4-d5",
+      "name": "Vienna Bc4: Central Break",
+      "description": "Black strikes with ...d5; White clarifies the center and develops.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Qh5",
+          "comment": "White creates tactical threats against f7."
+        },
+        {
+          "san": "Nd6"
+        },
+        {
+          "san": "Bb3"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-bc4-bc5",
+      "name": "Vienna Bc4: Symmetrical Development",
+      "description": "A classical setup with d3, Nf3 and castling.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nc6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-g3-d5",
+      "name": "Vienna Fianchetto: ...d5",
+      "description": "White exchanges in the center and relies on long-diagonal pressure.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "exd5"
+        },
+        {
+          "san": "Nxd5"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "bxc3"
+        },
+        {
+          "san": "Bd6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-g3-bc5",
+      "name": "Vienna Fianchetto: ...Bc5",
+      "description": "White develops quietly and keeps the center flexible.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nge2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "four-knights-spanish",
+      "name": "Four Knights: Spanish Variation",
+      "description": "White enters a main Four Knights structure with Bb5.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        }
+      ]
+    },
+    {
+      "id": "four-knights-scotch",
+      "name": "Four Knights: Scotch Variation",
+      "description": "White plays d4 and opens the center.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Nxd4"
+        },
+        {
+          "san": "Bb4"
+        }
+      ]
+    },
+    {
+      "id": "vienna-vs-bb4-d4",
+      "name": "Vienna vs ...Bb4: d4 Break",
+      "description": "White challenges the center while Black's bishop is committed.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "Nge2"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Qxd4"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Qd3"
+        }
+      ]
+    },
+    {
+      "id": "vienna-vs-d6-f4",
+      "name": "Vienna vs ...d6: f4 Plan",
+      "description": "White uses the closed center to prepare a kingside expansion.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "exf4"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "g5"
+        },
+        {
+          "san": "h4"
+        }
+      ]
+    },
+    {
+      "id": "vienna-quiet-nf3",
+      "name": "Quiet Vienna with Nf3",
+      "description": "White delays f4 and keeps several transpositions available.",
+      "tier": 2,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "frankenstein-dracula",
+      "name": "Frankenstein–Dracula Variation",
+      "description": "A famous ultra-sharp Vienna line beginning with 3.Bc4 Nxe4.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nxe4",
+          "comment": "Black grabs the center pawn and enters sharp theory."
+        },
+        {
+          "san": "Qh5",
+          "comment": "White attacks f7 and e5 immediately."
+        },
+        {
+          "san": "Nd6"
+        },
+        {
+          "san": "Bb3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "f5"
+        }
+      ]
+    },
+    {
+      "id": "frankenstein-dracula-deep",
+      "name": "Frankenstein–Dracula: Deep Main Line",
+      "description": "A deeper tactical continuation with checks and exposed kings.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Qh5"
+        },
+        {
+          "san": "Nd6"
+        },
+        {
+          "san": "Bb3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "f5"
+        },
+        {
+          "san": "Qd5"
+        },
+        {
+          "san": "Qe7"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-modern",
+      "name": "Vienna Gambit: Modern Main Line",
+      "description": "White uses Qf3 and Bb5 to maintain pressure after ...Nxe4.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d5"
+        },
+        {
+          "san": "fxe5"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "Nxc3"
+        },
+        {
+          "san": "dxc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bd7"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-max-lange",
+      "name": "Vienna Gambit: Max Lange Defense",
+      "description": "Black reacts with ...Bc5 and ...d5; White keeps tactical pressure.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "exf4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g5"
+        },
+        {
+          "san": "h4"
+        },
+        {
+          "san": "g4"
+        },
+        {
+          "san": "Ne5"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-hamppe",
+      "name": "Vienna Gambit: Hamppe–Muzio Ideas",
+      "description": "White sacrifices material for rapid development and kingside pressure.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "exf4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g5"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "g4"
+        },
+        {
+          "san": "O-O"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-pierce",
+      "name": "Vienna Gambit: Pierce Gambit",
+      "description": "White develops aggressively and offers material for initiative.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "exf4"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "g5"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "g4"
+        },
+        {
+          "san": "Bxf4"
+        }
+      ]
+    },
+    {
+      "id": "vienna-gambit-steinitz",
+      "name": "Vienna Gambit: Steinitz Defense",
+      "description": "Black reinforces the center with ...d6; White builds a broad pawn center.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "f4"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Bg4"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "Bxc6+"
+        },
+        {
+          "san": "bxc6"
+        }
+      ]
+    },
+    {
+      "id": "vienna-four-knights-rubinstein",
+      "name": "Four Knights: Rubinstein Countergambit",
+      "description": "White meets ...Nd4 with active central play.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Nd4"
+        },
+        {
+          "san": "Nxe5"
+        },
+        {
+          "san": "Qe7"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nxb5"
+        }
+      ]
+    },
+    {
+      "id": "vienna-four-knights-metger",
+      "name": "Four Knights: Metger Variation",
+      "description": "White plays d3 and develops calmly before central expansion.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Nf3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Bb5"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Ne2"
+        }
+      ]
+    },
+    {
+      "id": "vienna-bc4-qh5-tactics",
+      "name": "Vienna Bc4: Qh5 Tactics",
+      "description": "White uses the queen and bishop battery against f7.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "Bc4"
+        },
+        {
+          "san": "Nxe4"
+        },
+        {
+          "san": "Qh5"
+        },
+        {
+          "san": "Nd6"
+        },
+        {
+          "san": "Bb3"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Nb5"
+        },
+        {
+          "san": "g6"
+        },
+        {
+          "san": "Qf3"
+        },
+        {
+          "san": "f5"
+        },
+        {
+          "san": "Qd5"
+        }
+      ]
+    },
+    {
+      "id": "vienna-g3-closed-center",
+      "name": "Vienna Fianchetto: Closed Center",
+      "description": "White builds slowly with Bg2, Nge2 and d3 before expanding.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "g3"
+        },
+        {
+          "san": "Bc5"
+        },
+        {
+          "san": "Bg2"
+        },
+        {
+          "san": "d6"
+        },
+        {
+          "san": "Nge2"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "O-O"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "d3"
+        },
+        {
+          "san": "a6"
+        },
+        {
+          "san": "h3"
+        }
+      ]
+    },
+    {
+      "id": "vienna-center-sacrifice",
+      "name": "Vienna Center Sacrifice",
+      "description": "White opens the center early and accepts temporary queen exposure for activity.",
+      "tier": 3,
+      "moves": [
+        {
+          "san": "e4"
+        },
+        {
+          "san": "e5"
+        },
+        {
+          "san": "Nc3"
+        },
+        {
+          "san": "Nf6"
+        },
+        {
+          "san": "d4"
+        },
+        {
+          "san": "exd4"
+        },
+        {
+          "san": "Qxd4"
+        },
+        {
+          "san": "Nc6"
+        },
+        {
+          "san": "Qd1"
+        },
+        {
+          "san": "Bb4"
+        },
+        {
+          "san": "Bd3"
+        }
+      ]
+    }
+  ]
+}
