@@ -1,14 +1,18 @@
 import Link from "next/link";
 import type { CourseSummary } from "@/lib/chess/openingRepository";
 import type { CourseProgressSummary } from "@/lib/chess/progress";
+import type { TierProgress } from "@/lib/chess/tiers";
+import { CourseStagePanel } from "./CourseStagePanel";
 import { StatusBadge } from "./StatusBadge";
 
 export function CourseCard({
   course,
   progress,
+  tiers,
 }: {
   course: CourseSummary;
   progress: CourseProgressSummary;
+  tiers: TierProgress[];
 }) {
   return (
     <div className="group rounded-xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-stone-700 dark:bg-stone-900 dark:hover:border-amber-700">
@@ -61,6 +65,12 @@ export function CourseCard({
           &rarr;
         </span>
       </Link>
+
+      {tiers.length > 0 && (
+        <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">
+          <CourseStagePanel tiers={tiers} />
+        </div>
+      )}
 
       {progress.totalLines > 0 && (
         <div className="mt-3 border-t border-stone-100 pt-3 dark:border-stone-800">

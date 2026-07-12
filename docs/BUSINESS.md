@@ -56,6 +56,14 @@ defenses), the Ryder Gambit, several declined setups, and a handful of
 number of additional courses with no code changes — see
 [docs/TECHNICAL.md](./TECHNICAL.md#adding-a-new-course).
 
+42 lines is too much to throw at a learner at once, so every course's lines
+are split into three stages — **Foundation**, **Advanced**, **Master** — of
+increasing difficulty. A learner starts on Foundation; each stage unlocks
+once every line in the stage before it is mastered. This is a coarse,
+manual stepping stone toward the scheduling described in §5 below, not a
+replacement for it — see
+[docs/TECHNICAL.md §7](./TECHNICAL.md#7-learning-stages-tiers).
+
 ## 5. Vision: getting to "spaced repetition," not just "random drill"
 
 Today, line selection is still uniform random per session — there's no

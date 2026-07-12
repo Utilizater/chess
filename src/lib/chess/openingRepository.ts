@@ -13,8 +13,8 @@ export type CourseSummary = {
   title: string;
   shortDescription?: string;
   colorToTrain: PieceColor;
-  /** Every OpeningLine.id in the course, for progress aggregation. */
-  lineIds: string[];
+  /** id + tier for every OpeningLine in the course, for progress/tier aggregation. */
+  lines: Pick<OpeningLine, "id" | "tier">[];
 };
 
 interface CourseDataSource {
@@ -49,6 +49,7 @@ class MongoCourseDataSource implements CourseDataSource {
             shortDescription: 1,
             colorToTrain: 1,
             "lines.id": 1,
+            "lines.tier": 1,
           },
         },
       )
@@ -58,7 +59,7 @@ class MongoCourseDataSource implements CourseDataSource {
       title: course.title,
       shortDescription: course.shortDescription,
       colorToTrain: course.colorToTrain,
-      lineIds: course.lines.map((line) => line.id),
+      lines: course.lines.map((line) => ({ id: line.id, tier: line.tier })),
     }));
   }
 

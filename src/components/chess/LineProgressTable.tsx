@@ -1,13 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { Tier } from "@/lib/chess/openingTypes";
 import type { LineStatus } from "@/lib/chess/progress";
 import { StatusBadge } from "./StatusBadge";
+import { TierBadge, TIER_STYLES } from "./TierBadge";
 
 export type LineProgressRow = {
   id: string;
   name: string;
   description?: string;
+  tier: Tier;
+  /** Not yet reachable in training because its stage isn't unlocked. */
+  locked: boolean;
   status: LineStatus;
   correctMoves: number;
   mistakes: number;
@@ -19,6 +24,7 @@ export type LineProgressRow = {
 
 type SortColumn =
   | "name"
+  | "tier"
   | "status"
   | "correctMoves"
   | "mistakes"
@@ -39,6 +45,7 @@ type ColumnDef = {
 
 const COLUMNS: ColumnDef[] = [
   { key: "name", label: "Line", align: "left", defaultDirection: "asc" },
+  { key: "tier", label: "Stage", align: "left", defaultDirection: "asc" },
   { key: "status", label: "Status", align: "left", defaultDirection: "asc" },
   { key: "correctMoves", label: "Correct", align: "right", defaultDirection: "desc" },
   { key: "mistakes", label: "Mistakes", align: "right", defaultDirection: "desc" },
@@ -60,6 +67,8 @@ function compareRows(a: LineProgressRow, b: LineProgressRow, column: SortColumn)
   switch (column) {
     case "name":
       return a.name.localeCompare(b.name);
+    case "tier":
+      return a.tier - b.tier;
     case "status":
       return STATUS_RANK[a.status] - STATUS_RANK[b.status];
     case "lastAttemptAt":
@@ -131,7 +140,9 @@ export function LineProgressTable({ rows }: { rows: LineProgressRow[] }) {
           {sortedRows.map((row) => (
             <tr
               key={row.id}
-              className="border-b border-stone-100 last:border-0 dark:border-stone-800"
+              className={`border-b border-l-4 border-stone-100 last:border-b-0 dark:border-stone-800 ${
+                TIER_STYLES[row.tier].border
+              } ${row.locked ? "opacity-50" : ""}`}
             >
               <td className="px-4 py-3">
                 <div className="font-medium text-stone-900 dark:text-stone-100">{row.name}</div>
@@ -140,6 +151,9 @@ export function LineProgressTable({ rows }: { rows: LineProgressRow[] }) {
                     {row.description}
                   </div>
                 )}
+              </td>
+              <td className="px-4 py-3">
+                <TierBadge tier={row.tier} locked={row.locked} />
               </td>
               <td className="px-4 py-3">
                 <StatusBadge status={row.status} />

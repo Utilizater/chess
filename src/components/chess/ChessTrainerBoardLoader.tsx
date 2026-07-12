@@ -6,7 +6,7 @@
 // ever renders client-side, where the random pick is consistent.
 
 import dynamic from "next/dynamic";
-import type { Course } from "@/lib/chess/openingTypes";
+import type { Course, Tier } from "@/lib/chess/openingTypes";
 
 const ChessTrainerBoard = dynamic(
   () => import("./ChessTrainerBoard").then((mod) => mod.ChessTrainerBoard),
@@ -20,6 +20,12 @@ const ChessTrainerBoard = dynamic(
   },
 );
 
-export function ChessTrainerBoardLoader({ course }: { course: Course }) {
-  return <ChessTrainerBoard course={course} />;
+export function ChessTrainerBoardLoader({
+  course,
+  unlockedTier,
+}: {
+  course: Course;
+  unlockedTier: Tier;
+}) {
+  return <ChessTrainerBoard course={course} unlockedTier={unlockedTier} />;
 }

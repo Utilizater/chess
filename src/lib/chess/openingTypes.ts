@@ -4,6 +4,10 @@
 
 export type PieceColor = "white" | "black";
 
+/** A course's lines are grouped into three learning stages, unlocked in
+ * order as the learner masters the previous one. See tiers.ts. */
+export type Tier = 1 | 2 | 3;
+
 export type OpeningMove = {
   /** Move in Standard Algebraic Notation, e.g. "Nf3". */
   san: string;
@@ -19,6 +23,7 @@ export type OpeningLine = {
   id: string;
   name: string;
   description?: string;
+  tier: Tier;
   moves: OpeningMove[];
 };
 

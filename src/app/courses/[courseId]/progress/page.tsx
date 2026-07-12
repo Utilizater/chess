@@ -3,10 +3,12 @@ import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { StatusBadge } from "@/components/chess/StatusBadge";
+import { StageOverview } from "@/components/chess/StageOverview";
 import { LineProgressTable, type LineProgressRow } from "@/components/chess/LineProgressTable";
 import { courseRepository } from "@/lib/chess/openingRepository";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import { computeCourseProgressSummary, computeLineStatus } from "@/lib/chess/progress";
+import { computeTierProgress, computeUnlockedTier } from "@/lib/chess/tiers";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +28,8 @@ export default async function CourseProgressPage({ params }: CourseProgressPageP
   const progressDoc = await progressRepository.getForUserAndCourse(userId, courseId);
   const lineIds = course.lines.map((line) => line.id);
   const summary = computeCourseProgressSummary(lineIds, progressDoc);
+  const unlockedTier = computeUnlockedTier(course.lines, progressDoc);
+  const tierProgress = computeTierProgress(course.lines, progressDoc);
 
   const rows: LineProgressRow[] = course.lines.map((line) => {
     const lineProgress = progressDoc?.lines[line.id];
@@ -33,6 +37,8 @@ export default async function CourseProgressPage({ params }: CourseProgressPageP
       id: line.id,
       name: line.name,
       description: line.description,
+      tier: line.tier,
+      locked: line.tier > unlockedTier,
       status: computeLineStatus(lineProgress),
       correctMoves: lineProgress?.correctMoves ?? 0,
       mistakes: lineProgress?.mistakes ?? 0,
@@ -73,6 +79,10 @@ export default async function CourseProgressPage({ params }: CourseProgressPageP
           >
             Train this course &rarr;
           </Link>
+        </div>
+
+        <div className="mt-6">
+          <StageOverview tiers={tierProgress} />
         </div>
 
         <div className="mt-6">

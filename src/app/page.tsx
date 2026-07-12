@@ -5,6 +5,7 @@ import { Landing } from "@/components/marketing/Landing";
 import { courseRepository } from "@/lib/chess/openingRepository";
 import { computeCourseProgressSummary } from "@/lib/chess/progress";
 import { progressRepository } from "@/lib/chess/progressRepository";
+import { computeTierProgress } from "@/lib/chess/tiers";
 
 // Course data now lives in MongoDB, not compile-time JSON, so this page
 // must not be statically frozen at build time.
@@ -39,16 +40,20 @@ export default async function Home() {
         </p>
 
         <div className="mt-10 flex flex-col gap-3">
-          {courses.map((course) => (
-            <CourseCard
-              key={course.id}
-              course={course}
-              progress={computeCourseProgressSummary(
-                course.lineIds,
-                progressByCourse.get(course.id),
-              )}
-            />
-          ))}
+          {courses.map((course) => {
+            const progressDoc = progressByCourse.get(course.id);
+            return (
+              <CourseCard
+                key={course.id}
+                course={course}
+                progress={computeCourseProgressSummary(
+                  course.lines.map((line) => line.id),
+                  progressDoc,
+                )}
+                tiers={computeTierProgress(course.lines, progressDoc)}
+              />
+            );
+          })}
         </div>
       </main>
     </div>

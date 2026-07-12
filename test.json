@@ -1,9 +1,9 @@
 {
+  "_id": {
+    "$oid": "6a4c7000be4ce89393bdb063"
+  },
   "id": "blackmar-diemer-gambit",
-  "title": "Blackmar-Diemer Gambit",
-  "shortDescription": "A tactical gambit starting 1.d4 d5 2.e4, sacrificing a pawn for rapid development and open lines.",
   "colorToTrain": "white",
-  "startingFen": "startpos",
   "lines": [
     {
       "id": "accepted-bogoljubov",
@@ -2287,5 +2287,8 @@
         }
       ]
     }
-  ]
+  ],
+  "shortDescription": "A tactical gambit starting 1.d4 d5 2.e4, sacrificing a pawn for rapid development and open lines.",
+  "startingFen": "startpos",
+  "title": "Blackmar-Diemer Gambit"
 }

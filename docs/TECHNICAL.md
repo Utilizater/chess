@@ -58,7 +58,8 @@ npm run lint    # eslint
 ## 3. Adding a new course
 
 1. Add a new JSON file under `src/data/courses/`, matching the `Course`
-   shape in [§5](#5-data-model).
+   shape in [§5](#5-data-model) — including a `tier` (1–3) on every line,
+   see [§7](#7-learning-stages-tiers).
 2. Run `npm run seed:courses` to upsert it into MongoDB.
 3. It appears automatically on the home page and at `/courses/<id>` — no
    code changes needed. The course list and training page are both driven
@@ -66,7 +67,7 @@ npm run lint    # eslint
    code.
 
 To edit an *existing* course's lines without touching JSON files or
-re-running the seed script, use the admin UI (see [§8](#8-admin-tooling))
+re-running the seed script, use the admin UI (see [§9](#9-admin-tooling))
 instead.
 
 ## 4. Architecture
@@ -100,6 +101,8 @@ change — nothing in `components/` or `app/` talks to Mongo directly.
 Defined in `src/lib/chess/openingTypes.ts`.
 
 ```ts
+type Tier = 1 | 2 | 3;   // 1 Foundation, 2 Advanced, 3 Master — see §7
+
 type Course = {
   id: string;
   title: string;
@@ -113,6 +116,7 @@ type OpeningLine = {
   id: string;            // must be unique within the course
   name: string;
   description?: string;
+  tier: Tier;             // which learning stage this line belongs to
   moves: OpeningMove[];  // SAN sequence from startingFen
 };
 
@@ -204,7 +208,50 @@ This is an intentionally simple first cut — see
 [docs/BUSINESS.md §5](./BUSINESS.md#5-vision-getting-to-spaced-repetition-not-just-random-drill)
 for the fuller per-line scheduling this is a step toward.
 
-## 7. Data integrity & validation
+## 7. Learning stages (tiers)
+
+Defined in `src/lib/chess/tiers.ts`, pure and storage-agnostic like
+`progress.ts`.
+
+Every line belongs to one of three tiers — Foundation (1), Advanced (2),
+Master (3) — authored directly in the course JSON (`OpeningLine.tier`).
+Tier 2 unlocks once every Foundation line is mastered; Tier 3 unlocks once
+every Advanced line is mastered. Tier 1 is always unlocked, even with zero
+activity. `computeUnlockedTier` derives the current unlock ceiling from a
+`UserCourseProgressDoc`; `computeTierProgress` returns the full per-tier
+breakdown (mastered/total, locked/unlocked, which tier is "current") used
+to render stage UI.
+
+The unlock ceiling isn't just cosmetic: `useOpeningTrainer` filters
+`course.lines` down to the unlocked tiers *before* building the opening
+tree (`buildOpeningTree`), so a locked line's moves never appear as a
+prepared opponent reply, and "Next Line" can never land on one. The hook
+takes the unlocked tier as an explicit argument
+(`useOpeningTrainer(course, unlockedTier)`), computed server-side in
+`app/courses/[courseId]/page.tsx` from that user's progress doc and passed
+down through `ChessTrainerBoardLoader` → `ChessTrainerBoard`.
+
+Stage UI lives in three components:
+
+- `TierBadge.tsx` — a single tier chip, plus the sky/violet/fuchsia color
+  palette every tier component shares (deliberately disjoint from
+  `StatusBadge`'s stone/amber/emerald, so tier and mastery status never
+  read as the same signal side by side) and `TierDots` for a compact
+  multi-tier summary.
+- `CourseStagePanel.tsx` — the collapsed "Stages" toggle on each home-page
+  `CourseCard`; expands in place to the full per-tier breakdown. Kept
+  outside the card's main `<Link>` so the toggle click doesn't also
+  navigate.
+- `StageOverview.tsx` — the full 3-card banner with a "?" explainer, used
+  on the per-course progress page (`/courses/[courseId]/progress`). The
+  training page itself only shows a compact `TierBadge` next to the course
+  title, linking to the progress page for detail.
+
+`LineProgressTable` also takes a `tier`/`locked` pair on each row: a
+`TierBadge` in a dedicated Stage column, plus a `border-l-4` accent in that
+tier's color on the row itself.
+
+## 8. Data integrity & validation
 
 Every line is validated as legal chess before it can be persisted:
 `buildOpeningTree` replays each line's SAN sequence through a real
@@ -216,7 +263,7 @@ Every line is validated as legal chess before it can be persisted:
   the tree with the candidate lines *before* writing to MongoDB — an invalid
   line is rejected with a 400 and the database is left untouched).
 
-## 8. Admin tooling
+## 9. Admin tooling
 
 A minimal, unauthenticated editor for course content, meant for trusted
 local/single-admin use — **do not expose this publicly without adding
@@ -231,12 +278,16 @@ auth first.**
   via `buildOpeningTree`, and either persists or returns a 400 with the
   validation error.
 
-## 9. Trainer session logic
+## 10. Trainer session logic
 
 `useOpeningTrainer` (`src/lib/chess/useOpeningTrainer.ts`) is the only React
 hook that touches game state; it's a thin adapter over the pure functions in
 `openingTrainer.ts` (tree building, move matching, opponent-reply selection,
 hint/answer text, line-completion detection — none of which import React).
+It also takes the caller-computed `unlockedTier` (see
+[§7](#7-learning-stages-tiers)) and narrows `course.lines` to it before
+building the tree — every downstream lookup in this hook operates on that
+narrowed set, not the full course.
 
 Session state machine (`TrainerStatus`):
 
@@ -261,7 +312,7 @@ On any legal-but-unprepared move, the board simply doesn't update (the
 line." — the position is never mutated, so `canInteract`/`Restart Line`
 always reflect real game state, never a rejected attempt.
 
-## 10. Project structure
+## 11. Project structure
 
 ```
 src/
@@ -274,7 +325,8 @@ src/
     api/courses/[courseId]/progress/      Progress-event write API
   components/
     chess/                         Board, panel, move list, course card,
-                                    status badge, line progress table
+                                    status badge, tier badge/panel/overview,
+                                    line progress table
     admin/                         CourseLinesEditor
     layout/                        SiteHeader
   lib/
@@ -288,6 +340,7 @@ src/
       progress.ts                  Pure status derivation (line/course mastery)
       progressRepository.ts        Progress data access layer (MongoDB-backed)
       progressClient.ts            Client-side helper that POSTs progress events
+      tiers.ts                     Pure tier/stage unlock logic
       pgnImport.ts                 PGN → OpeningMove[] helper (not wired into any UI yet)
     db/
       mongo.ts                     Cached MongoClient singleton
@@ -295,16 +348,18 @@ src/
     courses/*.json                 Seed data, consumed only by scripts/seedCourses.mjs
 scripts/
   seedCourses.mjs                  One-off upsert of seed JSON into MongoDB
+  addLineTiers.mjs                 Applies each line's tier to the seed JSON files
+  migrateCourseTiers.mjs           Backfills tier onto lines already in MongoDB
 ```
 
-## 11. Known simplifications (intentional, for a single-user MVP)
+## 12. Known simplifications (intentional, for a single-user MVP)
 
 - Pawn promotion always defaults to queen (`attemptMove` in
   `openingTrainer.ts`) — covers the vast majority of opening-phase
   promotions without a promotion-choice UI.
 - Opponent reply selection is uniform random, not weighted.
 - No authentication on `/admin` — the rest of the app is behind Clerk, but
-  the course editor is still a trusted-access tool (see §8).
+  the course editor is still a trusted-access tool (see §9).
 - No spaced-repetition/scheduling layer — "Next Line" is a random pick, not
   a due-card queue. See [docs/BUSINESS.md §5](./BUSINESS.md#5-vision-getting-to-spaced-repetition-not-just-random-drill)
   for where this is headed.
@@ -312,3 +367,6 @@ scripts/
   over time and no per-mistake weighting — a good-enough signal for "has
   this been learned at all," not yet the graded difficulty a real
   scheduler would want.
+- Stage unlocking (§7) is all-or-nothing per tier — every line in a tier
+  must be mastered before the next unlocks, with no partial credit and no
+  weighting by how hard a given line is.

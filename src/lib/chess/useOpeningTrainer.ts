@@ -6,7 +6,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Chess, type Square } from "chess.js";
-import type { Course } from "./openingTypes";
+import type { Course, Tier } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
 import { recordProgressEvent } from "./progressClient";
 import {
@@ -45,8 +45,16 @@ export type LegalTarget = {
 
 const OPPONENT_REPLY_DELAY_MS = 500;
 
-export function useOpeningTrainer(course: Course) {
-  const tree = useMemo(() => buildOpeningTree(course), [course]);
+export function useOpeningTrainer(course: Course, unlockedTier: Tier) {
+  // Locked-tier lines are excluded from the trainable set entirely — not
+  // just from line selection but from tree building, so the app-controlled
+  // opponent can never reply into a position that only exists in a locked
+  // line.
+  const trainableCourse = useMemo<Course>(
+    () => ({ ...course, lines: course.lines.filter((line) => line.tier <= unlockedTier) }),
+    [course, unlockedTier],
+  );
+  const tree = useMemo(() => buildOpeningTree(trainableCourse), [trainableCourse]);
   const startingFen = useMemo(
     () => resolveStartingFen(course.startingFen),
     [course.startingFen],
@@ -61,7 +69,7 @@ export function useOpeningTrainer(course: Course) {
   // Lazy initializers run exactly once on mount, so the random starting
   // line is picked client-side without ever needing a "sync state in an
   // effect" pattern (which would also risk a hydration mismatch).
-  const [biasLineId] = useState<string>(() => pickStartingLineId(course.lines));
+  const [biasLineId] = useState<string>(() => pickStartingLineId(trainableCourse.lines));
   const activeLineIdsRef = useRef<string[]>([biasLineId]);
   // The line id the current drill run is being recorded against (distinct
   // from biasLineId, which is fixed at mount for opponent-reply biasing).
@@ -270,9 +278,9 @@ export function useOpeningTrainer(course: Course) {
   }, [beginSession, biasLineId]);
 
   const nextLine = useCallback(() => {
-    const nextId = pickStartingLineId(course.lines, Math.random, biasLineId);
+    const nextId = pickStartingLineId(trainableCourse.lines, Math.random, biasLineId);
     beginSession(nextId);
-  }, [beginSession, biasLineId, course.lines]);
+  }, [beginSession, biasLineId, trainableCourse.lines]);
 
   const requestHint = useCallback(() => {
     recordProgressEvent(course.id, sessionLineIdRef.current, "hint");
@@ -288,14 +296,14 @@ export function useOpeningTrainer(course: Course) {
     setFeedback(`Expected: ${answer}`);
   }, [preparedMoves, course.id]);
 
-  const lineNames = getActiveLineNames(course, activeLineIds);
+  const lineNames = getActiveLineNames(trainableCourse, activeLineIds);
   const currentLineLabel =
     lineNames.length === 1
       ? lineNames[0]
       : lineNames.length > 1
         ? `${lineNames.length} possible lines`
         : "Unknown line";
-  const lineDescription = course.lines.find((line) => line.id === biasLineId)
+  const lineDescription = trainableCourse.lines.find((line) => line.id === biasLineId)
     ?.description;
 
   return {
