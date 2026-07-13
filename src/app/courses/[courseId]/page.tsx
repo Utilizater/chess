@@ -47,23 +47,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
         >
           &larr; All courses
         </Link>
-        <div className="mt-1 flex flex-wrap items-center gap-2">
-          <h1 className="font-serif text-2xl font-semibold text-stone-900 sm:text-3xl dark:text-stone-100">
-            {course.title}
-          </h1>
-          <Link href={`/courses/${course.id}/progress`} title="View stage progress">
-            <TierBadge tier={unlockedTier} />
-          </Link>
-        </div>
-        {currentStageProgress && (
-          <Link
-            href={`/courses/${course.id}/progress`}
-            className="mt-2 inline-block w-fit"
-            title="View stage progress"
-          >
-            <StageProgressBar tier={currentStageProgress} />
-          </Link>
-        )}
+        <h1 className="mt-1 font-serif text-2xl font-semibold text-stone-900 sm:text-3xl dark:text-stone-100">
+          {course.title}
+        </h1>
+        <Link
+          href={`/courses/${course.id}/progress`}
+          className="mt-2 inline-flex w-fit items-center gap-2"
+          title="View stage progress"
+        >
+          <TierBadge tier={unlockedTier} />
+          {currentStageProgress && <StageProgressBar tier={currentStageProgress} />}
+        </Link>
       </div>
       <ChessTrainerBoardLoader
         course={course}
