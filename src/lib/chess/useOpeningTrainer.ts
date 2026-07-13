@@ -5,6 +5,7 @@
 // to import chess.js or walk the opening tree themselves.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Chess, type Square } from "chess.js";
 import type { Course, Tier } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
@@ -51,6 +52,8 @@ export function useOpeningTrainer(
   unlockedTier: Tier,
   lineStatuses: Record<string, LineStatus> = {},
 ) {
+  const router = useRouter();
+
   // Locked-tier lines are excluded from the trainable set entirely — not
   // just from line selection but from tree building, so the app-controlled
   // opponent can never reply into a position that only exists in a locked
@@ -121,6 +124,19 @@ export function useOpeningTrainer(
     [startingFen, tree, userColor],
   );
 
+  // Records a line completion and, once the write lands, refreshes the
+  // server-rendered progress UI (stage progress bar, tier badge, unlock
+  // state) so it reflects the new mastery/needs-review status without
+  // requiring a manual page reload.
+  const recordCompletion = useCallback(
+    (clean: boolean) => {
+      recordProgressEvent(course.id, sessionLineIdRef.current, "complete", clean).then(() => {
+        router.refresh();
+      });
+    },
+    [course.id, router],
+  );
+
   // Auto-play the opponent's prepared reply whenever it becomes their turn.
   useEffect(() => {
     if (status !== "opponent-thinking") return;
@@ -154,12 +170,7 @@ export function useOpeningTrainer(
       setLastMoveComment(chosen.comment);
 
       if (isLineComplete(tree, newFenKey)) {
-        recordProgressEvent(
-          course.id,
-          sessionLineIdRef.current,
-          "complete",
-          !sessionHadMistakeOrHintRef.current,
-        );
+        recordCompletion(!sessionHadMistakeOrHintRef.current);
         setStatus("line-complete");
         setFeedback(`Opponent replied: ${chosen.san}. Line complete!`);
       } else {
@@ -169,7 +180,7 @@ export function useOpeningTrainer(
     }, OPPONENT_REPLY_DELAY_MS);
 
     return () => clearTimeout(timeout);
-  }, [status, tree, course.id]);
+  }, [status, tree, course.id, recordCompletion]);
 
   // Shared by drag-and-drop and tap-to-move: validates and applies a
   // from/to move, updating trainer state accordingly.
@@ -205,12 +216,7 @@ export function useOpeningTrainer(
       recordProgressEvent(course.id, sessionLineIdRef.current, "correct");
 
       if (isLineComplete(tree, newFenKey)) {
-        recordProgressEvent(
-          course.id,
-          sessionLineIdRef.current,
-          "complete",
-          !sessionHadMistakeOrHintRef.current,
-        );
+        recordCompletion(!sessionHadMistakeOrHintRef.current);
         setStatus("line-complete");
         setFeedback("Correct! Line complete!");
       } else {
@@ -219,7 +225,7 @@ export function useOpeningTrainer(
       }
       return true;
     },
-    [tree, course.id],
+    [tree, course.id, recordCompletion],
   );
 
   const onPieceDrop = useCallback(

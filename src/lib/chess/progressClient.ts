@@ -4,18 +4,25 @@
 
 import type { ProgressEventKind } from "./progressTypes";
 
+/**
+ * Returns a promise so callers that need to know when the write has landed
+ * (e.g. to refresh server-rendered progress UI after a line completes) can
+ * await it — most callers still fire-and-forget by simply not awaiting.
+ */
 export function recordProgressEvent(
   courseId: string,
   lineId: string,
   kind: ProgressEventKind,
   clean?: boolean,
-): void {
-  fetch(`/api/courses/${courseId}/progress`, {
+): Promise<void> {
+  return fetch(`/api/courses/${courseId}/progress`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ lineId, kind, clean }),
     // Lets the request complete even if the user navigates away right
     // after finishing a line (e.g. clicking back to the course list).
     keepalive: true,
-  }).catch(() => {});
+  })
+    .then(() => undefined)
+    .catch(() => {});
 }

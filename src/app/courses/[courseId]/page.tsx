@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs/server";
 import { ChessTrainerBoardLoader } from "@/components/chess/ChessTrainerBoardLoader";
+import { StageProgressBar } from "@/components/chess/StageProgressBar";
 import { TierBadge } from "@/components/chess/TierBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
 import { computeLineStatus } from "@/lib/chess/progress";
 import { progressRepository } from "@/lib/chess/progressRepository";
-import { computeUnlockedTier } from "@/lib/chess/tiers";
+import { computeTierProgress, computeUnlockedTier } from "@/lib/chess/tiers";
 
 // Reads live, per-user progress to decide which stage is unlocked, so this
 // page must not be statically frozen at build time.
@@ -32,6 +33,9 @@ export default async function CoursePage({ params }: CoursePageProps) {
   const lineStatuses = Object.fromEntries(
     course.lines.map((line) => [line.id, computeLineStatus(progressDoc?.lines[line.id])]),
   );
+  const currentStageProgress = computeTierProgress(course.lines, progressDoc).find(
+    (tier) => tier.current,
+  );
 
   return (
     <div className="flex flex-1 flex-col">
@@ -51,6 +55,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <TierBadge tier={unlockedTier} />
           </Link>
         </div>
+        {currentStageProgress && (
+          <Link
+            href={`/courses/${course.id}/progress`}
+            className="mt-2 inline-block w-fit"
+            title="View stage progress"
+          >
+            <StageProgressBar tier={currentStageProgress} />
+          </Link>
+        )}
       </div>
       <ChessTrainerBoardLoader
         course={course}
