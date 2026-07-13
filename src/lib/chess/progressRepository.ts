@@ -4,7 +4,9 @@
 
 import type { Collection } from "mongodb";
 import { getDb } from "@/lib/db/mongo";
+import { MASTERY_CLEAN_STREAK, REMASTERY_CLEAN_STREAK } from "./progress";
 import type { ProgressEventKind, UserCourseProgressDoc } from "./progressTypes";
+import { computeEligibleTier, type TieredLine } from "./tiers";
 
 const COLLECTION_NAME = "user_course_progress";
 
@@ -55,14 +57,27 @@ export const progressRepository = {
       case "hint":
         inc[`${prefix}.hintsUsed`] = 1;
         break;
-      case "complete":
+      case "complete": {
+        // Whether this completion crosses the mastery bar depends on the
+        // line's current streak and whether it's a first mastery or a
+        // re-mastery, so (unlike the other event kinds) this needs a read
+        // before the write rather than a plain $inc.
+        const doc = await collection.findOne({ userId, courseId }, { projection: { [prefix]: 1 } });
+        const existing = doc?.lines?.[lineId];
+        const previousStreak = existing?.cleanStreak ?? 0;
+        // Docs written before `everMastered` existed can already have a
+        // qualifying streak; treat that as having been mastered too.
+        const wasEverMastered = (existing?.everMastered ?? false) || previousStreak >= MASTERY_CLEAN_STREAK;
+        const newStreak = clean ? previousStreak + 1 : 0;
+        const requiredStreak = wasEverMastered ? REMASTERY_CLEAN_STREAK : MASTERY_CLEAN_STREAK;
+
         inc[`${prefix}.completions`] = 1;
-        if (clean) {
-          inc[`${prefix}.cleanStreak`] = 1;
-        } else {
-          set[`${prefix}.cleanStreak`] = 0;
+        set[`${prefix}.cleanStreak`] = newStreak;
+        if (newStreak >= requiredStreak) {
+          set[`${prefix}.everMastered`] = true;
         }
         break;
+      }
     }
 
     await collection.updateOne(
@@ -70,6 +85,32 @@ export const progressRepository = {
       {
         $inc: inc,
         $set: set,
+        $setOnInsert: { userId, courseId, createdAt: now },
+      },
+      { upsert: true },
+    );
+  },
+
+  /**
+   * Recomputes whether current mastery justifies unlocking a new tier and,
+   * if so, raises the persisted `highestUnlockedTier` floor. Only needs
+   * calling after "complete" events — those are the only ones that can
+   * change a line's status. See computeUnlockedTier in tiers.ts for why
+   * this floor matters (tiers must never re-lock).
+   */
+  async syncUnlockedTier(userId: string, courseId: string, lines: TieredLine[]): Promise<void> {
+    const collection = await getProgressCollection();
+    const doc = (await collection.findOne({ userId, courseId }, { projection: { _id: 0 } })) ?? undefined;
+    const eligible = computeEligibleTier(lines, doc);
+    const persisted = doc?.highestUnlockedTier ?? 1;
+    if (eligible <= persisted) return;
+
+    const now = new Date();
+    await collection.updateOne(
+      { userId, courseId },
+      {
+        $max: { highestUnlockedTier: eligible },
+        $set: { updatedAt: now },
         $setOnInsert: { userId, courseId, createdAt: now },
       },
       { upsert: true },

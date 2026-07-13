@@ -7,6 +7,7 @@
 
 import dynamic from "next/dynamic";
 import type { Course, Tier } from "@/lib/chess/openingTypes";
+import type { LineStatus } from "@/lib/chess/progress";
 
 const ChessTrainerBoard = dynamic(
   () => import("./ChessTrainerBoard").then((mod) => mod.ChessTrainerBoard),
@@ -23,9 +24,13 @@ const ChessTrainerBoard = dynamic(
 export function ChessTrainerBoardLoader({
   course,
   unlockedTier,
+  lineStatuses,
 }: {
   course: Course;
   unlockedTier: Tier;
+  lineStatuses: Record<string, LineStatus>;
 }) {
-  return <ChessTrainerBoard course={course} unlockedTier={unlockedTier} />;
+  return (
+    <ChessTrainerBoard course={course} unlockedTier={unlockedTier} lineStatuses={lineStatuses} />
+  );
 }

@@ -9,6 +9,7 @@ import { Chess, type Square } from "chess.js";
 import type { Course, Tier } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
 import { recordProgressEvent } from "./progressClient";
+import type { LineStatus } from "./progress";
 import {
   attemptMove,
   buildOpeningTree,
@@ -45,7 +46,11 @@ export type LegalTarget = {
 
 const OPPONENT_REPLY_DELAY_MS = 500;
 
-export function useOpeningTrainer(course: Course, unlockedTier: Tier) {
+export function useOpeningTrainer(
+  course: Course,
+  unlockedTier: Tier,
+  lineStatuses: Record<string, LineStatus> = {},
+) {
   // Locked-tier lines are excluded from the trainable set entirely — not
   // just from line selection but from tree building, so the app-controlled
   // opponent can never reply into a position that only exists in a locked
@@ -69,7 +74,9 @@ export function useOpeningTrainer(course: Course, unlockedTier: Tier) {
   // Lazy initializers run exactly once on mount, so the random starting
   // line is picked client-side without ever needing a "sync state in an
   // effect" pattern (which would also risk a hydration mismatch).
-  const [biasLineId] = useState<string>(() => pickStartingLineId(trainableCourse.lines));
+  const [biasLineId] = useState<string>(() =>
+    pickStartingLineId(trainableCourse.lines, lineStatuses),
+  );
   const activeLineIdsRef = useRef<string[]>([biasLineId]);
   // The line id the current drill run is being recorded against (distinct
   // from biasLineId, which is fixed at mount for opponent-reply biasing).
@@ -278,9 +285,9 @@ export function useOpeningTrainer(course: Course, unlockedTier: Tier) {
   }, [beginSession, biasLineId]);
 
   const nextLine = useCallback(() => {
-    const nextId = pickStartingLineId(trainableCourse.lines, Math.random, biasLineId);
+    const nextId = pickStartingLineId(trainableCourse.lines, lineStatuses, Math.random, biasLineId);
     beginSession(nextId);
-  }, [beginSession, biasLineId, trainableCourse.lines]);
+  }, [beginSession, biasLineId, trainableCourse.lines, lineStatuses]);
 
   const requestHint = useCallback(() => {
     recordProgressEvent(course.id, sessionLineIdRef.current, "hint");

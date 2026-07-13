@@ -60,7 +60,8 @@ const COLUMNS: ColumnDef[] = [
 const STATUS_RANK: Record<LineStatus, number> = {
   "not-started": 0,
   learning: 1,
-  mastered: 2,
+  "needs-review": 2,
+  mastered: 3,
 };
 
 function compareRows(a: LineProgressRow, b: LineProgressRow, column: SortColumn): number {

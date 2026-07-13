@@ -5,6 +5,7 @@ import { ChessTrainerBoardLoader } from "@/components/chess/ChessTrainerBoardLoa
 import { TierBadge } from "@/components/chess/TierBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { computeLineStatus } from "@/lib/chess/progress";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import { computeUnlockedTier } from "@/lib/chess/tiers";
 
@@ -28,6 +29,9 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
   const progressDoc = await progressRepository.getForUserAndCourse(userId, courseId);
   const unlockedTier = computeUnlockedTier(course.lines, progressDoc);
+  const lineStatuses = Object.fromEntries(
+    course.lines.map((line) => [line.id, computeLineStatus(progressDoc?.lines[line.id])]),
+  );
 
   return (
     <div className="flex flex-1 flex-col">
@@ -48,7 +52,11 @@ export default async function CoursePage({ params }: CoursePageProps) {
           </Link>
         </div>
       </div>
-      <ChessTrainerBoardLoader course={course} unlockedTier={unlockedTier} />
+      <ChessTrainerBoardLoader
+        course={course}
+        unlockedTier={unlockedTier}
+        lineStatuses={lineStatuses}
+      />
     </div>
   );
 }

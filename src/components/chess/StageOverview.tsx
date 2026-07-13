@@ -28,9 +28,12 @@ export function StageOverview({ tiers }: { tiers: TierProgress[] }) {
         <p className="mt-2 rounded-lg border-l-2 border-amber-400 bg-amber-50/60 p-3 text-xs leading-relaxed text-stone-600 dark:border-amber-600 dark:bg-amber-950/20 dark:text-stone-300">
           Every course is split into three stages of increasing difficulty.
           You start on <strong>Foundation</strong>. A stage unlocks once
-          you&apos;ve mastered every line in the stage before it &mdash;
-          three clean run-throughs in a row, with no mistakes or hints.
-          Locked lines stay out of your drills entirely, including the
+          you&apos;ve mastered at least 80% of the lines in the stage before
+          it &mdash; three clean run-throughs in a row, with no mistakes or
+          hints. Once a stage unlocks it stays unlocked, even if an older
+          line later needs review. A line that slips out of mastery only
+          needs one more clean run-through to get back to mastered. Locked
+          lines stay out of your drills entirely, including the
           opponent&apos;s replies, so you&apos;ll never get quizzed on
           something you haven&apos;t unlocked yet.
         </p>

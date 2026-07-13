@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Chessboard } from "react-chessboard";
 import type { Course, Tier } from "@/lib/chess/openingTypes";
+import type { LineStatus } from "@/lib/chess/progress";
 import { useOpeningTrainer } from "@/lib/chess/useOpeningTrainer";
 import { TrainingPanel } from "./TrainingPanel";
 
@@ -37,9 +38,11 @@ function useIsCoarsePointer() {
 export function ChessTrainerBoard({
   course,
   unlockedTier,
+  lineStatuses,
 }: {
   course: Course;
   unlockedTier: Tier;
+  lineStatuses: Record<string, LineStatus>;
 }) {
   const {
     fen,
@@ -58,7 +61,7 @@ export function ChessTrainerBoard({
     nextLine,
     requestHint,
     requestShowAnswer,
-  } = useOpeningTrainer(course, unlockedTier);
+  } = useOpeningTrainer(course, unlockedTier, lineStatuses);
 
   const isCoarsePointer = useIsCoarsePointer();
 

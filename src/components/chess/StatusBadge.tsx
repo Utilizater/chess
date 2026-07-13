@@ -14,6 +14,11 @@ const STATUS_STYLES: Record<
     dot: "bg-amber-500",
     label: "Learning",
   },
+  "needs-review": {
+    badge: "bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300",
+    dot: "bg-rose-500",
+    label: "Needs review",
+  },
   mastered: {
     badge: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300",
     dot: "bg-emerald-500",

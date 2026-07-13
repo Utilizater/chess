@@ -12,6 +12,7 @@ import type {
   OpeningTreeMove,
   OpeningTreeNode,
 } from "./openingTypes";
+import type { LineStatus } from "./progress";
 
 /** Builds the in-memory opening tree from every line in a course. */
 export function buildOpeningTree(course: Course): OpeningTree {
@@ -142,16 +143,49 @@ export function getActiveLineNames(
     .map((line) => line.name);
 }
 
-/** Picks a random line id to bias a fresh session toward, e.g. for "Next Line". */
+/**
+ * Relative selection weight per mastery status: lines needing more practice
+ * come up more often, while mastered lines still surface occasionally so
+ * they don't fully drop out of rotation. See pickStartingLineId.
+ */
+const LINE_STATUS_WEIGHTS: Record<LineStatus, number> = {
+  "not-started": 5,
+  learning: 4,
+  "needs-review": 6,
+  mastered: 1,
+};
+
+/** Weighted random pick from `items` using parallel `weights`. Falls back
+ * to a uniform pick if every weight is zero. */
+function weightedPick<T>(items: T[], weights: number[], rng: () => number): T {
+  const total = weights.reduce((sum, weight) => sum + weight, 0);
+  if (total <= 0) {
+    const index = Math.min(Math.floor(rng() * items.length), items.length - 1);
+    return items[index];
+  }
+  let roll = rng() * total;
+  for (let i = 0; i < items.length; i += 1) {
+    roll -= weights[i];
+    if (roll < 0) return items[i];
+  }
+  return items[items.length - 1];
+}
+
+/**
+ * Picks a random line id to bias a fresh session toward, e.g. for "Next
+ * Line". Weighted by mastery status (see LINE_STATUS_WEIGHTS) so lines that
+ * need review or haven't been started come up more often than mastered ones.
+ */
 export function pickStartingLineId(
   lines: OpeningLine[],
+  lineStatuses: Record<string, LineStatus> = {},
   rng: () => number = Math.random,
   excludeId?: string,
 ): string {
   const candidates = lines.filter((line) => line.id !== excludeId);
   const pool = candidates.length > 0 ? candidates : lines;
-  const index = Math.min(Math.floor(rng() * pool.length), pool.length - 1);
-  return pool[index].id;
+  const weights = pool.map((line) => LINE_STATUS_WEIGHTS[lineStatuses[line.id] ?? "not-started"]);
+  return weightedPick(pool, weights, rng).id;
 }
 
 const PIECE_MOVE_NAMES: Record<string, string> = {

@@ -7,7 +7,15 @@ import type { UserCourseProgressDoc } from "./progressTypes";
 
 /** The only fields tier logic needs — satisfied by a full OpeningLine or by
  * the trimmed shape returned in CourseSummary.lines. */
-type TieredLine = Pick<OpeningLine, "id" | "tier">;
+export type TieredLine = Pick<OpeningLine, "id" | "tier">;
+
+/** Fraction of a tier's lines that must be mastered to unlock the next tier. */
+const TIER_UNLOCK_MASTERY_FRACTION = 0.8;
+
+/** Number of mastered lines a tier needs before the next tier unlocks. */
+function tierUnlockThreshold(totalLines: number): number {
+  return Math.ceil(totalLines * TIER_UNLOCK_MASTERY_FRACTION);
+}
 
 export const TIERS: Tier[] = [1, 2, 3];
 
@@ -27,25 +35,42 @@ export const TIER_INFO: Record<Tier, { name: string; blurb: string }> = {
 };
 
 /**
- * Highest tier currently unlocked for a learner: tier N+1 unlocks once
- * every line in tier N is mastered (see MASTERY_CLEAN_STREAK in
- * progress.ts). Tier 1 is always unlocked, even with zero activity.
+ * The tier that current mastery counts alone would justify unlocking right
+ * now: tier N+1 unlocks once at least 80% of tier N's lines are mastered
+ * (see MASTERY_CLEAN_STREAK in progress.ts). Doesn't account for a
+ * persisted unlock floor — see computeUnlockedTier, which layers that in so
+ * a tier never re-locks after a mastered line regresses to needs-review.
+ */
+export function computeEligibleTier(
+  lines: TieredLine[],
+  doc: UserCourseProgressDoc | undefined,
+): Tier {
+  let eligible: Tier = 1;
+  for (const tier of [1, 2] as Tier[]) {
+    const linesInTier = lines.filter((line) => line.tier === tier);
+    if (linesInTier.length === 0) continue;
+    const masteredCount = linesInTier.filter(
+      (line) => computeLineStatus(doc?.lines[line.id]) === "mastered",
+    ).length;
+    if (masteredCount < tierUnlockThreshold(linesInTier.length)) break;
+    eligible = (tier + 1) as Tier;
+  }
+  return eligible;
+}
+
+/**
+ * Highest tier currently unlocked for a learner: the larger of what current
+ * mastery justifies and whatever tier was already persisted as unlocked, so
+ * a tier stays unlocked even if a mastered line later regresses to
+ * needs-review. Tier 1 is always unlocked, even with zero activity.
  */
 export function computeUnlockedTier(
   lines: TieredLine[],
   doc: UserCourseProgressDoc | undefined,
 ): Tier {
-  let unlocked: Tier = 1;
-  for (const tier of [1, 2] as Tier[]) {
-    const linesInTier = lines.filter((line) => line.tier === tier);
-    if (linesInTier.length === 0) continue;
-    const allMastered = linesInTier.every(
-      (line) => computeLineStatus(doc?.lines[line.id]) === "mastered",
-    );
-    if (!allMastered) break;
-    unlocked = (tier + 1) as Tier;
-  }
-  return unlocked;
+  const eligible = computeEligibleTier(lines, doc);
+  const persisted = doc?.highestUnlockedTier ?? 1;
+  return Math.max(eligible, persisted) as Tier;
 }
 
 export type TierProgress = {

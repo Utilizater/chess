@@ -3,6 +3,8 @@
 // a course, not the course content itself — one document per (userId,
 // courseId) in the `user_course_progress` collection.
 
+import type { Tier } from "./openingTypes";
+
 export type ProgressEventKind = "correct" | "mistake" | "hint" | "complete";
 
 export type LineProgress = {
@@ -20,6 +22,13 @@ export type LineProgress = {
    * `computeLineStatus` in `progress.ts`.
    */
   cleanStreak: number;
+  /**
+   * True once this line has ever reached mastery. Never reset back to
+   * false, even when `cleanStreak` drops — it's what lets a regressed line
+   * be re-mastered with a single clean completion instead of a fresh
+   * streak of three. See `computeLineStatus` in `progress.ts`.
+   */
+  everMastered: boolean;
   lastAttemptAt: Date;
 };
 
@@ -28,6 +37,13 @@ export type UserCourseProgressDoc = {
   courseId: string;
   /** Keyed by OpeningLine.id. */
   lines: Record<string, LineProgress>;
+  /**
+   * Highest tier ever unlocked, persisted so a tier never re-locks after a
+   * previously-mastered line regresses to needs-review. Absent on documents
+   * written before this field existed; treat as 1 (the always-unlocked
+   * floor) when missing. See `computeUnlockedTier` in `tiers.ts`.
+   */
+  highestUnlockedTier?: Tier;
   createdAt: Date;
   updatedAt: Date;
 };

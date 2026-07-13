@@ -4,6 +4,7 @@
 
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
+import { courseRepository } from "@/lib/chess/openingRepository";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import type { ProgressEventKind } from "@/lib/chess/progressTypes";
 
@@ -49,6 +50,15 @@ export async function POST(request: Request, { params }: RouteParams) {
     kind as ProgressEventKind,
     clean === true,
   );
+
+  // Only a completion can move a line's status, so only completions can
+  // change which tier is unlocked.
+  if (kind === "complete") {
+    const course = await courseRepository.getCourseById(courseId);
+    if (course) {
+      await progressRepository.syncUnlockedTier(userId, courseId, course.lines);
+    }
+  }
 
   return NextResponse.json({ ok: true });
 }
