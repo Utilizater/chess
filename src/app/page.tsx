@@ -23,10 +23,18 @@ export default async function Home() {
     );
   }
 
-  const [courses, progressByCourse] = await Promise.all([
+  const [allCourses, progressByCourse] = await Promise.all([
     courseRepository.listCourses(),
     progressRepository.listForUser(userId),
   ]);
+
+  // Most recently trained course first; courses never trained keep their
+  // original catalog order at the end.
+  const courses = [...allCourses].sort((a, b) => {
+    const aTime = progressByCourse.get(a.id)?.updatedAt?.getTime() ?? -Infinity;
+    const bTime = progressByCourse.get(b.id)?.updatedAt?.getTime() ?? -Infinity;
+    return bTime - aTime;
+  });
 
   return (
     <div className="flex flex-1 flex-col">
