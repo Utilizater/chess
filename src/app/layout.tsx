@@ -23,8 +23,28 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.chess-lines.com"),
   title: "Chess Opening Trainer",
   description: "Train openings as move-by-move memory drills.",
+  openGraph: {
+    title: "Chess Opening Trainer",
+    description: "Train openings as move-by-move memory drills.",
+    url: "https://www.chess-lines.com",
+    siteName: "Chess Opening Trainer",
+    images: [
+      {
+        url: "/visit_card.png",
+        width: 1734,
+        height: 907,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chess Opening Trainer",
+    description: "Train openings as move-by-move memory drills.",
+    images: ["/visit_card.png"],
+  },
 };
 
 export default async function RootLayout({
