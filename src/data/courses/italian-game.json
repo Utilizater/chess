@@ -5,2103 +5,1369 @@
   "image": "/course-images/italian-game.png",
   "colorToTrain": "white",
   "startingFen": "startpos",
-  "lines": [
+  "root": [
     {
-      "id": "giuoco-pianissimo-basic",
-      "name": "Giuoco Pianissimo: Basic Setup",
-      "description": "White builds a quiet Italian center with d3 and prepares c3, Re1, and Nbd2.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4",
-          "comment": "White occupies the center and opens lines for the queen and bishop."
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3",
-          "comment": "The knight develops with tempo against e5."
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4",
-          "comment": "The Italian bishop targets f7."
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3",
-          "comment": "The quiet d3 setup keeps the center flexible."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 prepares d4 and gives the bishop a retreat square on c2."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 supports e4 and prepares a later d4 break."
-        }
-      ]
-    },
-    {
-      "id": "giuoco-piano-classical-center",
-      "name": "Giuoco Piano: Classical Center",
-      "description": "White immediately prepares d4 and challenges Black in the center.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 prepares the central pawn break d4."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d4",
-          "comment": "White opens the center while ahead in space."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "cxd4",
-          "comment": "White rebuilds a strong pawn center."
-        },
-        {
-          "san": "Bb4+"
-        },
-        {
-          "san": "Bd2"
-        },
-        {
-          "san": "Bxd2+"
-        },
-        {
-          "san": "Nbxd2",
-          "comment": "The knight recaptures and develops toward the center."
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-early-castling",
-      "name": "Giuoco Pianissimo: Early Castling",
-      "description": "A simple move order where White castles before deciding on c3 and d4.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "O-O",
-          "comment": "White makes the king safe immediately."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d3",
-          "comment": "d3 protects e4 and keeps the position compact."
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 prepares d4."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 reinforces e4."
-        }
-      ]
-    },
-    {
-      "id": "two-knights-quiet-d3",
-      "name": "Two Knights Defense: Quiet d3",
-      "description": "White avoids forcing tactics and enters a solid modern Italian structure.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6",
-          "comment": "The Two Knights Defense attacks e4."
-        },
-        {
-          "san": "d3",
-          "comment": "d3 calmly defends the pawn."
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 prepares a later d4 expansion."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1"
-        }
-      ]
-    },
-    {
-      "id": "two-knights-main-na5",
-      "name": "Two Knights Defense: Main Line with 5...Na5",
-      "description": "White attacks f7, then retreats the bishop and keeps the extra pawn after Black gains development.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5",
-          "comment": "Ng5 creates the immediate threat Nxf7."
-        },
-        {
-          "san": "d5",
-          "comment": "Black strikes in the center—the critical response."
-        },
-        {
-          "san": "exd5",
-          "comment": "White accepts the challenge by taking on d5."
-        },
-        {
-          "san": "Na5",
-          "comment": "Na5 attacks the bishop and avoids the Fried Liver sacrifice."
-        },
-        {
-          "san": "Bb5+",
-          "comment": "The check disrupts Black before the bishop retreats."
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "dxc6"
-        },
-        {
-          "san": "bxc6"
-        },
-        {
-          "san": "Be2",
-          "comment": "White usually returns the bishop to e2 and prepares to castle."
-        }
-      ]
-    },
-    {
-      "id": "fried-liver-basic",
-      "name": "Two Knights Defense: Fried Liver Attack",
-      "description": "White sacrifices a knight on f7 to drag the king into the center.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5",
-          "comment": "Ng5 targets the vulnerable f7 pawn."
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nxd5",
-          "comment": "Nxd5 allows the famous sacrifice."
-        },
-        {
-          "san": "Nxf7",
-          "comment": "Nxf7 forks the queen and rook and forces the king to capture."
-        },
-        {
-          "san": "Kxf7"
-        },
-        {
-          "san": "Qf3+",
-          "comment": "Qf3+ brings the queen into the attack with tempo."
-        },
-        {
-          "san": "Ke6"
-        },
-        {
-          "san": "Nc3",
-          "comment": "Nc3 adds another attacker to d5 and e4."
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-accepted-basic",
-      "name": "Evans Gambit Accepted: Basic Development",
-      "description": "White sacrifices the b-pawn to gain tempi and build a powerful center.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4",
-          "comment": "b4 offers a pawn to deflect the bishop."
-        },
-        {
-          "san": "Bxb4"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 attacks the bishop and prepares d4."
-        },
-        {
-          "san": "Ba5"
-        },
-        {
-          "san": "d4",
-          "comment": "d4 opens the center before Black can consolidate."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O",
-          "comment": "White castles and brings the rook toward the open center."
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "cxd4",
-          "comment": "White restores the central pawn mass."
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-declined",
-      "name": "Evans Gambit Declined",
-      "description": "Black refuses the pawn, so White gains queenside space without sacrificing material.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4",
-          "comment": "White offers the Evans Gambit pawn."
-        },
-        {
-          "san": "Bb6",
-          "comment": "Black declines and keeps the bishop on the diagonal."
-        },
-        {
-          "san": "a4",
-          "comment": "a4 gains more space and threatens a5."
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "Nc3",
-          "comment": "White develops naturally and keeps attacking chances."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d3"
-        }
-      ]
-    },
-    {
-      "id": "hungarian-defense-basic",
-      "name": "Hungarian Defense: Central Expansion",
-      "description": "Against 3...Be7, White takes space with d4 and develops normally.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Be7",
-          "comment": "The Hungarian Defense is solid but passive."
-        },
-        {
-          "san": "d4",
-          "comment": "White claims the center immediately."
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 supports e4 and prepares expansion."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 strengthens the d4 center."
-        }
-      ]
-    },
-    {
-      "id": "blackburne-shilling-safe",
-      "name": "Blackburne Shilling Gambit: Safe Refutation",
-      "description": "White avoids the famous trap by exchanging the centralized knight.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nd4",
-          "comment": "Black offers the dubious Blackburne Shilling Gambit."
-        },
-        {
-          "san": "Nxd4",
-          "comment": "Nxd4 is the clean response—remove the advanced knight."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O",
-          "comment": "White castles instead of chasing material."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d3"
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-bishop-retreat",
-      "name": "Giuoco Pianissimo: Ba7 and h3 Setup",
-      "description": "A standard modern structure with c3, Re1, h3, and a bishop retreat to preserve the Italian bishop.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3",
-          "comment": "c3 prepares d4 while controlling b4."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 supports the center."
-        },
-        {
-          "san": "a6",
-          "comment": "...a6 prepares ...Ba7 and sometimes ...b5."
-        },
-        {
-          "san": "Bb3",
-          "comment": "Bb3 keeps pressure on f7."
-        },
-        {
-          "san": "Ba7"
-        },
-        {
-          "san": "h3",
-          "comment": "h3 prevents ...Bg4 and gives the king luft."
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-a4",
-      "name": "Giuoco Pianissimo: Early a4",
-      "description": "White uses a4 to slow ...b5 and secure the bishop on a2 or b3.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "a4",
-          "comment": "...a6 prepares queenside expansion."
-        },
-        {
-          "san": "Ba7",
-          "comment": "a4 restrains ...b5."
-        },
-        {
-          "san": "Re1"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd2",
-          "comment": "Re1 supports e4."
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-knight-maneuver",
-      "name": "Giuoco Pianissimo: Nbd2-f1-g3",
-      "description": "White executes the classic knight maneuver toward g3, strengthening the kingside attack.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "Bb3"
-        },
-        {
-          "san": "Ba7"
-        },
-        {
-          "san": "Nbd2",
-          "comment": "Nbd2 begins the standard maneuver."
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "Nf1",
-          "comment": "Nf1 reroutes the knight without blocking the c-pawn."
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Ng3",
-          "comment": "Ng3 increases pressure on f5 and supports a kingside attack."
-        }
-      ]
-    },
-    {
-      "id": "giuoco-center-e5",
-      "name": "Giuoco Piano: Center Attack with e5",
-      "description": "White advances e5 to chase the f6-knight after opening the center.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
+      "san": "e4",
+      "comment": "White occupies the center and opens lines for the queen and bishop.",
+      "children": [
         {
           "san": "e5",
-          "comment": "e5 gains space and attacks the knight."
-        },
-        {
-          "san": "d5",
-          "comment": "Black counters in the center immediately."
-        },
-        {
-          "san": "Bb5",
-          "comment": "Bb5 increases pressure on c6."
-        },
-        {
-          "san": "Ne4"
-        },
-        {
-          "san": "cxd4",
-          "comment": "White restores the pawn center."
-        }
-      ]
-    },
-    {
-      "id": "moller-attack",
-      "name": "Giuoco Piano: Møller Attack",
-      "description": "White sacrifices central material for rapid development and an attack against the uncastled king.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "cxd4"
-        },
-        {
-          "san": "Bb4+"
-        },
-        {
-          "san": "Nc3",
-          "comment": "Nc3 develops while blocking the check."
-        },
-        {
-          "san": "Nxe4",
-          "comment": "Black grabs the e4 pawn."
-        },
-        {
-          "san": "O-O",
-          "comment": "White castles and accelerates development."
-        },
-        {
-          "san": "Bxc3"
-        },
-        {
-          "san": "d5",
-          "comment": "d5 drives pieces away and opens attacking lines."
-        },
-        {
-          "san": "Bf6"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 brings the last major piece into the center."
-        }
-      ]
-    },
-    {
-      "id": "max-lange-attack",
-      "name": "Italian Gambit: Max Lange Attack",
-      "description": "White opens the center with d4 and uses e5 to drive the knight while attacking Black’s king.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d4",
-          "comment": "d4 immediately challenges Black’s e5 pawn."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O",
-          "comment": "White castles instead of recapturing, prioritizing development."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e5",
-          "comment": "e5 attacks the knight and opens tactical lines."
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exf6",
-          "comment": "White takes on f6 and damages Black’s kingside."
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Re1+",
-          "comment": "Re1+ forces Black to respond to the open e-file."
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Ng5",
-          "comment": "Ng5 increases pressure on e6 and f7."
-        }
-      ]
-    },
-    {
-      "id": "two-knights-na5-main-deep",
-      "name": "Two Knights Defense: 5...Na5 Main Line",
-      "description": "The theoretical main line where White keeps an extra pawn but Black gains activity and development.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Na5"
-        },
-        {
-          "san": "Bb5+",
-          "comment": "Bb5+ forces Black to spend a move blocking."
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "dxc6"
-        },
-        {
-          "san": "bxc6"
-        },
-        {
-          "san": "Be2",
-          "comment": "Be2 prepares castling and preserves the bishop."
-        },
-        {
-          "san": "h6",
-          "comment": "...h6 drives away the active knight."
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "Ne5",
-          "comment": "Ne5 centralizes the knight and attacks c6 and f7."
-        },
-        {
-          "san": "Bd6"
-        }
-      ]
-    },
-    {
-      "id": "two-knights-ulvestad",
-      "name": "Two Knights Defense: Ulvestad Variation",
-      "description": "Black uses ...b5 to attack the bishop and create tactical counterplay instead of recapturing on d5.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "b5",
-          "comment": "...b5 is the Ulvestad Variation, gaining tempo on the bishop."
-        },
-        {
-          "san": "Bf1",
-          "comment": "Bf1 is the most resilient retreat."
-        },
-        {
-          "san": "Nxd5"
-        },
-        {
-          "san": "Ne4",
-          "comment": "Ne4 attacks c5 and prepares active development."
-        }
-      ]
-    },
-    {
-      "id": "two-knights-fritz",
-      "name": "Two Knights Defense: Fritz Variation",
-      "description": "Black plays ...Nd4, creating threats against c2 and forcing White to react accurately.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nd4",
-          "comment": "...Nd4 is the Fritz Variation."
-        },
-        {
-          "san": "c3",
-          "comment": "c3 attacks the advanced knight."
-        },
-        {
-          "san": "b5",
-          "comment": "...b5 gains another tempo against the bishop."
-        },
-        {
-          "san": "Bf1",
-          "comment": "Bf1 keeps the bishop safe."
-        },
-        {
-          "san": "Nxd5"
-        },
-        {
-          "san": "Ne4",
-          "comment": "Ne4 centralizes and attacks c5."
-        }
-      ]
-    },
-    {
-      "id": "traxler-bxf7",
-      "name": "Traxler Counterattack: 5.Bxf7+",
-      "description": "White answers the dangerous Traxler with a forcing check on f7 and keeps the king under pressure.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "Bc5",
-          "comment": "...Bc5 ignores f7 and launches the Traxler Counterattack."
-        },
-        {
-          "san": "Bxf7+",
-          "comment": "Bxf7+ is the principled forcing response."
-        },
-        {
-          "san": "Ke7"
-        },
-        {
-          "san": "Bb3",
-          "comment": "Bb3 preserves the bishop after drawing the king forward."
-        },
-        {
-          "san": "Rf8"
-        },
-        {
-          "san": "d3",
-          "comment": "d3 opens the dark-squared bishop and supports e4."
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "Nf3",
-          "comment": "Nf3 completes development and prepares castling."
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-compromised",
-      "name": "Evans Gambit Accepted: Compromised Defense",
-      "description": "Black retreats to a5; White builds the classical center and develops with tempo.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4"
-        },
-        {
-          "san": "Bxb4"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Ba5"
-        },
-        {
-          "san": "d4",
-          "comment": "d4 establishes the Evans center."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "cxd4",
-          "comment": "cxd4 restores the pawn center."
-        },
-        {
-          "san": "Bb6"
-        },
-        {
-          "san": "Nc3",
-          "comment": "Nc3 adds pressure on d5 and supports development."
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-lasker-defense",
-      "name": "Evans Gambit: Lasker Defense",
-      "description": "Black returns material with ...d6 and ...Bb6 to blunt White’s initiative; White keeps active piece play.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4"
-        },
-        {
-          "san": "Bxb4"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Ba5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d6",
-          "comment": "...d6 is a solid way to return material and reduce White’s attack."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bb6"
-        },
-        {
-          "san": "dxe5",
-          "comment": "White exchanges queens to recover material safely."
-        },
-        {
-          "san": "dxe5"
-        },
-        {
-          "san": "Qxd8+"
-        },
-        {
-          "san": "Nxd8"
-        },
-        {
-          "san": "Nxe5",
-          "comment": "Nxe5 wins back the central pawn."
-        }
-      ]
-    },
-    {
-      "id": "rousseau-gambit-response",
-      "name": "Rousseau Gambit: Central Counter",
-      "description": "White meets 3...f5 by striking in the center before Black can build a kingside attack.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "f5",
-          "comment": "...f5 is the aggressive Rousseau Gambit."
-        },
-        {
-          "san": "d4",
-          "comment": "d4 opens the center while Black’s king is still exposed."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O",
-          "comment": "White castles and increases pressure on the center."
-        },
-        {
-          "san": "fxe4"
-        },
-        {
-          "san": "Ng5",
-          "comment": "Ng5 creates threats against e4 and f7."
-        },
-        {
-          "san": "Nh6"
-        },
-        {
-          "san": "Nxe4",
-          "comment": "Nxe4 regains the pawn with active pieces."
-        }
-      ]
-    },
-    {
-      "id": "deutz-gambit",
-      "name": "Italian Game: Deutz Gambit",
-      "description": "White delays c3 and offers the d-pawn for rapid development and central activity.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d4",
-          "comment": "d4 offers the Deutz Gambit."
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "e5",
-          "comment": "e5 drives the knight and opens lines."
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exf6"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Re1+",
-          "comment": "Re1+ uses the open e-file immediately."
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-modern-mainline",
-      "name": "Giuoco Pianissimo: Modern Main Line",
-      "description": "A deeper modern Italian sequence featuring restrained center play, prophylaxis, and piece maneuvering.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "Re1",
-          "comment": "h3 prevents ...Bg4 and prepares a slow kingside buildup."
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "Bb3"
-        },
-        {
-          "san": "Ba7"
-        },
-        {
-          "san": "h3",
-          "comment": "Nbd2 begins the Nf1-g3 maneuver."
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "Nbd2",
-          "comment": "Nf1 improves the knight while keeping the center flexible."
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Nf1",
-          "comment": "Bc2 preserves the bishop for kingside pressure."
-        },
-        {
-          "san": "Be6",
-          "comment": "...d5 is Black’s thematic central break."
-        },
-        {
-          "san": "Bc2"
-        },
-        {
-          "san": "d5"
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-d4-break",
-      "name": "Giuoco Pianissimo: Prepared d4 Break",
-      "description": "White completes development and only then strikes with d4 under favorable circumstances.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "Bb3"
-        },
-        {
-          "san": "Ba7"
-        },
-        {
-          "san": "h3"
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "Nbd2",
-          "comment": "Nf1 prepares Ng3 and frees d2."
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Nf1"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Bc2",
-          "comment": "Nxe5 uses the tension created by ...d5."
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "Nxe5",
-          "comment": "d4 finally opens the center after White has completed development."
-        },
-        {
-          "san": "Nxe5"
-        },
-        {
-          "san": "d4"
-        }
-      ]
-    },
-    {
-      "id": "pianissimo-queenside-expansion",
-      "name": "Giuoco Pianissimo: Queenside Expansion",
-      "description": "White combines the standard knight maneuver with a4 to restrain Black’s queenside play.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Re1"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "Bb3"
-        },
-        {
-          "san": "Ba7"
-        },
-        {
-          "san": "h3"
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "Nbd2"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Nf1"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Bc2"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "a4",
-          "comment": "a4 limits ...b5 and gives White useful queenside space."
-        }
-      ]
-    },
-    {
-      "id": "moller-main-tactics",
-      "name": "Møller Attack: Main Tactical Line",
-      "description": "A forcing continuation where White uses d5 and Re1 to exploit Black’s lagging king.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "cxd4"
-        },
-        {
-          "san": "Bb4+"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nxe4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bxc3"
-        },
-        {
-          "san": "d5",
-          "comment": "d5 drives the bishop and opens the center."
-        },
-        {
-          "san": "Bf6"
-        },
-        {
-          "san": "Re1",
-          "comment": "Re1 pins the knight on e4 against the king."
-        },
-        {
-          "san": "Ne7"
-        },
-        {
-          "san": "Rxe4",
-          "comment": "Rxe4 recovers the piece with active play."
-        },
-        {
-          "san": "d6"
-        }
-      ]
-    },
-    {
-      "id": "fried-liver-main-deep",
-      "name": "Fried Liver Attack: Main Line with Ke6",
-      "description": "The classic forcing attack continues with Nc3, d4, and Re1 against the exposed king.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nxd5"
-        },
-        {
-          "san": "Nxf7"
-        },
-        {
-          "san": "Kxf7"
-        },
-        {
-          "san": "Qf3+"
-        },
-        {
-          "san": "Ke6"
-        },
-        {
-          "san": "Nc3",
-          "comment": "Nc3 develops with tempo against d5."
-        },
-        {
-          "san": "Ncb4"
-        },
-        {
-          "san": "Qe4",
-          "comment": "Qe4 keeps the king boxed in and supports d4."
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "a3"
-        },
-        {
-          "san": "Na6"
-        },
-        {
-          "san": "d4",
-          "comment": "d4 opens the center while Black’s king remains exposed."
-        }
-      ]
-    },
-    {
-      "id": "traxler-king-f1",
-      "name": "Traxler Counterattack: King Walk Line",
-      "description": "White accepts the tactical challenge and navigates a forcing king-safety line after ...Bxf2+.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Ng5"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "Bxf7+"
-        },
-        {
-          "san": "Ke7"
-        },
-        {
-          "san": "Bb3"
-        },
-        {
-          "san": "Rf8"
-        },
-        {
-          "san": "Nf3",
-          "comment": "Nf3 develops and covers key central squares."
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "d3"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "O-O",
-          "comment": "Nh3 avoids tactical forks and protects f2."
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-main-deep",
-      "name": "Evans Gambit Accepted: Main Line Attack",
-      "description": "White builds the ideal center, castles, and places the queen on b3 to pressure f7 and b7.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4"
-        },
-        {
-          "san": "Bxb4"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Ba5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "cxd4"
-        },
-        {
-          "san": "Bb6"
-        },
-        {
-          "san": "Nc3",
-          "comment": "e5 drives the knight and opens attacking lines."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e5",
-          "comment": "Qb3 attacks f7 and b7 at once."
-        },
-        {
-          "san": "dxe5"
-        },
-        {
-          "san": "Qb3"
-        }
-      ]
-    },
-    {
-      "id": "evans-gambit-stone-ware",
-      "name": "Evans Gambit: Stone-Ware Variation",
-      "description": "White uses Ba3 to interfere with Black’s castling and reinforce pressure on the dark squares.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "b4"
-        },
-        {
-          "san": "Bxb4"
-        },
-        {
-          "san": "c3"
-        },
-        {
-          "san": "Ba5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "d6"
-        },
-        {
-          "san": "cxd4"
-        },
-        {
-          "san": "Bb6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "Qa4",
-          "comment": "Qa4 develops the queen with pressure on c6."
-        },
-        {
-          "san": "Bd7"
-        },
-        {
-          "san": "Qb3",
-          "comment": "Qb3 renews threats against f7 and b7."
-        },
-        {
-          "san": "Qf6"
-        },
-        {
-          "san": "e5"
-        }
-      ]
-    },
-    {
-      "id": "max-lange-mainline-deep",
-      "name": "Max Lange Attack: Main Line",
-      "description": "A sharp theoretical sequence where White sacrifices material to keep Black’s king in the center.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bc4"
-        },
-        {
-          "san": "Bc5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "exf6"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Re1+"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Ng5",
-          "comment": "Ng5 attacks e6 and f7."
-        },
-        {
-          "san": "Qd5"
-        },
-        {
-          "san": "Nc3",
-          "comment": "Nc3 adds development with tempo."
-        },
-        {
-          "san": "Qf5"
-        },
-        {
-          "san": "Nce4",
-          "comment": "Nce4 centralizes another piece and attacks the queen."
+          "children": [
+            {
+              "san": "Nf3",
+              "comment": "The knight develops with tempo against e5.",
+              "children": [
+                {
+                  "san": "Nc6",
+                  "children": [
+                    {
+                      "san": "Bc4",
+                      "comment": "The Italian bishop targets f7.",
+                      "children": [
+                        {
+                          "san": "Bc5",
+                          "children": [
+                            {
+                              "san": "d3",
+                              "comment": "The quiet d3 setup keeps the center flexible.",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "children": [
+                                        {
+                                          "san": "d6",
+                                          "children": [
+                                            {
+                                              "san": "c3",
+                                              "comment": "c3 prepares d4 and gives the bishop a retreat square on c2.",
+                                              "children": [
+                                                {
+                                                  "san": "O-O",
+                                                  "children": [
+                                                    {
+                                                      "san": "Re1",
+                                                      "comment": "Re1 supports e4 and prepares a later d4 break.",
+                                                      "line": {
+                                                        "id": "giuoco-pianissimo-basic",
+                                                        "name": "Giuoco Pianissimo: Basic Setup",
+                                                        "description": "White builds a quiet Italian center with d3 and prepares c3, Re1, and Nbd2.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "a6",
+                                                          "comment": "...a6 prepares ...Ba7 and sometimes ...b5.",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bb3",
+                                                              "comment": "Bb3 keeps pressure on f7.",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Ba7",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "h3",
+                                                                      "comment": "h3 prevents ...Bg4 and gives the king luft.",
+                                                                      "line": {
+                                                                        "id": "pianissimo-bishop-retreat",
+                                                                        "name": "Giuoco Pianissimo: Ba7 and h3 Setup",
+                                                                        "description": "A standard modern structure with c3, Re1, h3, and a bishop retreat to preserve the Italian bishop.",
+                                                                        "tier": 2
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Re8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Nbd2",
+                                                                              "comment": "Nf1 prepares Ng3 and frees d2.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "h6",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Nf1",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "san": "Be6",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "san": "Bc2",
+                                                                                              "comment": "Nxe5 uses the tension created by ...d5.",
+                                                                                              "children": [
+                                                                                                {
+                                                                                                  "san": "d5",
+                                                                                                  "children": [
+                                                                                                    {
+                                                                                                      "san": "Nxe5",
+                                                                                                      "comment": "d4 finally opens the center after White has completed development.",
+                                                                                                      "children": [
+                                                                                                        {
+                                                                                                          "san": "Nxe5",
+                                                                                                          "children": [
+                                                                                                            {
+                                                                                                              "san": "d4",
+                                                                                                              "line": {
+                                                                                                                "id": "pianissimo-d4-break",
+                                                                                                                "name": "Giuoco Pianissimo: Prepared d4 Break",
+                                                                                                                "description": "White completes development and only then strikes with d4 under favorable circumstances.",
+                                                                                                                "tier": 3
+                                                                                                              }
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                      "san": "a4",
+                                                                                                      "comment": "a4 limits ...b5 and gives White useful queenside space.",
+                                                                                                      "line": {
+                                                                                                        "id": "pianissimo-queenside-expansion",
+                                                                                                        "name": "Giuoco Pianissimo: Queenside Expansion",
+                                                                                                        "description": "White combines the standard knight maneuver with a4 to restrain Black’s queenside play.",
+                                                                                                        "tier": 3
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "san": "Nbd2",
+                                                                      "comment": "Nbd2 begins the standard maneuver.",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Re8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Nf1",
+                                                                              "comment": "Nf1 reroutes the knight without blocking the c-pawn.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "h6",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Ng3",
+                                                                                      "comment": "Ng3 increases pressure on f5 and supports a kingside attack.",
+                                                                                      "line": {
+                                                                                        "id": "pianissimo-knight-maneuver",
+                                                                                        "name": "Giuoco Pianissimo: Nbd2-f1-g3",
+                                                                                        "description": "White executes the classic knight maneuver toward g3, strengthening the kingside attack.",
+                                                                                        "tier": 2
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "san": "a6",
+                                                  "children": [
+                                                    {
+                                                      "san": "a4",
+                                                      "comment": "...a6 prepares queenside expansion.",
+                                                      "children": [
+                                                        {
+                                                          "san": "Ba7",
+                                                          "comment": "a4 restrains ...b5.",
+                                                          "children": [
+                                                            {
+                                                              "san": "Re1",
+                                                              "children": [
+                                                                {
+                                                                  "san": "O-O",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Nbd2",
+                                                                      "comment": "Re1 supports e4.",
+                                                                      "line": {
+                                                                        "id": "pianissimo-a4",
+                                                                        "name": "Giuoco Pianissimo: Early a4",
+                                                                        "description": "White uses a4 to slow ...b5 and secure the bishop on a2 or b3.",
+                                                                        "tier": 2
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "O-O",
+                                          "children": [
+                                            {
+                                              "san": "c3",
+                                              "children": [
+                                                {
+                                                  "san": "d6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Re1",
+                                                      "comment": "h3 prevents ...Bg4 and prepares a slow kingside buildup.",
+                                                      "children": [
+                                                        {
+                                                          "san": "a6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bb3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Ba7",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "h3",
+                                                                      "comment": "Nbd2 begins the Nf1-g3 maneuver.",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Re8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Nbd2",
+                                                                              "comment": "Nf1 improves the knight while keeping the center flexible.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "h6",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Nf1",
+                                                                                      "comment": "Bc2 preserves the bishop for kingside pressure.",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "san": "Be6",
+                                                                                          "comment": "...d5 is Black’s thematic central break.",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "san": "Bc2",
+                                                                                              "children": [
+                                                                                                {
+                                                                                                  "san": "d5",
+                                                                                                  "line": {
+                                                                                                    "id": "pianissimo-modern-mainline",
+                                                                                                    "name": "Giuoco Pianissimo: Modern Main Line",
+                                                                                                    "description": "A deeper modern Italian sequence featuring restrained center play, prophylaxis, and piece maneuvering.",
+                                                                                                    "tier": 3
+                                                                                                  }
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "c3",
+                              "comment": "c3 prepares the central pawn break d4.",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "d4",
+                                      "comment": "White opens the center while ahead in space.",
+                                      "children": [
+                                        {
+                                          "san": "exd4",
+                                          "children": [
+                                            {
+                                              "san": "cxd4",
+                                              "comment": "White rebuilds a strong pawn center.",
+                                              "children": [
+                                                {
+                                                  "san": "Bb4+",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bd2",
+                                                      "children": [
+                                                        {
+                                                          "san": "Bxd2+",
+                                                          "children": [
+                                                            {
+                                                              "san": "Nbxd2",
+                                                              "comment": "The knight recaptures and develops toward the center.",
+                                                              "line": {
+                                                                "id": "giuoco-piano-classical-center",
+                                                                "name": "Giuoco Piano: Classical Center",
+                                                                "description": "White immediately prepares d4 and challenges Black in the center.",
+                                                                "tier": 1
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "san": "Nc3",
+                                                      "comment": "Nc3 develops while blocking the check.",
+                                                      "children": [
+                                                        {
+                                                          "san": "Nxe4",
+                                                          "comment": "Black grabs the e4 pawn.",
+                                                          "children": [
+                                                            {
+                                                              "san": "O-O",
+                                                              "comment": "White castles and accelerates development.",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Bxc3",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "d5",
+                                                                      "comment": "d5 drives pieces away and opens attacking lines.",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Bf6",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Re1",
+                                                                              "comment": "Re1 brings the last major piece into the center.",
+                                                                              "line": {
+                                                                                "id": "moller-attack",
+                                                                                "name": "Giuoco Piano: Møller Attack",
+                                                                                "description": "White sacrifices central material for rapid development and an attack against the uncastled king.",
+                                                                                "tier": 2
+                                                                              },
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Ne7",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Rxe4",
+                                                                                      "comment": "Rxe4 recovers the piece with active play.",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "san": "d6",
+                                                                                          "line": {
+                                                                                            "id": "moller-main-tactics",
+                                                                                            "name": "Møller Attack: Main Tactical Line",
+                                                                                            "description": "A forcing continuation where White uses d5 and Re1 to exploit Black’s lagging king.",
+                                                                                            "tier": 3
+                                                                                          }
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "san": "e5",
+                                              "comment": "e5 gains space and attacks the knight.",
+                                              "children": [
+                                                {
+                                                  "san": "d5",
+                                                  "comment": "Black counters in the center immediately.",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bb5",
+                                                      "comment": "Bb5 increases pressure on c6.",
+                                                      "children": [
+                                                        {
+                                                          "san": "Ne4",
+                                                          "children": [
+                                                            {
+                                                              "san": "cxd4",
+                                                              "comment": "White restores the pawn center.",
+                                                              "line": {
+                                                                "id": "giuoco-center-e5",
+                                                                "name": "Giuoco Piano: Center Attack with e5",
+                                                                "description": "White advances e5 to chase the f6-knight after opening the center.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "O-O",
+                              "comment": "White makes the king safe immediately.",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "d3",
+                                      "comment": "d3 protects e4 and keeps the position compact.",
+                                      "children": [
+                                        {
+                                          "san": "d6",
+                                          "children": [
+                                            {
+                                              "san": "c3",
+                                              "comment": "c3 prepares d4.",
+                                              "children": [
+                                                {
+                                                  "san": "O-O",
+                                                  "children": [
+                                                    {
+                                                      "san": "Re1",
+                                                      "comment": "Re1 reinforces e4.",
+                                                      "line": {
+                                                        "id": "pianissimo-early-castling",
+                                                        "name": "Giuoco Pianissimo: Early Castling",
+                                                        "description": "A simple move order where White castles before deciding on c3 and d4.",
+                                                        "tier": 1
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "d4",
+                                      "comment": "d4 offers the Deutz Gambit.",
+                                      "children": [
+                                        {
+                                          "san": "exd4",
+                                          "children": [
+                                            {
+                                              "san": "e5",
+                                              "comment": "e5 drives the knight and opens lines.",
+                                              "children": [
+                                                {
+                                                  "san": "d5",
+                                                  "children": [
+                                                    {
+                                                      "san": "exf6",
+                                                      "children": [
+                                                        {
+                                                          "san": "dxc4",
+                                                          "children": [
+                                                            {
+                                                              "san": "Re1+",
+                                                              "comment": "Re1+ uses the open e-file immediately.",
+                                                              "line": {
+                                                                "id": "deutz-gambit",
+                                                                "name": "Italian Game: Deutz Gambit",
+                                                                "description": "White delays c3 and offers the d-pawn for rapid development and central activity.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "b4",
+                              "comment": "b4 offers a pawn to deflect the bishop.",
+                              "children": [
+                                {
+                                  "san": "Bxb4",
+                                  "children": [
+                                    {
+                                      "san": "c3",
+                                      "comment": "c3 attacks the bishop and prepares d4.",
+                                      "children": [
+                                        {
+                                          "san": "Ba5",
+                                          "children": [
+                                            {
+                                              "san": "d4",
+                                              "comment": "d4 opens the center before Black can consolidate.",
+                                              "children": [
+                                                {
+                                                  "san": "exd4",
+                                                  "children": [
+                                                    {
+                                                      "san": "O-O",
+                                                      "comment": "White castles and brings the rook toward the open center.",
+                                                      "children": [
+                                                        {
+                                                          "san": "d6",
+                                                          "children": [
+                                                            {
+                                                              "san": "cxd4",
+                                                              "comment": "White restores the central pawn mass.",
+                                                              "line": {
+                                                                "id": "evans-gambit-accepted-basic",
+                                                                "name": "Evans Gambit Accepted: Basic Development",
+                                                                "description": "White sacrifices the b-pawn to gain tempi and build a powerful center.",
+                                                                "tier": 1
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "san": "Bb6",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Nc3",
+                                                                      "comment": "Nc3 adds pressure on d5 and supports development.",
+                                                                      "line": {
+                                                                        "id": "evans-gambit-compromised",
+                                                                        "name": "Evans Gambit Accepted: Compromised Defense",
+                                                                        "description": "Black retreats to a5; White builds the classical center and develops with tempo.",
+                                                                        "tier": 2
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nf6",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "e5",
+                                                                              "comment": "Qb3 attacks f7 and b7 at once.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "dxe5",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Qb3",
+                                                                                      "line": {
+                                                                                        "id": "evans-gambit-main-deep",
+                                                                                        "name": "Evans Gambit Accepted: Main Line Attack",
+                                                                                        "description": "White builds the ideal center, castles, and places the queen on b3 to pressure f7 and b7.",
+                                                                                        "tier": 3
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "san": "Bg4",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Qa4",
+                                                                              "comment": "Qa4 develops the queen with pressure on c6.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Bd7",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Qb3",
+                                                                                      "comment": "Qb3 renews threats against f7 and b7.",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "san": "Qf6",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "san": "e5",
+                                                                                              "line": {
+                                                                                                "id": "evans-gambit-stone-ware",
+                                                                                                "name": "Evans Gambit: Stone-Ware Variation",
+                                                                                                "description": "White uses Ba3 to interfere with Black’s castling and reinforce pressure on the dark squares.",
+                                                                                                "tier": 3
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "san": "d6",
+                                                  "comment": "...d6 is a solid way to return material and reduce White’s attack.",
+                                                  "children": [
+                                                    {
+                                                      "san": "O-O",
+                                                      "children": [
+                                                        {
+                                                          "san": "Bb6",
+                                                          "children": [
+                                                            {
+                                                              "san": "dxe5",
+                                                              "comment": "White exchanges queens to recover material safely.",
+                                                              "children": [
+                                                                {
+                                                                  "san": "dxe5",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Qxd8+",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nxd8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Nxe5",
+                                                                              "comment": "Nxe5 wins back the central pawn.",
+                                                                              "line": {
+                                                                                "id": "evans-gambit-lasker-defense",
+                                                                                "name": "Evans Gambit: Lasker Defense",
+                                                                                "description": "Black returns material with ...d6 and ...Bb6 to blunt White’s initiative; White keeps active piece play.",
+                                                                                "tier": 2
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "Bb6",
+                                  "comment": "Black declines and keeps the bishop on the diagonal.",
+                                  "children": [
+                                    {
+                                      "san": "a4",
+                                      "comment": "a4 gains more space and threatens a5.",
+                                      "children": [
+                                        {
+                                          "san": "a6",
+                                          "children": [
+                                            {
+                                              "san": "Nc3",
+                                              "comment": "White develops naturally and keeps attacking chances.",
+                                              "children": [
+                                                {
+                                                  "san": "Nf6",
+                                                  "children": [
+                                                    {
+                                                      "san": "d3",
+                                                      "line": {
+                                                        "id": "evans-gambit-declined",
+                                                        "name": "Evans Gambit Declined",
+                                                        "description": "Black refuses the pawn, so White gains queenside space without sacrificing material.",
+                                                        "tier": 1
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "d4",
+                              "comment": "d4 immediately challenges Black’s e5 pawn.",
+                              "children": [
+                                {
+                                  "san": "exd4",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "comment": "White castles instead of recapturing, prioritizing development.",
+                                      "children": [
+                                        {
+                                          "san": "Nf6",
+                                          "children": [
+                                            {
+                                              "san": "e5",
+                                              "comment": "e5 attacks the knight and opens tactical lines.",
+                                              "children": [
+                                                {
+                                                  "san": "d5",
+                                                  "children": [
+                                                    {
+                                                      "san": "exf6",
+                                                      "comment": "White takes on f6 and damages Black’s kingside.",
+                                                      "children": [
+                                                        {
+                                                          "san": "dxc4",
+                                                          "children": [
+                                                            {
+                                                              "san": "Re1+",
+                                                              "comment": "Re1+ forces Black to respond to the open e-file.",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Be6",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Ng5",
+                                                                      "comment": "Ng5 increases pressure on e6 and f7.",
+                                                                      "line": {
+                                                                        "id": "max-lange-attack",
+                                                                        "name": "Italian Gambit: Max Lange Attack",
+                                                                        "description": "White opens the center with d4 and uses e5 to drive the knight while attacking Black’s king.",
+                                                                        "tier": 2
+                                                                      },
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Qd5",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Nc3",
+                                                                              "comment": "Nc3 adds development with tempo.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Qf5",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "Nce4",
+                                                                                      "comment": "Nce4 centralizes another piece and attacks the queen.",
+                                                                                      "line": {
+                                                                                        "id": "max-lange-mainline-deep",
+                                                                                        "name": "Max Lange Attack: Main Line",
+                                                                                        "description": "A sharp theoretical sequence where White sacrifices material to keep Black’s king in the center.",
+                                                                                        "tier": 3
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "san": "Nf6",
+                          "comment": "The Two Knights Defense attacks e4.",
+                          "children": [
+                            {
+                              "san": "d3",
+                              "comment": "d3 calmly defends the pawn.",
+                              "children": [
+                                {
+                                  "san": "Bc5",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "children": [
+                                        {
+                                          "san": "d6",
+                                          "children": [
+                                            {
+                                              "san": "c3",
+                                              "comment": "c3 prepares a later d4 expansion.",
+                                              "children": [
+                                                {
+                                                  "san": "O-O",
+                                                  "children": [
+                                                    {
+                                                      "san": "Re1",
+                                                      "line": {
+                                                        "id": "two-knights-quiet-d3",
+                                                        "name": "Two Knights Defense: Quiet d3",
+                                                        "description": "White avoids forcing tactics and enters a solid modern Italian structure.",
+                                                        "tier": 1
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "Ng5",
+                              "comment": "Ng5 creates the immediate threat Nxf7.",
+                              "children": [
+                                {
+                                  "san": "d5",
+                                  "comment": "Black strikes in the center—the critical response.",
+                                  "children": [
+                                    {
+                                      "san": "exd5",
+                                      "comment": "White accepts the challenge by taking on d5.",
+                                      "children": [
+                                        {
+                                          "san": "Na5",
+                                          "comment": "Na5 attacks the bishop and avoids the Fried Liver sacrifice.",
+                                          "children": [
+                                            {
+                                              "san": "Bb5+",
+                                              "comment": "The check disrupts Black before the bishop retreats.",
+                                              "children": [
+                                                {
+                                                  "san": "c6",
+                                                  "children": [
+                                                    {
+                                                      "san": "dxc6",
+                                                      "children": [
+                                                        {
+                                                          "san": "bxc6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Be2",
+                                                              "comment": "White usually returns the bishop to e2 and prepares to castle.",
+                                                              "line": {
+                                                                "id": "two-knights-main-na5",
+                                                                "name": "Two Knights Defense: Main Line with 5...Na5",
+                                                                "description": "White attacks f7, then retreats the bishop and keeps the extra pawn after Black gains development.",
+                                                                "tier": 1
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "san": "h6",
+                                                                  "comment": "...h6 drives away the active knight.",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Nf3",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "e4",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Ne5",
+                                                                              "comment": "Ne5 centralizes the knight and attacks c6 and f7.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Bd6",
+                                                                                  "line": {
+                                                                                    "id": "two-knights-na5-main-deep",
+                                                                                    "name": "Two Knights Defense: 5...Na5 Main Line",
+                                                                                    "description": "The theoretical main line where White keeps an extra pawn but Black gains activity and development.",
+                                                                                    "tier": 2
+                                                                                  }
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "Nxd5",
+                                          "comment": "Nxd5 allows the famous sacrifice.",
+                                          "children": [
+                                            {
+                                              "san": "Nxf7",
+                                              "comment": "Nxf7 forks the queen and rook and forces the king to capture.",
+                                              "children": [
+                                                {
+                                                  "san": "Kxf7",
+                                                  "children": [
+                                                    {
+                                                      "san": "Qf3+",
+                                                      "comment": "Qf3+ brings the queen into the attack with tempo.",
+                                                      "children": [
+                                                        {
+                                                          "san": "Ke6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Nc3",
+                                                              "comment": "Nc3 adds another attacker to d5 and e4.",
+                                                              "line": {
+                                                                "id": "fried-liver-basic",
+                                                                "name": "Two Knights Defense: Fried Liver Attack",
+                                                                "description": "White sacrifices a knight on f7 to drag the king into the center.",
+                                                                "tier": 1
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "san": "Ncb4",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Qe4",
+                                                                      "comment": "Qe4 keeps the king boxed in and supports d4.",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "c6",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "a3",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Na6",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "d4",
+                                                                                      "comment": "d4 opens the center while Black’s king remains exposed.",
+                                                                                      "line": {
+                                                                                        "id": "fried-liver-main-deep",
+                                                                                        "name": "Fried Liver Attack: Main Line with Ke6",
+                                                                                        "description": "The classic forcing attack continues with Nc3, d4, and Re1 against the exposed king.",
+                                                                                        "tier": 3
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "b5",
+                                          "comment": "...b5 is the Ulvestad Variation, gaining tempo on the bishop.",
+                                          "children": [
+                                            {
+                                              "san": "Bf1",
+                                              "comment": "Bf1 is the most resilient retreat.",
+                                              "children": [
+                                                {
+                                                  "san": "Nxd5",
+                                                  "children": [
+                                                    {
+                                                      "san": "Ne4",
+                                                      "comment": "Ne4 attacks c5 and prepares active development.",
+                                                      "line": {
+                                                        "id": "two-knights-ulvestad",
+                                                        "name": "Two Knights Defense: Ulvestad Variation",
+                                                        "description": "Black uses ...b5 to attack the bishop and create tactical counterplay instead of recapturing on d5.",
+                                                        "tier": 2
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "Nd4",
+                                          "comment": "...Nd4 is the Fritz Variation.",
+                                          "children": [
+                                            {
+                                              "san": "c3",
+                                              "comment": "c3 attacks the advanced knight.",
+                                              "children": [
+                                                {
+                                                  "san": "b5",
+                                                  "comment": "...b5 gains another tempo against the bishop.",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bf1",
+                                                      "comment": "Bf1 keeps the bishop safe.",
+                                                      "children": [
+                                                        {
+                                                          "san": "Nxd5",
+                                                          "children": [
+                                                            {
+                                                              "san": "Ne4",
+                                                              "comment": "Ne4 centralizes and attacks c5.",
+                                                              "line": {
+                                                                "id": "two-knights-fritz",
+                                                                "name": "Two Knights Defense: Fritz Variation",
+                                                                "description": "Black plays ...Nd4, creating threats against c2 and forcing White to react accurately.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "Bc5",
+                                  "comment": "...Bc5 ignores f7 and launches the Traxler Counterattack.",
+                                  "children": [
+                                    {
+                                      "san": "Bxf7+",
+                                      "comment": "Bxf7+ is the principled forcing response.",
+                                      "children": [
+                                        {
+                                          "san": "Ke7",
+                                          "children": [
+                                            {
+                                              "san": "Bb3",
+                                              "comment": "Bb3 preserves the bishop after drawing the king forward.",
+                                              "children": [
+                                                {
+                                                  "san": "Rf8",
+                                                  "children": [
+                                                    {
+                                                      "san": "d3",
+                                                      "comment": "d3 opens the dark-squared bishop and supports e4.",
+                                                      "children": [
+                                                        {
+                                                          "san": "d6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Nf3",
+                                                              "comment": "Nf3 completes development and prepares castling.",
+                                                              "line": {
+                                                                "id": "traxler-bxf7",
+                                                                "name": "Traxler Counterattack: 5.Bxf7+",
+                                                                "description": "White answers the dangerous Traxler with a forcing check on f7 and keeps the king under pressure.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "san": "Nf3",
+                                                      "comment": "Nf3 develops and covers key central squares.",
+                                                      "children": [
+                                                        {
+                                                          "san": "d6",
+                                                          "children": [
+                                                            {
+                                                              "san": "d3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "h6",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "O-O",
+                                                                      "comment": "Nh3 avoids tactical forks and protects f2.",
+                                                                      "line": {
+                                                                        "id": "traxler-king-f1",
+                                                                        "name": "Traxler Counterattack: King Walk Line",
+                                                                        "description": "White accepts the tactical challenge and navigates a forcing king-safety line after ...Bxf2+.",
+                                                                        "tier": 3
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "san": "Be7",
+                          "comment": "The Hungarian Defense is solid but passive.",
+                          "children": [
+                            {
+                              "san": "d4",
+                              "comment": "White claims the center immediately.",
+                              "children": [
+                                {
+                                  "san": "d6",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "children": [
+                                        {
+                                          "san": "Nf6",
+                                          "children": [
+                                            {
+                                              "san": "Re1",
+                                              "comment": "Re1 supports e4 and prepares expansion.",
+                                              "children": [
+                                                {
+                                                  "san": "O-O",
+                                                  "children": [
+                                                    {
+                                                      "san": "c3",
+                                                      "comment": "c3 strengthens the d4 center.",
+                                                      "line": {
+                                                        "id": "hungarian-defense-basic",
+                                                        "name": "Hungarian Defense: Central Expansion",
+                                                        "description": "Against 3...Be7, White takes space with d4 and develops normally.",
+                                                        "tier": 1
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "san": "Nd4",
+                          "comment": "Black offers the dubious Blackburne Shilling Gambit.",
+                          "children": [
+                            {
+                              "san": "Nxd4",
+                              "comment": "Nxd4 is the clean response—remove the advanced knight.",
+                              "children": [
+                                {
+                                  "san": "exd4",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "comment": "White castles instead of chasing material.",
+                                      "children": [
+                                        {
+                                          "san": "Nf6",
+                                          "children": [
+                                            {
+                                              "san": "d3",
+                                              "line": {
+                                                "id": "blackburne-shilling-safe",
+                                                "name": "Blackburne Shilling Gambit: Safe Refutation",
+                                                "description": "White avoids the famous trap by exchanging the centralized knight.",
+                                                "tier": 1
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "san": "f5",
+                          "comment": "...f5 is the aggressive Rousseau Gambit.",
+                          "children": [
+                            {
+                              "san": "d4",
+                              "comment": "d4 opens the center while Black’s king is still exposed.",
+                              "children": [
+                                {
+                                  "san": "exd4",
+                                  "children": [
+                                    {
+                                      "san": "O-O",
+                                      "comment": "White castles and increases pressure on the center.",
+                                      "children": [
+                                        {
+                                          "san": "fxe4",
+                                          "children": [
+                                            {
+                                              "san": "Ng5",
+                                              "comment": "Ng5 creates threats against e4 and f7.",
+                                              "children": [
+                                                {
+                                                  "san": "Nh6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Nxe4",
+                                                      "comment": "Nxe4 regains the pawn with active pieces.",
+                                                      "line": {
+                                                        "id": "rousseau-gambit-response",
+                                                        "name": "Rousseau Gambit: Central Counter",
+                                                        "description": "White meets 3...f5 by striking in the center before Black can build a kingside attack.",
+                                                        "tier": 2
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

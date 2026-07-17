@@ -5,1820 +5,910 @@
   "image": "/course-images/slav-defense.png",
   "colorToTrain": "black",
   "startingFen": "startpos",
-  "lines": [
+  "root": [
     {
-      "id": "mainline-a4-basic",
-      "name": "Main Line: 4...dxc4 and 5.a4",
-      "description": "The classical Slav main line. Black accepts the c4 pawn and develops the bishop outside the pawn chain.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4",
-          "comment": "White claims central space."
-        },
+      "san": "d4",
+      "comment": "White claims central space.",
+      "children": [
         {
           "san": "d5",
-          "comment": "Black mirrors the center."
-        },
-        {
-          "san": "c4",
-          "comment": "White challenges d5 with the Queen's Gambit."
-        },
-        {
-          "san": "c6",
-          "comment": "The Slav Defense supports d5 without blocking the light-squared bishop."
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4",
-          "comment": "Black temporarily wins the c4 pawn."
-        },
-        {
-          "san": "a4",
-          "comment": "White prevents ...b5 from securely holding the pawn."
-        },
-        {
-          "san": "Bf5",
-          "comment": "Black develops the bishop actively before playing ...e6."
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        }
-      ]
-    },
-    {
-      "id": "mainline-e3-basic",
-      "name": "Main Line: Early e3",
-      "description": "White prepares Bxc4 while Black develops naturally.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3",
-          "comment": "White chooses a quiet setup and prepares Bxc4."
-        },
-        {
-          "san": "Bf5",
-          "comment": "Black develops the bishop before locking it in."
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nh4"
-        },
-        {
-          "san": "Bg6"
-        }
-      ]
-    },
-    {
-      "id": "exchange-basic",
-      "name": "Exchange Slav: Basic Setup",
-      "description": "A symmetrical structure where Black develops actively and avoids passivity.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5",
-          "comment": "White exchanges and reaches a symmetrical pawn structure."
-        },
-        {
-          "san": "cxd5",
-          "comment": "Black recaptures symmetrically."
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bf5"
-        }
-      ]
-    },
-    {
-      "id": "quiet-slav-basic",
-      "name": "Quiet Slav: 3.Nf3 Nf6 4.e3",
-      "description": "Black keeps a sound structure and develops the bishop before ...e6.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nh4"
-        },
-        {
-          "san": "Bg6"
-        },
-        {
-          "san": "Nxg6"
-        },
-        {
-          "san": "hxg6"
-        }
-      ]
-    },
-    {
-      "id": "against-early-nc3",
-      "name": "Against 3.Nc3",
-      "description": "Black develops with ...Nf6 and keeps both ...dxc4 and ...e6 available.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        }
-      ]
-    },
-    {
-      "id": "against-early-e3",
-      "name": "Against 3.e3",
-      "description": "Black develops the bishop actively and maintains the Slav structure.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "e6"
-        }
-      ]
-    },
-    {
-      "id": "against-early-cxd5",
-      "name": "Against Early cxd5",
-      "description": "Black recaptures and develops symmetrically.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Nc6"
-        }
-      ]
-    },
-    {
-      "id": "mainline-b5-hold",
-      "name": "Holding the Extra Pawn with ...b5",
-      "description": "Black supports the c4 pawn and gains queenside space.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "b5",
-          "comment": "Black supports the extra pawn and gains space."
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nd5"
-        }
-      ]
-    },
-    {
-      "id": "smyslov-basic",
-      "name": "Smyslov Variation: ...Na6",
-      "description": "Black develops the queen's knight flexibly and supports ...b5.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Na6",
-          "comment": "The Smyslov move develops while preparing ...Bf5 and ...Nb4."
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "Bg4"
-        }
-      ]
-    },
-    {
-      "id": "slav-vs-g3",
-      "name": "Against a Catalan-Style g3 Setup",
-      "description": "Black maintains the Slav center and develops the bishop actively.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "g3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        }
-      ]
-    },
-    {
-      "id": "mainline-bf5",
-      "name": "Main Line: 4...dxc4 5.a4 Bf5",
-      "description": "The principal Slav setup with active bishop development.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        }
-      ]
-    },
-    {
-      "id": "mainline-na6",
-      "name": "Main Line: Smyslov Variation",
-      "description": "Black chooses ...Na6 and develops with flexibility.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Na6"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "e6"
-        }
-      ]
-    },
-    {
-      "id": "mainline-e6",
-      "name": "Main Line: 4...dxc4 5.a4 e6",
-      "description": "Black delays the bishop development and aims for a solid setup.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nxe4"
-        }
-      ]
-    },
-    {
-      "id": "geller-gambit",
-      "name": "Geller Gambit",
-      "description": "White sacrifices a pawn for central space; Black holds the extra pawn and counterattacks.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4",
-          "comment": "White builds a broad center and offers material."
-        },
-        {
-          "san": "b5",
-          "comment": "Black supports the c4 pawn."
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nd5"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "e6"
-        }
-      ]
-    },
-    {
-      "id": "exchange-bf4",
-      "name": "Exchange Slav: Bf4 Main Line",
-      "description": "Black mirrors development and fights for the c-file.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        }
-      ]
-    },
-    {
-      "id": "exchange-early-nf3",
-      "name": "Exchange Slav: Early Nf3",
-      "description": "Black develops naturally and aims for ...Bf5 and ...e6.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Ne4"
-        }
-      ]
-    },
-    {
-      "id": "quiet-slav-nh4",
-      "name": "Quiet Slav: Nh4",
-      "description": "Black preserves the bishop with ...Bg6 and accepts doubled h-pawns if needed.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nh4"
-        },
-        {
-          "san": "Bg6"
-        },
-        {
-          "san": "Nxg6"
-        },
-        {
-          "san": "hxg6"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "Nbd7"
-        }
-      ]
-    },
-    {
-      "id": "quiet-slav-qb3",
-      "name": "Quiet Slav: Qb3 Pressure",
-      "description": "Black meets pressure on b7 with Qb6 and exchanges queens if favorable.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Qb3"
-        },
-        {
-          "san": "Qb6"
-        }
-      ]
-    },
-    {
-      "id": "slav-steiner",
-      "name": "Steiner Variation: 4...a6",
-      "description": "Black prepares ...b5 and keeps the queenside flexible.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Nbd7"
-        }
-      ]
-    },
-    {
-      "id": "slav-schlechter",
-      "name": "Schlechter Slav Setup",
-      "description": "Black uses ...g6 and ...Bg7 for a resilient kingside fianchetto.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "g6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bg7"
-        }
-      ]
-    },
-    {
-      "id": "slav-vs-4qc2",
-      "name": "Against 4.Qc2",
-      "description": "Black keeps the center flexible and develops the bishop.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Qc2"
-        },
-        {
-          "san": "Bxc2"
-        },
-        {
-          "san": "e3"
-        }
-      ]
-    },
-    {
-      "id": "slav-vs-early-a4",
-      "name": "Against Early a4",
-      "description": "Black develops normally and uses ...Bf5 before ...e6.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nbd7"
-        }
-      ]
-    },
-    {
-      "id": "slav-vs-g3-main",
-      "name": "Against g3: Main Setup",
-      "description": "Black develops the bishop outside the chain and then plays ...e6.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "g3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Be7"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-transition",
-      "name": "Transition to the Semi-Slav",
-      "description": "Black closes the light-squared bishop in exchange for a very solid center.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6",
-          "comment": "Black enters the Semi-Slav structure."
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        }
-      ]
-    },
-    {
-      "id": "mainline-bf5-deep",
-      "name": "Main Line: Bf5 Deep Setup",
-      "description": "A deeper classical line with active development and pressure on the center.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Qe2"
-        },
-        {
-          "san": "O-O"
-        }
-      ]
-    },
-    {
-      "id": "geller-gambit-deep",
-      "name": "Geller Gambit: Main Line",
-      "description": "Black holds the extra pawn and attacks White's advanced center.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nd5"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "axb5"
-        },
-        {
-          "san": "cxb5"
-        },
-        {
-          "san": "Nxb5"
-        }
-      ]
-    },
-    {
-      "id": "smyslov-deep",
-      "name": "Smyslov Variation: Deep Line",
-      "description": "Black combines ...Na6, ...Bg4 and ...e6 with flexible piece play.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Na6"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nb4"
-        }
-      ]
-    },
-    {
-      "id": "exchange-slav-c-file",
-      "name": "Exchange Slav: c-File Pressure",
-      "description": "Black develops symmetrically and fights for the only open file.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Rc1"
-        },
-        {
-          "san": "Rc8"
-        }
-      ]
-    },
-    {
-      "id": "quiet-slav-bishop-pair",
-      "name": "Quiet Slav: Bishop Pair Structure",
-      "description": "Black accepts doubled h-pawns to gain the bishop pair and open the h-file.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nh4"
-        },
-        {
-          "san": "Bg6"
-        },
-        {
-          "san": "Nxg6"
-        },
-        {
-          "san": "hxg6"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bd6"
-        }
-      ]
-    },
-    {
-      "id": "slav-b5-pawn-chain",
-      "name": "Slav Pawn-Holding Chain",
-      "description": "Black supports c4 with ...b5 and expands on the queenside.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nd5"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "axb5"
-        },
-        {
-          "san": "Nxc3"
-        },
-        {
-          "san": "bxc3"
-        },
-        {
-          "san": "cxb5"
-        }
-      ]
-    },
-    {
-      "id": "slav-steiner-deep",
-      "name": "Steiner Variation: Queenside Expansion",
-      "description": "Black uses ...a6 and ...b5 to seize queenside space.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "a6"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        }
-      ]
-    },
-    {
-      "id": "schlechter-slav-deep",
-      "name": "Schlechter Slav: Fianchetto Main Line",
-      "description": "Black builds a resilient setup with ...g6 and ...Bg7.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "g6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bg7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Be2"
-        },
-        {
-          "san": "Nc6"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-meran-transition",
-      "name": "Semi-Slav Transition: Meran Setup",
-      "description": "Black transitions into a Meran structure with ...e6 and ...dxc4.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "a6"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-botvinnik-transition",
-      "name": "Semi-Slav Transition: Botvinnik Structure",
-      "description": "Black accepts a sharp center and queenside pawn chain.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Bh4"
-        },
-        {
-          "san": "g5"
-        }
-      ]
-    },
-    {
-      "id": "slav-vs-catalan-deep",
-      "name": "Against Catalan Setup: Deep Line",
-      "description": "Black combines ...Bf5 and ...e6 with pressure on the queenside.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "g3"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "Nh4"
-        },
-        {
-          "san": "Bg4"
-        }
-      ]
-    },
-    {
-      "id": "slav-endgame-queen-trade",
-      "name": "Slav Endgame: Queen Trade",
-      "description": "Black accepts a simplified position with a sound pawn structure.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Qe2"
-        },
-        {
-          "san": "Nbd7"
+          "comment": "Black mirrors the center.",
+          "children": [
+            {
+              "san": "c4",
+              "comment": "White challenges d5 with the Queen's Gambit.",
+              "children": [
+                {
+                  "san": "c6",
+                  "comment": "The Slav Defense supports d5 without blocking the light-squared bishop.",
+                  "children": [
+                    {
+                      "san": "Nf3",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Nc3",
+                              "children": [
+                                {
+                                  "san": "dxc4",
+                                  "comment": "Black temporarily wins the c4 pawn.",
+                                  "children": [
+                                    {
+                                      "san": "a4",
+                                      "comment": "White prevents ...b5 from securely holding the pawn.",
+                                      "children": [
+                                        {
+                                          "san": "Bf5",
+                                          "comment": "Black develops the bishop actively before playing ...e6.",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "children": [
+                                                {
+                                                  "san": "e6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "line": {
+                                                        "id": "mainline-a4-basic",
+                                                        "name": "Main Line: 4...dxc4 and 5.a4",
+                                                        "description": "The classical Slav main line. Black accepts the c4 pawn and develops the bishop outside the pawn chain.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "Bb4",
+                                                          "children": [
+                                                            {
+                                                              "san": "O-O",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Nbd7",
+                                                                  "line": {
+                                                                    "id": "mainline-bf5",
+                                                                    "name": "Main Line: 4...dxc4 5.a4 Bf5",
+                                                                    "description": "The principal Slav setup with active bishop development.",
+                                                                    "tier": 2
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Qe2",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "O-O",
+                                                                          "line": {
+                                                                            "id": "mainline-bf5-deep",
+                                                                            "name": "Main Line: Bf5 Deep Setup",
+                                                                            "description": "A deeper classical line with active development and pressure on the center.",
+                                                                            "tier": 3
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "san": "O-O",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Qe2",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nbd7",
+                                                                          "line": {
+                                                                            "id": "slav-endgame-queen-trade",
+                                                                            "name": "Slav Endgame: Queen Trade",
+                                                                            "description": "Black accepts a simplified position with a sound pawn structure.",
+                                                                            "tier": 3
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "san": "Qc2",
+                                              "children": [
+                                                {
+                                                  "san": "Bxc2",
+                                                  "children": [
+                                                    {
+                                                      "san": "e3",
+                                                      "line": {
+                                                        "id": "slav-vs-4qc2",
+                                                        "name": "Against 4.Qc2",
+                                                        "description": "Black keeps the center flexible and develops the bishop.",
+                                                        "tier": 2
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "Na6",
+                                          "comment": "The Smyslov move develops while preparing ...Bf5 and ...Nb4.",
+                                          "children": [
+                                            {
+                                              "san": "e4",
+                                              "children": [
+                                                {
+                                                  "san": "Bg4",
+                                                  "line": {
+                                                    "id": "smyslov-basic",
+                                                    "name": "Smyslov Variation: ...Na6",
+                                                    "description": "Black develops the queen's knight flexibly and supports ...b5.",
+                                                    "tier": 1
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "children": [
+                                                        {
+                                                          "san": "e6",
+                                                          "line": {
+                                                            "id": "mainline-na6",
+                                                            "name": "Main Line: Smyslov Variation",
+                                                            "description": "Black chooses ...Na6 and develops with flexibility.",
+                                                            "tier": 2
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "san": "O-O",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Nb4",
+                                                                  "line": {
+                                                                    "id": "smyslov-deep",
+                                                                    "name": "Smyslov Variation: Deep Line",
+                                                                    "description": "Black combines ...Na6, ...Bg4 and ...e6 with flexible piece play.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "e6",
+                                          "children": [
+                                            {
+                                              "san": "e4",
+                                              "children": [
+                                                {
+                                                  "san": "Bb4",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "children": [
+                                                        {
+                                                          "san": "Nxe4",
+                                                          "line": {
+                                                            "id": "mainline-e6",
+                                                            "name": "Main Line: 4...dxc4 5.a4 e6",
+                                                            "description": "Black delays the bishop development and aims for a solid setup.",
+                                                            "tier": 2
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "e4",
+                                      "children": [
+                                        {
+                                          "san": "b5",
+                                          "comment": "Black supports the extra pawn and gains space.",
+                                          "children": [
+                                            {
+                                              "san": "e5",
+                                              "children": [
+                                                {
+                                                  "san": "Nd5",
+                                                  "line": {
+                                                    "id": "mainline-b5-hold",
+                                                    "name": "Holding the Extra Pawn with ...b5",
+                                                    "description": "Black supports the c4 pawn and gains queenside space.",
+                                                    "tier": 1
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "a4",
+                                                      "children": [
+                                                        {
+                                                          "san": "e6",
+                                                          "line": {
+                                                            "id": "geller-gambit",
+                                                            "name": "Geller Gambit",
+                                                            "description": "White sacrifices a pawn for central space; Black holds the extra pawn and counterattacks.",
+                                                            "tier": 2
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "san": "axb5",
+                                                              "children": [
+                                                                {
+                                                                  "san": "cxb5",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Nxb5",
+                                                                      "line": {
+                                                                        "id": "geller-gambit-deep",
+                                                                        "name": "Geller Gambit: Main Line",
+                                                                        "description": "Black holds the extra pawn and attacks White's advanced center.",
+                                                                        "tier": 3
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "san": "Nxc3",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "bxc3",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "cxb5",
+                                                                          "line": {
+                                                                            "id": "slav-b5-pawn-chain",
+                                                                            "name": "Slav Pawn-Holding Chain",
+                                                                            "description": "Black supports c4 with ...b5 and expands on the queenside.",
+                                                                            "tier": 3
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "comment": "White builds a broad center and offers material."
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "a6",
+                                  "children": [
+                                    {
+                                      "san": "c5",
+                                      "children": [
+                                        {
+                                          "san": "Bf5",
+                                          "children": [
+                                            {
+                                              "san": "Bf4",
+                                              "children": [
+                                                {
+                                                  "san": "Nbd7",
+                                                  "line": {
+                                                    "id": "slav-steiner",
+                                                    "name": "Steiner Variation: 4...a6",
+                                                    "description": "Black prepares ...b5 and keeps the queenside flexible.",
+                                                    "tier": 2
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "e3",
+                                                      "children": [
+                                                        {
+                                                          "san": "e6",
+                                                          "line": {
+                                                            "id": "slav-steiner-deep",
+                                                            "name": "Steiner Variation: Queenside Expansion",
+                                                            "description": "Black uses ...a6 and ...b5 to seize queenside space.",
+                                                            "tier": 3
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "g6",
+                                  "children": [
+                                    {
+                                      "san": "cxd5",
+                                      "children": [
+                                        {
+                                          "san": "cxd5",
+                                          "children": [
+                                            {
+                                              "san": "Bf4",
+                                              "children": [
+                                                {
+                                                  "san": "Bg7",
+                                                  "line": {
+                                                    "id": "slav-schlechter",
+                                                    "name": "Schlechter Slav Setup",
+                                                    "description": "Black uses ...g6 and ...Bg7 for a resilient kingside fianchetto.",
+                                                    "tier": 2
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "e3",
+                                                      "children": [
+                                                        {
+                                                          "san": "O-O",
+                                                          "children": [
+                                                            {
+                                                              "san": "Be2",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Nc6",
+                                                                  "line": {
+                                                                    "id": "schlechter-slav-deep",
+                                                                    "name": "Schlechter Slav: Fianchetto Main Line",
+                                                                    "description": "Black builds a resilient setup with ...g6 and ...Bg7.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "e6",
+                                  "comment": "Black enters the Semi-Slav structure.",
+                                  "children": [
+                                    {
+                                      "san": "e3",
+                                      "children": [
+                                        {
+                                          "san": "Nbd7",
+                                          "children": [
+                                            {
+                                              "san": "Bd3",
+                                              "children": [
+                                                {
+                                                  "san": "dxc4",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "line": {
+                                                        "id": "semi-slav-transition",
+                                                        "name": "Transition to the Semi-Slav",
+                                                        "description": "Black closes the light-squared bishop in exchange for a very solid center.",
+                                                        "tier": 2
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "b5",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bd3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "a6",
+                                                                  "line": {
+                                                                    "id": "semi-slav-meran-transition",
+                                                                    "name": "Semi-Slav Transition: Meran Setup",
+                                                                    "description": "Black transitions into a Meran structure with ...e6 and ...dxc4.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "Bg5",
+                                      "children": [
+                                        {
+                                          "san": "dxc4",
+                                          "children": [
+                                            {
+                                              "san": "e4",
+                                              "children": [
+                                                {
+                                                  "san": "b5",
+                                                  "children": [
+                                                    {
+                                                      "san": "e5",
+                                                      "children": [
+                                                        {
+                                                          "san": "h6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bh4",
+                                                              "children": [
+                                                                {
+                                                                  "san": "g5",
+                                                                  "line": {
+                                                                    "id": "semi-slav-botvinnik-transition",
+                                                                    "name": "Semi-Slav Transition: Botvinnik Structure",
+                                                                    "description": "Black accepts a sharp center and queenside pawn chain.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "e3",
+                              "comment": "White chooses a quiet setup and prepares Bxc4.",
+                              "children": [
+                                {
+                                  "san": "Bf5",
+                                  "comment": "Black develops the bishop before locking it in.",
+                                  "children": [
+                                    {
+                                      "san": "Nc3",
+                                      "children": [
+                                        {
+                                          "san": "e6",
+                                          "children": [
+                                            {
+                                              "san": "Nh4",
+                                              "children": [
+                                                {
+                                                  "san": "Bg6",
+                                                  "line": {
+                                                    "id": "mainline-e3-basic",
+                                                    "name": "Main Line: Early e3",
+                                                    "description": "White prepares Bxc4 while Black develops naturally.",
+                                                    "tier": 1
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "Nxg6",
+                                                      "children": [
+                                                        {
+                                                          "san": "hxg6",
+                                                          "line": {
+                                                            "id": "quiet-slav-basic",
+                                                            "name": "Quiet Slav: 3.Nf3 Nf6 4.e3",
+                                                            "description": "Black keeps a sound structure and develops the bishop before ...e6.",
+                                                            "tier": 1
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "san": "Bd3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Nbd7",
+                                                                  "line": {
+                                                                    "id": "quiet-slav-nh4",
+                                                                    "name": "Quiet Slav: Nh4",
+                                                                    "description": "Black preserves the bishop with ...Bg6 and accepts doubled h-pawns if needed.",
+                                                                    "tier": 2
+                                                                  },
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "O-O",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Bd6",
+                                                                          "line": {
+                                                                            "id": "quiet-slav-bishop-pair",
+                                                                            "name": "Quiet Slav: Bishop Pair Structure",
+                                                                            "description": "Black accepts doubled h-pawns to gain the bishop pair and open the h-file.",
+                                                                            "tier": 3
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "san": "Qb3",
+                                              "children": [
+                                                {
+                                                  "san": "Qb6",
+                                                  "line": {
+                                                    "id": "quiet-slav-qb3",
+                                                    "name": "Quiet Slav: Qb3 Pressure",
+                                                    "description": "Black meets pressure on b7 with Qb6 and exchanges queens if favorable.",
+                                                    "tier": 2
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "g3",
+                              "children": [
+                                {
+                                  "san": "Bf5",
+                                  "children": [
+                                    {
+                                      "san": "Bg2",
+                                      "children": [
+                                        {
+                                          "san": "e6",
+                                          "children": [
+                                            {
+                                              "san": "O-O",
+                                              "children": [
+                                                {
+                                                  "san": "Nbd7",
+                                                  "line": {
+                                                    "id": "slav-vs-g3",
+                                                    "name": "Against a Catalan-Style g3 Setup",
+                                                    "description": "Black maintains the Slav center and develops the bishop actively.",
+                                                    "tier": 1
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "Nc3",
+                                                      "children": [
+                                                        {
+                                                          "san": "Be7",
+                                                          "line": {
+                                                            "id": "slav-vs-g3-main",
+                                                            "name": "Against g3: Main Setup",
+                                                            "description": "Black develops the bishop outside the chain and then plays ...e6.",
+                                                            "tier": 2
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "san": "Nh4",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Bg4",
+                                                                  "line": {
+                                                                    "id": "slav-vs-catalan-deep",
+                                                                    "name": "Against Catalan Setup: Deep Line",
+                                                                    "description": "Black combines ...Bf5 and ...e6 with pressure on the queenside.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "a4",
+                              "children": [
+                                {
+                                  "san": "Bf5",
+                                  "children": [
+                                    {
+                                      "san": "Nc3",
+                                      "children": [
+                                        {
+                                          "san": "e6",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "children": [
+                                                {
+                                                  "san": "Nbd7",
+                                                  "line": {
+                                                    "id": "slav-vs-early-a4",
+                                                    "name": "Against Early a4",
+                                                    "description": "Black develops normally and uses ...Bf5 before ...e6.",
+                                                    "tier": 2
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "cxd5",
+                      "comment": "White exchanges and reaches a symmetrical pawn structure.",
+                      "children": [
+                        {
+                          "san": "cxd5",
+                          "comment": "Black recaptures symmetrically.",
+                          "children": [
+                            {
+                              "san": "Nc3",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "Nf3",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "children": [
+                                            {
+                                              "san": "Bf4",
+                                              "children": [
+                                                {
+                                                  "san": "Bf5",
+                                                  "line": {
+                                                    "id": "exchange-basic",
+                                                    "name": "Exchange Slav: Basic Setup",
+                                                    "description": "A symmetrical structure where Black develops actively and avoids passivity.",
+                                                    "tier": 1
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "e3",
+                                                      "children": [
+                                                        {
+                                                          "san": "e6",
+                                                          "line": {
+                                                            "id": "exchange-bf4",
+                                                            "name": "Exchange Slav: Bf4 Main Line",
+                                                            "description": "Black mirrors development and fights for the c-file.",
+                                                            "tier": 2
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "san": "Rc1",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Rc8",
+                                                                  "line": {
+                                                                    "id": "exchange-slav-c-file",
+                                                                    "name": "Exchange Slav: c-File Pressure",
+                                                                    "description": "Black develops symmetrically and fights for the only open file.",
+                                                                    "tier": 3
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "Bf4",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "line": {
+                                            "id": "against-early-cxd5",
+                                            "name": "Against Early cxd5",
+                                            "description": "Black recaptures and develops symmetrically.",
+                                            "tier": 1
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "Nf3",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "Nc3",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "children": [
+                                            {
+                                              "san": "Bg5",
+                                              "children": [
+                                                {
+                                                  "san": "Ne4",
+                                                  "line": {
+                                                    "id": "exchange-early-nf3",
+                                                    "name": "Exchange Slav: Early Nf3",
+                                                    "description": "Black develops naturally and aims for ...Bf5 and ...e6.",
+                                                    "tier": 2
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "Nc3",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Nf3",
+                              "children": [
+                                {
+                                  "san": "dxc4",
+                                  "children": [
+                                    {
+                                      "san": "a4",
+                                      "children": [
+                                        {
+                                          "san": "Bf5",
+                                          "line": {
+                                            "id": "against-early-nc3",
+                                            "name": "Against 3.Nc3",
+                                            "description": "Black develops with ...Nf6 and keeps both ...dxc4 and ...e6 available.",
+                                            "tier": 1
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "e3",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Nc3",
+                              "children": [
+                                {
+                                  "san": "Bf5",
+                                  "children": [
+                                    {
+                                      "san": "Nf3",
+                                      "children": [
+                                        {
+                                          "san": "e6",
+                                          "line": {
+                                            "id": "against-early-e3",
+                                            "name": "Against 3.e3",
+                                            "description": "Black develops the bishop actively and maintains the Slav structure.",
+                                            "tier": 1
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
