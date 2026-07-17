@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CourseLinesEditor } from "@/components/admin/CourseLinesEditor";
+import { CourseTreeEditor } from "@/components/admin/CourseTreeEditor";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
 
@@ -30,11 +30,11 @@ export default async function AdminCoursePage({ params }: AdminCoursePageProps) 
           {course.title}
         </h1>
         <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-          Edit the raw <code>lines</code> array for this course and save. Invalid or illegal moves
-          are rejected before anything is written.
+          Edit the raw move tree (<code>root</code>) for this course and save. Invalid or illegal
+          moves are rejected before anything is written.
         </p>
         <div className="mt-4">
-          <CourseLinesEditor courseId={course.id} initialLines={course.lines} />
+          <CourseTreeEditor courseId={course.id} initialRoot={course.root} />
         </div>
       </div>
     </div>

@@ -5,1810 +5,1180 @@
   "image": "/course-images/queens-gambit.png",
   "colorToTrain": "white",
   "startingFen": "startpos",
-  "lines": [
+  "root": [
     {
-      "id": "qgd-orthodox-basic",
-      "name": "Queen's Gambit Declined: Orthodox Setup",
-      "description": "The classical QGD structure with Nc3, Nf3, Bg5 and e3.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4",
-          "comment": "White claims central space."
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4",
-          "comment": "The Queen's Gambit challenges Black's d5 pawn."
-        },
-        {
-          "san": "e6",
-          "comment": "Black declines the gambit and reinforces d5."
-        },
-        {
-          "san": "Nc3",
-          "comment": "White increases pressure on d5."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg5",
-          "comment": "The bishop pins the knight and increases pressure on the center."
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3",
-          "comment": "White develops solidly and prepares Nf3 and Rc1."
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Rc1",
-          "comment": "The rook supports c-file pressure and possible cxd5 ideas."
-        }
-      ]
-    },
-    {
-      "id": "qgd-exchange-basic",
-      "name": "Queen's Gambit Declined: Exchange Variation",
-      "description": "White exchanges on d5 and reaches the Carlsbad structure.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "cxd5",
-          "comment": "White fixes the pawn structure and prepares a minority attack."
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Re8"
-        }
-      ]
-    },
-    {
-      "id": "qga-e3-basic",
-      "name": "Queen's Gambit Accepted: 3.e3",
-      "description": "White prepares to regain the c4 pawn with Bxc4.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "dxc4",
-          "comment": "Black accepts the gambit pawn."
-        },
-        {
-          "san": "e3",
-          "comment": "White prepares Bxc4 and rapid development."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bxc4",
-          "comment": "White regains the pawn and develops with tempo."
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nc6"
-        }
-      ]
-    },
-    {
-      "id": "qga-nf3-basic",
-      "name": "Queen's Gambit Accepted: 3.Nf3",
-      "description": "A flexible line where White delays e3 and prevents ...e5 ideas.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Nf3",
-          "comment": "White develops and prepares e3."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nc6"
-        }
-      ]
-    },
-    {
-      "id": "slav-basic",
-      "name": "Slav Defense: Main Setup",
-      "description": "White develops naturally against Black's solid ...c6 structure.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4",
-          "comment": "White prevents ...b5 from safely holding the extra pawn."
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-basic",
-      "name": "Semi-Slav: Basic Development",
-      "description": "White enters the main Semi-Slav structure with e3 and Nf3.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e3",
-          "comment": "White supports d4 and prepares Bd3."
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        }
-      ]
-    },
-    {
-      "id": "tarrasch-basic",
-      "name": "Tarrasch Defense: Main Setup",
-      "description": "Black challenges the center with ...c5; White develops and pressures d5.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "c5",
-          "comment": "The Tarrasch Defense attacks White's center immediately."
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "g3",
-          "comment": "White prepares a kingside fianchetto and pressure on d5."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg2"
-        }
-      ]
-    },
-    {
-      "id": "albin-basic",
-      "name": "Albin Countergambit: Safe Response",
-      "description": "White accepts Black's countergambit and challenges the advanced pawn.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e5",
-          "comment": "Black offers the Albin Countergambit."
-        },
-        {
-          "san": "dxe5"
-        },
-        {
-          "san": "d4",
-          "comment": "Black gains space and cramps White's development."
-        },
-        {
-          "san": "Nf3",
-          "comment": "White attacks the d4 pawn and develops."
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "a3",
-          "comment": "White prevents ...Bb4+ and prepares b4 ideas."
-        },
-        {
-          "san": "Be6"
-        }
-      ]
-    },
-    {
-      "id": "chigorin-basic",
-      "name": "Chigorin Defense: Basic Line",
-      "description": "White builds a broad center against Black's early ...Nc6.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "cxd5",
-          "comment": "White clarifies the center."
-        },
-        {
-          "san": "Bxf3"
-        },
-        {
-          "san": "gxf3"
-        },
-        {
-          "san": "Qxd5"
-        },
-        {
-          "san": "e3"
-        }
-      ]
-    },
-    {
-      "id": "marshall-defense",
-      "name": "Marshall Defense",
-      "description": "White gains space against the passive ...Nf6 setup.",
-      "tier": 1,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "cxd5",
-          "comment": "White exploits Black's lack of support for d5."
-        },
-        {
-          "san": "Nxd5"
-        },
-        {
-          "san": "e4",
-          "comment": "White gains a strong center and attacks the knight."
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e5"
-        }
-      ]
-    },
-    {
-      "id": "qgd-orthodox-main",
-      "name": "QGD Orthodox: Main Line",
-      "description": "A classical main line with Rc1, Bd3 and O-O.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Rc1"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nd5"
-        }
-      ]
-    },
-    {
-      "id": "qgd-exchange-minority",
-      "name": "QGD Exchange: Minority Attack",
-      "description": "White uses Rb1 and b4-b5 to attack Black's queenside pawn structure.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Nge2"
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf8"
-        },
-        {
-          "san": "Rb1",
-          "comment": "White prepares the thematic minority attack."
-        }
-      ]
-    },
-    {
-      "id": "qgd-catalan-style",
-      "name": "QGD with Catalan Setup",
-      "description": "White fianchettos the bishop and pressures the long diagonal.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "g3",
-          "comment": "White heads for a Catalan-style structure."
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Qc2"
-        },
-        {
-          "san": "c6"
-        }
-      ]
-    },
-    {
-      "id": "qga-central-expansion",
-      "name": "QGA: Central Expansion with e4",
-      "description": "White builds a broad center after Black accepts the pawn.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4",
-          "comment": "White grabs central space instead of immediately recovering the pawn."
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "O-O"
-        }
-      ]
-    },
-    {
-      "id": "qga-3e4",
-      "name": "QGA: 3.e4 Main Line",
-      "description": "An ambitious line where White creates a strong pawn center.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Be6"
-        }
-      ]
-    },
-    {
-      "id": "slav-mainline-a4",
-      "name": "Slav Main Line with a4",
-      "description": "White prevents ...b5 and prepares to regain the c4 pawn.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "a4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "O-O"
-        }
-      ]
-    },
-    {
-      "id": "slav-exchange",
-      "name": "Slav Exchange Variation",
-      "description": "White reaches a symmetrical structure but can still play for pressure.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "cxd5",
-          "comment": "White chooses the Exchange Slav."
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bf4"
-        },
-        {
-          "san": "Bf5"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-meran-basic",
-      "name": "Semi-Slav: Meran Setup",
-      "description": "White develops Bd3 and prepares e4 after Black captures on c4.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "Bd3"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-anti-meran",
-      "name": "Semi-Slav: Anti-Meran with Qc2",
-      "description": "White delays Bd3 and keeps more flexibility.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Qc2",
-          "comment": "White avoids immediate Meran theory and supports e4."
-        },
-        {
-          "san": "Bd6"
-        },
-        {
-          "san": "Bd3"
-        }
-      ]
-    },
-    {
-      "id": "tarrasch-mainline",
-      "name": "Tarrasch Defense: Main Line",
-      "description": "White targets the isolated d-pawn and develops harmoniously.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "g3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "O-O"
-        }
-      ]
-    },
-    {
-      "id": "semi-tarrasch",
-      "name": "Semi-Tarrasch Defense",
-      "description": "White reaches an isolated-queen-pawn structure with active piece play.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Nxd5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Bd3"
-        }
-      ]
-    },
-    {
-      "id": "albin-mainline",
-      "name": "Albin Countergambit: Main Line",
-      "description": "White challenges the advanced d4 pawn and develops safely.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "dxe5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "a3"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Nbd2"
-        },
-        {
-          "san": "Qd7"
-        }
-      ]
-    },
-    {
-      "id": "chigorin-mainline",
-      "name": "Chigorin Defense: Main Line",
-      "description": "White uses cxd5 and Nc3 to exploit Black's unusual development.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Bxf3"
-        },
-        {
-          "san": "gxf3"
-        },
-        {
-          "san": "Qxd5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e5"
-        }
-      ]
-    },
-    {
-      "id": "baltic-defense",
-      "name": "Baltic Defense",
-      "description": "White challenges Black's early bishop development with cxd5 and Nc3.",
-      "tier": 2,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "Bf5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Bxb1"
-        },
-        {
-          "san": "Qa4+"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Rxb1"
-        }
-      ]
-    },
-    {
-      "id": "qgd-orthodox-deep",
-      "name": "QGD Orthodox: Deep Main Line",
-      "description": "A deeper Orthodox line featuring the classic central tension.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Rc1"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nd5"
-        },
-        {
-          "san": "Bxe7"
-        },
-        {
-          "san": "Qxe7"
-        }
-      ]
-    },
-    {
-      "id": "qgd-exchange-kingside",
-      "name": "QGD Exchange: Kingside Attack",
-      "description": "White uses Nge2, f3 and e4 to build a central and kingside attack.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "Nbd7"
-        },
-        {
-          "san": "Nge2"
-        },
-        {
-          "san": "Re8"
-        },
-        {
-          "san": "Qc2"
-        },
-        {
-          "san": "Nf8"
-        },
-        {
-          "san": "f3",
-          "comment": "White prepares the thematic e4 break."
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "O-O"
-        }
-      ]
-    },
-    {
-      "id": "qgd-ragozin",
-      "name": "Ragozin Defense",
-      "description": "White meets ...Bb4 with e3 and Qc2, maintaining central pressure.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bd3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "Bxc4"
-        }
-      ]
-    },
-    {
-      "id": "qgd-vienna",
-      "name": "Vienna Variation",
-      "description": "White enters a sharp QGD line with Nc3 and Nf3 before Bg5.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4",
-          "comment": "White builds a powerful center."
-        },
-        {
-          "san": "Bb4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nxe4"
-        }
-      ]
-    },
-    {
-      "id": "qga-3e4-deep",
-      "name": "QGA 3.e4: Deep Main Line",
-      "description": "White accepts an isolated structure in return for activity and initiative.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "exd4"
-        },
-        {
-          "san": "Bxc4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Bxe6"
-        },
-        {
-          "san": "fxe6"
-        }
-      ]
-    },
-    {
-      "id": "slav-geller-gambit",
-      "name": "Slav: Geller Gambit",
-      "description": "White sacrifices a pawn for rapid development and central initiative.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4",
-          "comment": "The Geller Gambit: White builds a huge center."
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nd5"
-        },
-        {
-          "san": "a4"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-botvinnik",
-      "name": "Semi-Slav: Botvinnik Variation",
-      "description": "One of the sharpest branches in all of opening theory.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bg5",
-          "comment": "White enters the Anti-Meran complex."
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "b5"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Bh4"
-        },
-        {
-          "san": "g5"
-        },
-        {
-          "san": "Nxg5"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-moscow",
-      "name": "Semi-Slav: Moscow Variation",
-      "description": "White gives up the bishop pair to avoid the sharpest Botvinnik lines.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Bxf6",
-          "comment": "White damages Black's structure and sidesteps the Botvinnik."
-        },
-        {
-          "san": "Qxf6"
-        },
-        {
-          "san": "e3"
-        }
-      ]
-    },
-    {
-      "id": "semi-slav-anti-moscow",
-      "name": "Semi-Slav: Anti-Moscow Gambit",
-      "description": "White keeps the bishop and enters a very sharp kingside struggle.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "c6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Bg5"
-        },
-        {
-          "san": "h6"
-        },
-        {
-          "san": "Bh4"
-        },
-        {
-          "san": "dxc4"
-        },
-        {
-          "san": "e4"
-        },
-        {
-          "san": "g5"
-        },
-        {
-          "san": "Bg3"
-        }
-      ]
-    },
-    {
-      "id": "tarrasch-schlechter-rubinstein",
-      "name": "Tarrasch: Schlechter-Rubinstein Setup",
-      "description": "White uses g3 and Bg2 to pressure the isolated d-pawn.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e6"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "c5"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "exd5"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "g3"
-        },
-        {
-          "san": "Nf6"
-        },
-        {
-          "san": "Bg2"
-        },
-        {
-          "san": "Be7"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "O-O"
-        },
-        {
-          "san": "Bg5"
-        }
-      ]
-    },
-    {
-      "id": "albin-lasker-trap-avoid",
-      "name": "Albin Countergambit: Avoiding the Lasker Trap",
-      "description": "White uses a safe development scheme and avoids the famous tactical trap.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "dxe5"
-        },
-        {
-          "san": "d4"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "a3"
-        },
-        {
-          "san": "Be6"
-        },
-        {
-          "san": "Nbd2"
-        },
-        {
-          "san": "Qd7"
-        },
-        {
-          "san": "b4"
-        }
-      ]
-    },
-    {
-      "id": "chigorin-tactical",
-      "name": "Chigorin Defense: Tactical Main Line",
-      "description": "A forcing branch where White accepts structural damage for the bishop pair and center.",
-      "tier": 3,
-      "moves": [
-        {
-          "san": "d4"
-        },
-        {
-          "san": "d5"
-        },
-        {
-          "san": "c4"
-        },
-        {
-          "san": "Nc6"
-        },
-        {
-          "san": "Nf3"
-        },
-        {
-          "san": "Bg4"
-        },
-        {
-          "san": "cxd5"
-        },
-        {
-          "san": "Bxf3"
-        },
-        {
-          "san": "gxf3"
-        },
-        {
-          "san": "Qxd5"
-        },
-        {
-          "san": "e3"
-        },
-        {
-          "san": "e5"
-        },
-        {
-          "san": "Nc3"
-        },
-        {
-          "san": "Bb4"
+      "san": "d4",
+      "comment": "White claims central space.",
+      "children": [
+        {
+          "san": "d5",
+          "children": [
+            {
+              "san": "c4",
+              "comment": "The Queen's Gambit challenges Black's d5 pawn.",
+              "children": [
+                {
+                  "san": "e6",
+                  "comment": "Black declines the gambit and reinforces d5.",
+                  "children": [
+                    {
+                      "san": "Nc3",
+                      "comment": "White increases pressure on d5.",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Bg5",
+                              "comment": "The bishop pins the knight and increases pressure on the center.",
+                              "children": [
+                                {
+                                  "san": "Be7",
+                                  "children": [
+                                    {
+                                      "san": "e3",
+                                      "comment": "White develops solidly and prepares Nf3 and Rc1.",
+                                      "children": [
+                                        {
+                                          "san": "O-O",
+                                          "children": [
+                                            {
+                                              "san": "Nf3",
+                                              "children": [
+                                                {
+                                                  "san": "Nbd7",
+                                                  "children": [
+                                                    {
+                                                      "san": "Rc1",
+                                                      "comment": "The rook supports c-file pressure and possible cxd5 ideas.",
+                                                      "line": {
+                                                        "id": "qgd-orthodox-basic",
+                                                        "name": "Queen's Gambit Declined: Orthodox Setup",
+                                                        "description": "The classical QGD structure with Nc3, Nf3, Bg5 and e3.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "c6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bd3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "dxc4",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Bxc4",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nd5",
+                                                                          "line": {
+                                                                            "id": "qgd-orthodox-main",
+                                                                            "name": "QGD Orthodox: Main Line",
+                                                                            "description": "A classical main line with Rc1, Bd3 and O-O.",
+                                                                            "tier": 2
+                                                                          },
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Bxe7",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "Qxe7",
+                                                                                  "line": {
+                                                                                    "id": "qgd-orthodox-deep",
+                                                                                    "name": "QGD Orthodox: Deep Main Line",
+                                                                                    "description": "A deeper Orthodox line featuring the classic central tension.",
+                                                                                    "tier": 3
+                                                                                  }
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "cxd5",
+                              "comment": "White fixes the pawn structure and prepares a minority attack.",
+                              "children": [
+                                {
+                                  "san": "exd5",
+                                  "children": [
+                                    {
+                                      "san": "Bg5",
+                                      "children": [
+                                        {
+                                          "san": "Be7",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "children": [
+                                                {
+                                                  "san": "O-O",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bd3",
+                                                      "children": [
+                                                        {
+                                                          "san": "Nbd7",
+                                                          "children": [
+                                                            {
+                                                              "san": "Nf3",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Re8",
+                                                                  "line": {
+                                                                    "id": "qgd-exchange-basic",
+                                                                    "name": "Queen's Gambit Declined: Exchange Variation",
+                                                                    "description": "White exchanges on d5 and reaches the Carlsbad structure.",
+                                                                    "tier": 1
+                                                                  }
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "san": "Nge2",
+                                                              "children": [
+                                                                {
+                                                                  "san": "Re8",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "O-O",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nf8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "Rb1",
+                                                                              "comment": "White prepares the thematic minority attack.",
+                                                                              "line": {
+                                                                                "id": "qgd-exchange-minority",
+                                                                                "name": "QGD Exchange: Minority Attack",
+                                                                                "description": "White uses Rb1 and b4-b5 to attack Black's queenside pawn structure.",
+                                                                                "tier": 2
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "san": "Qc2",
+                                                                      "children": [
+                                                                        {
+                                                                          "san": "Nf8",
+                                                                          "children": [
+                                                                            {
+                                                                              "san": "f3",
+                                                                              "comment": "White prepares the thematic e4 break.",
+                                                                              "children": [
+                                                                                {
+                                                                                  "san": "c6",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "san": "O-O",
+                                                                                      "line": {
+                                                                                        "id": "qgd-exchange-kingside",
+                                                                                        "name": "QGD Exchange: Kingside Attack",
+                                                                                        "description": "White uses Nge2, f3 and e4 to build a central and kingside attack.",
+                                                                                        "tier": 3
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "san": "Nf3",
+                              "children": [
+                                {
+                                  "san": "c5",
+                                  "children": [
+                                    {
+                                      "san": "cxd5",
+                                      "children": [
+                                        {
+                                          "san": "Nxd5",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "children": [
+                                                {
+                                                  "san": "Nc6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bd3",
+                                                      "line": {
+                                                        "id": "semi-tarrasch",
+                                                        "name": "Semi-Tarrasch Defense",
+                                                        "description": "White reaches an isolated-queen-pawn structure with active piece play.",
+                                                        "tier": 2
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "Bb4",
+                                  "children": [
+                                    {
+                                      "san": "e3",
+                                      "children": [
+                                        {
+                                          "san": "O-O",
+                                          "children": [
+                                            {
+                                              "san": "Bd3",
+                                              "children": [
+                                                {
+                                                  "san": "dxc4",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "line": {
+                                                        "id": "qgd-ragozin",
+                                                        "name": "Ragozin Defense",
+                                                        "description": "White meets ...Bb4 with e3 and Qc2, maintaining central pressure.",
+                                                        "tier": 3
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "dxc4",
+                                  "children": [
+                                    {
+                                      "san": "e4",
+                                      "comment": "White builds a powerful center.",
+                                      "children": [
+                                        {
+                                          "san": "Bb4",
+                                          "children": [
+                                            {
+                                              "san": "Bxc4",
+                                              "children": [
+                                                {
+                                                  "san": "Nxe4",
+                                                  "line": {
+                                                    "id": "qgd-vienna",
+                                                    "name": "Vienna Variation",
+                                                    "description": "White enters a sharp QGD line with Nc3 and Nf3 before Bg5.",
+                                                    "tier": 3
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "san": "c5",
+                          "comment": "The Tarrasch Defense attacks White's center immediately.",
+                          "children": [
+                            {
+                              "san": "cxd5",
+                              "children": [
+                                {
+                                  "san": "exd5",
+                                  "children": [
+                                    {
+                                      "san": "Nf3",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "children": [
+                                            {
+                                              "san": "g3",
+                                              "comment": "White prepares a kingside fianchetto and pressure on d5.",
+                                              "children": [
+                                                {
+                                                  "san": "Nf6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bg2",
+                                                      "line": {
+                                                        "id": "tarrasch-basic",
+                                                        "name": "Tarrasch Defense: Main Setup",
+                                                        "description": "Black challenges the center with ...c5; White develops and pressures d5.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "Be7",
+                                                          "children": [
+                                                            {
+                                                              "san": "O-O",
+                                                              "line": {
+                                                                "id": "tarrasch-mainline",
+                                                                "name": "Tarrasch Defense: Main Line",
+                                                                "description": "White targets the isolated d-pawn and develops harmoniously.",
+                                                                "tier": 2
+                                                              },
+                                                              "children": [
+                                                                {
+                                                                  "san": "O-O",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Bg5",
+                                                                      "line": {
+                                                                        "id": "tarrasch-schlechter-rubinstein",
+                                                                        "name": "Tarrasch: Schlechter-Rubinstein Setup",
+                                                                        "description": "White uses g3 and Bg2 to pressure the isolated d-pawn.",
+                                                                        "tier": 3
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "Nf3",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "g3",
+                              "comment": "White heads for a Catalan-style structure.",
+                              "children": [
+                                {
+                                  "san": "Be7",
+                                  "children": [
+                                    {
+                                      "san": "Bg2",
+                                      "children": [
+                                        {
+                                          "san": "O-O",
+                                          "children": [
+                                            {
+                                              "san": "O-O",
+                                              "children": [
+                                                {
+                                                  "san": "Nbd7",
+                                                  "children": [
+                                                    {
+                                                      "san": "Qc2",
+                                                      "children": [
+                                                        {
+                                                          "san": "c6",
+                                                          "line": {
+                                                            "id": "qgd-catalan-style",
+                                                            "name": "QGD with Catalan Setup",
+                                                            "description": "White fianchettos the bishop and pressures the long diagonal.",
+                                                            "tier": 2
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "dxc4",
+                  "comment": "Black accepts the gambit pawn.",
+                  "children": [
+                    {
+                      "san": "e3",
+                      "comment": "White prepares Bxc4 and rapid development.",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Bxc4",
+                              "comment": "White regains the pawn and develops with tempo.",
+                              "children": [
+                                {
+                                  "san": "e6",
+                                  "children": [
+                                    {
+                                      "san": "Nf3",
+                                      "children": [
+                                        {
+                                          "san": "c5",
+                                          "children": [
+                                            {
+                                              "san": "O-O",
+                                              "children": [
+                                                {
+                                                  "san": "Nc6",
+                                                  "line": {
+                                                    "id": "qga-e3-basic",
+                                                    "name": "Queen's Gambit Accepted: 3.e3",
+                                                    "description": "White prepares to regain the c4 pawn with Bxc4.",
+                                                    "tier": 1
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "Nf3",
+                      "comment": "White develops and prepares e3.",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "e3",
+                              "children": [
+                                {
+                                  "san": "e6",
+                                  "children": [
+                                    {
+                                      "san": "Bxc4",
+                                      "children": [
+                                        {
+                                          "san": "c5",
+                                          "children": [
+                                            {
+                                              "san": "O-O",
+                                              "children": [
+                                                {
+                                                  "san": "Nc6",
+                                                  "line": {
+                                                    "id": "qga-nf3-basic",
+                                                    "name": "Queen's Gambit Accepted: 3.Nf3",
+                                                    "description": "A flexible line where White delays e3 and prevents ...e5 ideas.",
+                                                    "tier": 1
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "e4",
+                      "comment": "White grabs central space instead of immediately recovering the pawn.",
+                      "children": [
+                        {
+                          "san": "e5",
+                          "children": [
+                            {
+                              "san": "Nf3",
+                              "children": [
+                                {
+                                  "san": "exd4",
+                                  "children": [
+                                    {
+                                      "san": "Bxc4",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "children": [
+                                            {
+                                              "san": "O-O",
+                                              "line": {
+                                                "id": "qga-central-expansion",
+                                                "name": "QGA: Central Expansion with e4",
+                                                "description": "White builds a broad center after Black accepts the pawn.",
+                                                "tier": 2
+                                              },
+                                              "children": [
+                                                {
+                                                  "san": "Be6",
+                                                  "line": {
+                                                    "id": "qga-3e4",
+                                                    "name": "QGA: 3.e4 Main Line",
+                                                    "description": "An ambitious line where White creates a strong pawn center.",
+                                                    "tier": 2
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxe6",
+                                                      "children": [
+                                                        {
+                                                          "san": "fxe6",
+                                                          "line": {
+                                                            "id": "qga-3e4-deep",
+                                                            "name": "QGA 3.e4: Deep Main Line",
+                                                            "description": "White accepts an isolated structure in return for activity and initiative.",
+                                                            "tier": 3
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "c6",
+                  "children": [
+                    {
+                      "san": "Nf3",
+                      "children": [
+                        {
+                          "san": "Nf6",
+                          "children": [
+                            {
+                              "san": "Nc3",
+                              "children": [
+                                {
+                                  "san": "dxc4",
+                                  "children": [
+                                    {
+                                      "san": "a4",
+                                      "comment": "White prevents ...b5 from safely holding the extra pawn.",
+                                      "children": [
+                                        {
+                                          "san": "Bf5",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "children": [
+                                                {
+                                                  "san": "e6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "line": {
+                                                        "id": "slav-basic",
+                                                        "name": "Slav Defense: Main Setup",
+                                                        "description": "White develops naturally against Black's solid ...c6 structure.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "Bb4",
+                                                          "children": [
+                                                            {
+                                                              "san": "O-O",
+                                                              "line": {
+                                                                "id": "slav-mainline-a4",
+                                                                "name": "Slav Main Line with a4",
+                                                                "description": "White prevents ...b5 and prepares to regain the c4 pawn.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "e4",
+                                      "comment": "The Geller Gambit: White builds a huge center.",
+                                      "children": [
+                                        {
+                                          "san": "b5",
+                                          "children": [
+                                            {
+                                              "san": "e5",
+                                              "children": [
+                                                {
+                                                  "san": "Nd5",
+                                                  "children": [
+                                                    {
+                                                      "san": "a4",
+                                                      "line": {
+                                                        "id": "slav-geller-gambit",
+                                                        "name": "Slav: Geller Gambit",
+                                                        "description": "White sacrifices a pawn for rapid development and central initiative.",
+                                                        "tier": 3
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "san": "e6",
+                                  "children": [
+                                    {
+                                      "san": "e3",
+                                      "comment": "White supports d4 and prepares Bd3.",
+                                      "children": [
+                                        {
+                                          "san": "Nbd7",
+                                          "children": [
+                                            {
+                                              "san": "Bd3",
+                                              "children": [
+                                                {
+                                                  "san": "dxc4",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bxc4",
+                                                      "line": {
+                                                        "id": "semi-slav-basic",
+                                                        "name": "Semi-Slav: Basic Development",
+                                                        "description": "White enters the main Semi-Slav structure with e3 and Nf3.",
+                                                        "tier": 1
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "san": "b5",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bd3",
+                                                              "line": {
+                                                                "id": "semi-slav-meran-basic",
+                                                                "name": "Semi-Slav: Meran Setup",
+                                                                "description": "White develops Bd3 and prepares e4 after Black captures on c4.",
+                                                                "tier": 2
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "san": "Qc2",
+                                              "comment": "White avoids immediate Meran theory and supports e4.",
+                                              "children": [
+                                                {
+                                                  "san": "Bd6",
+                                                  "children": [
+                                                    {
+                                                      "san": "Bd3",
+                                                      "line": {
+                                                        "id": "semi-slav-anti-meran",
+                                                        "name": "Semi-Slav: Anti-Meran with Qc2",
+                                                        "description": "White delays Bd3 and keeps more flexibility.",
+                                                        "tier": 2
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "san": "Bg5",
+                                      "comment": "White enters the Anti-Meran complex.",
+                                      "children": [
+                                        {
+                                          "san": "dxc4",
+                                          "children": [
+                                            {
+                                              "san": "e4",
+                                              "children": [
+                                                {
+                                                  "san": "b5",
+                                                  "children": [
+                                                    {
+                                                      "san": "e5",
+                                                      "children": [
+                                                        {
+                                                          "san": "h6",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bh4",
+                                                              "children": [
+                                                                {
+                                                                  "san": "g5",
+                                                                  "children": [
+                                                                    {
+                                                                      "san": "Nxg5",
+                                                                      "line": {
+                                                                        "id": "semi-slav-botvinnik",
+                                                                        "name": "Semi-Slav: Botvinnik Variation",
+                                                                        "description": "One of the sharpest branches in all of opening theory.",
+                                                                        "tier": 3
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "san": "h6",
+                                          "children": [
+                                            {
+                                              "san": "Bxf6",
+                                              "comment": "White damages Black's structure and sidesteps the Botvinnik.",
+                                              "children": [
+                                                {
+                                                  "san": "Qxf6",
+                                                  "children": [
+                                                    {
+                                                      "san": "e3",
+                                                      "line": {
+                                                        "id": "semi-slav-moscow",
+                                                        "name": "Semi-Slav: Moscow Variation",
+                                                        "description": "White gives up the bishop pair to avoid the sharpest Botvinnik lines.",
+                                                        "tier": 3
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "san": "Bh4",
+                                              "children": [
+                                                {
+                                                  "san": "dxc4",
+                                                  "children": [
+                                                    {
+                                                      "san": "e4",
+                                                      "children": [
+                                                        {
+                                                          "san": "g5",
+                                                          "children": [
+                                                            {
+                                                              "san": "Bg3",
+                                                              "line": {
+                                                                "id": "semi-slav-anti-moscow",
+                                                                "name": "Semi-Slav: Anti-Moscow Gambit",
+                                                                "description": "White keeps the bishop and enters a very sharp kingside struggle.",
+                                                                "tier": 3
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "san": "cxd5",
+                      "comment": "White chooses the Exchange Slav.",
+                      "children": [
+                        {
+                          "san": "cxd5",
+                          "children": [
+                            {
+                              "san": "Nc3",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "Nf3",
+                                      "children": [
+                                        {
+                                          "san": "Nc6",
+                                          "children": [
+                                            {
+                                              "san": "Bf4",
+                                              "children": [
+                                                {
+                                                  "san": "Bf5",
+                                                  "line": {
+                                                    "id": "slav-exchange",
+                                                    "name": "Slav Exchange Variation",
+                                                    "description": "White reaches a symmetrical structure but can still play for pressure.",
+                                                    "tier": 2
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "e5",
+                  "comment": "Black offers the Albin Countergambit.",
+                  "children": [
+                    {
+                      "san": "dxe5",
+                      "children": [
+                        {
+                          "san": "d4",
+                          "comment": "Black gains space and cramps White's development.",
+                          "children": [
+                            {
+                              "san": "Nf3",
+                              "comment": "White attacks the d4 pawn and develops.",
+                              "children": [
+                                {
+                                  "san": "Nc6",
+                                  "children": [
+                                    {
+                                      "san": "a3",
+                                      "comment": "White prevents ...Bb4+ and prepares b4 ideas.",
+                                      "children": [
+                                        {
+                                          "san": "Be6",
+                                          "line": {
+                                            "id": "albin-basic",
+                                            "name": "Albin Countergambit: Safe Response",
+                                            "description": "White accepts Black's countergambit and challenges the advanced pawn.",
+                                            "tier": 1
+                                          },
+                                          "children": [
+                                            {
+                                              "san": "Nbd2",
+                                              "children": [
+                                                {
+                                                  "san": "Qd7",
+                                                  "line": {
+                                                    "id": "albin-mainline",
+                                                    "name": "Albin Countergambit: Main Line",
+                                                    "description": "White challenges the advanced d4 pawn and develops safely.",
+                                                    "tier": 2
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "b4",
+                                                      "line": {
+                                                        "id": "albin-lasker-trap-avoid",
+                                                        "name": "Albin Countergambit: Avoiding the Lasker Trap",
+                                                        "description": "White uses a safe development scheme and avoids the famous tactical trap.",
+                                                        "tier": 3
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "Nc6",
+                  "children": [
+                    {
+                      "san": "Nf3",
+                      "children": [
+                        {
+                          "san": "Bg4",
+                          "children": [
+                            {
+                              "san": "cxd5",
+                              "comment": "White clarifies the center.",
+                              "children": [
+                                {
+                                  "san": "Bxf3",
+                                  "children": [
+                                    {
+                                      "san": "gxf3",
+                                      "children": [
+                                        {
+                                          "san": "Qxd5",
+                                          "children": [
+                                            {
+                                              "san": "e3",
+                                              "line": {
+                                                "id": "chigorin-basic",
+                                                "name": "Chigorin Defense: Basic Line",
+                                                "description": "White builds a broad center against Black's early ...Nc6.",
+                                                "tier": 1
+                                              },
+                                              "children": [
+                                                {
+                                                  "san": "e5",
+                                                  "line": {
+                                                    "id": "chigorin-mainline",
+                                                    "name": "Chigorin Defense: Main Line",
+                                                    "description": "White uses cxd5 and Nc3 to exploit Black's unusual development.",
+                                                    "tier": 2
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "san": "Nc3",
+                                                      "children": [
+                                                        {
+                                                          "san": "Bb4",
+                                                          "line": {
+                                                            "id": "chigorin-tactical",
+                                                            "name": "Chigorin Defense: Tactical Main Line",
+                                                            "description": "A forcing branch where White accepts structural damage for the bishop pair and center.",
+                                                            "tier": 3
+                                                          }
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "Nf6",
+                  "children": [
+                    {
+                      "san": "cxd5",
+                      "comment": "White exploits Black's lack of support for d5.",
+                      "children": [
+                        {
+                          "san": "Nxd5",
+                          "children": [
+                            {
+                              "san": "e4",
+                              "comment": "White gains a strong center and attacks the knight.",
+                              "children": [
+                                {
+                                  "san": "Nf6",
+                                  "children": [
+                                    {
+                                      "san": "Nc3",
+                                      "children": [
+                                        {
+                                          "san": "e5",
+                                          "line": {
+                                            "id": "marshall-defense",
+                                            "name": "Marshall Defense",
+                                            "description": "White gains space against the passive ...Nf6 setup.",
+                                            "tier": 1
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "san": "Bf5",
+                  "children": [
+                    {
+                      "san": "cxd5",
+                      "children": [
+                        {
+                          "san": "Bxb1",
+                          "children": [
+                            {
+                              "san": "Qa4+",
+                              "children": [
+                                {
+                                  "san": "c6",
+                                  "children": [
+                                    {
+                                      "san": "Rxb1",
+                                      "line": {
+                                        "id": "baltic-defense",
+                                        "name": "Baltic Defense",
+                                        "description": "White challenges Black's early bishop development with cxd5 and Nc3.",
+                                        "tier": 2
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

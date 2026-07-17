@@ -5,6 +5,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { collectLineSummaries } from "@/lib/chess/openingTrainer";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import type { ProgressEventKind } from "@/lib/chess/progressTypes";
 
@@ -56,7 +57,7 @@ export async function POST(request: Request, { params }: RouteParams) {
   if (kind === "complete") {
     const course = await courseRepository.getCourseById(courseId);
     if (course) {
-      await progressRepository.syncUnlockedTier(userId, courseId, course.lines);
+      await progressRepository.syncUnlockedTier(userId, courseId, collectLineSummaries(course.root));
     }
   }
 

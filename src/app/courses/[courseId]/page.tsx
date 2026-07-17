@@ -6,6 +6,7 @@ import { StageProgressBar } from "@/components/chess/StageProgressBar";
 import { TierBadge } from "@/components/chess/TierBadge";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { collectLineSummaries } from "@/lib/chess/openingTrainer";
 import { computeLineStatus } from "@/lib/chess/progress";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import { computeTierProgress, computeUnlockedTier } from "@/lib/chess/tiers";
@@ -29,11 +30,12 @@ export default async function CoursePage({ params }: CoursePageProps) {
   }
 
   const progressDoc = await progressRepository.getForUserAndCourse(userId, courseId);
-  const unlockedTier = computeUnlockedTier(course.lines, progressDoc);
+  const lines = collectLineSummaries(course.root);
+  const unlockedTier = computeUnlockedTier(lines, progressDoc);
   const lineStatuses = Object.fromEntries(
-    course.lines.map((line) => [line.id, computeLineStatus(progressDoc?.lines[line.id])]),
+    lines.map((line) => [line.id, computeLineStatus(progressDoc?.lines[line.id])]),
   );
-  const currentStageProgress = computeTierProgress(course.lines, progressDoc).find(
+  const currentStageProgress = computeTierProgress(lines, progressDoc).find(
     (tier) => tier.current,
   );
 

@@ -6,7 +6,7 @@
 // ever renders client-side, where the random pick is consistent.
 
 import dynamic from "next/dynamic";
-import type { Course, Tier } from "@/lib/chess/openingTypes";
+import type { CourseTree, Tier } from "@/lib/chess/openingTypes";
 import type { LineStatus } from "@/lib/chess/progress";
 
 const ChessTrainerBoard = dynamic(
@@ -26,7 +26,7 @@ export function ChessTrainerBoardLoader({
   unlockedTier,
   lineStatuses,
 }: {
-  course: Course;
+  course: CourseTree;
   unlockedTier: Tier;
   lineStatuses: Record<string, LineStatus>;
 }) {

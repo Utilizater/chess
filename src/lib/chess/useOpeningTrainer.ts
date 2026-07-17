@@ -7,13 +7,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Chess, type Square } from "chess.js";
-import type { Course, Tier } from "./openingTypes";
+import type { CourseTree, Tier } from "./openingTypes";
 import { normalizeFen, resolveStartingFen } from "./fen";
 import { recordProgressEvent } from "./progressClient";
 import type { LineStatus } from "./progress";
 import {
   attemptMove,
   buildOpeningTree,
+  filterTreeByTier,
   findPreparedMoveByResultingFen,
   getActiveLineNames,
   getAnswerText,
@@ -48,21 +49,23 @@ export type LegalTarget = {
 const OPPONENT_REPLY_DELAY_MS = 500;
 
 export function useOpeningTrainer(
-  course: Course,
+  course: CourseTree,
   unlockedTier: Tier,
   lineStatuses: Record<string, LineStatus> = {},
 ) {
   const router = useRouter();
 
-  // Locked-tier lines are excluded from the trainable set entirely — not
-  // just from line selection but from tree building, so the app-controlled
-  // opponent can never reply into a position that only exists in a locked
-  // line.
-  const trainableCourse = useMemo<Course>(
-    () => ({ ...course, lines: course.lines.filter((line) => line.tier <= unlockedTier) }),
-    [course, unlockedTier],
+  // Locked-tier lines are pruned from the tree entirely — not just from
+  // line selection but from tree building, so the app-controlled opponent
+  // can never reply into a position that only exists in a locked line.
+  const trainableRoot = useMemo(
+    () => filterTreeByTier(course.root, unlockedTier),
+    [course.root, unlockedTier],
   );
-  const tree = useMemo(() => buildOpeningTree(trainableCourse), [trainableCourse]);
+  const { tree, lines } = useMemo(
+    () => buildOpeningTree({ ...course, root: trainableRoot }),
+    [course, trainableRoot],
+  );
   const startingFen = useMemo(
     () => resolveStartingFen(course.startingFen),
     [course.startingFen],
@@ -78,7 +81,7 @@ export function useOpeningTrainer(
   // line is picked client-side without ever needing a "sync state in an
   // effect" pattern (which would also risk a hydration mismatch).
   const [biasLineId] = useState<string>(() =>
-    pickStartingLineId(trainableCourse.lines, lineStatuses),
+    pickStartingLineId(lines, lineStatuses),
   );
   const activeLineIdsRef = useRef<string[]>([biasLineId]);
   // The line id the current drill run is being recorded against (distinct
@@ -291,9 +294,9 @@ export function useOpeningTrainer(
   }, [beginSession, biasLineId]);
 
   const nextLine = useCallback(() => {
-    const nextId = pickStartingLineId(trainableCourse.lines, lineStatuses, Math.random, biasLineId);
+    const nextId = pickStartingLineId(lines, lineStatuses, Math.random, biasLineId);
     beginSession(nextId);
-  }, [beginSession, biasLineId, trainableCourse.lines, lineStatuses]);
+  }, [beginSession, biasLineId, lines, lineStatuses]);
 
   const requestHint = useCallback(() => {
     recordProgressEvent(course.id, sessionLineIdRef.current, "hint");
@@ -309,15 +312,14 @@ export function useOpeningTrainer(
     setFeedback(`Expected: ${answer}`);
   }, [preparedMoves, course.id]);
 
-  const lineNames = getActiveLineNames(trainableCourse, activeLineIds);
+  const lineNames = getActiveLineNames(lines, activeLineIds);
   const currentLineLabel =
     lineNames.length === 1
       ? lineNames[0]
       : lineNames.length > 1
         ? `${lineNames.length} possible lines`
         : "Unknown line";
-  const lineDescription = trainableCourse.lines.find((line) => line.id === biasLineId)
-    ?.description;
+  const lineDescription = lines.find((line) => line.id === biasLineId)?.description;
 
   return {
     fen,

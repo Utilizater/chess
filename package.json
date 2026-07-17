@@ -7,11 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed:courses": "node --env-file=.env scripts/seedCourses.mjs"
+    "seed:courses": "node --env-file=.env scripts/seedCourses.mjs",
+    "seed:opening-tree": "node --env-file=.env scripts/seedOpeningTree.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.5.17",
+    "@xyflow/react": "^12.11.2",
     "chess.js": "^1.4.0",
+    "elkjs": "^0.12.0",
     "mongodb": "^7.4.0",
     "next": "16.2.10",
     "react": "19.2.4",

@@ -5,33 +5,42 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { StatusBadge } from "@/components/chess/StatusBadge";
 import { StageOverview } from "@/components/chess/StageOverview";
 import { LineProgressTable, type LineProgressRow } from "@/components/chess/LineProgressTable";
+import { CourseOpeningTreeSection } from "@/components/chess/CourseOpeningTreeSection";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { collectLineSummaries } from "@/lib/chess/openingTrainer";
+import { mapCourseTreeToViewNodes } from "@/lib/chess/openingTreeView";
 import { progressRepository } from "@/lib/chess/progressRepository";
 import { computeCourseProgressSummary, computeLineStatus } from "@/lib/chess/progress";
 import { computeTierProgress, computeUnlockedTier } from "@/lib/chess/tiers";
+import { ProgressViewTabs, type ProgressView } from "./ProgressViewTabs";
 
 export const dynamic = "force-dynamic";
 
 type CourseProgressPageProps = {
   params: Promise<{ courseId: string }>;
+  searchParams: Promise<{ view?: string }>;
 };
 
-export default async function CourseProgressPage({ params }: CourseProgressPageProps) {
+export default async function CourseProgressPage({ params, searchParams }: CourseProgressPageProps) {
   const { userId } = await auth.protect();
 
   const { courseId } = await params;
+  const { view } = await searchParams;
+  const initialView: ProgressView = view === "tree" ? "tree" : "table";
+
   const course = await courseRepository.getCourseById(courseId);
   if (!course) {
     notFound();
   }
 
   const progressDoc = await progressRepository.getForUserAndCourse(userId, courseId);
-  const lineIds = course.lines.map((line) => line.id);
+  const lines = collectLineSummaries(course.root);
+  const lineIds = lines.map((line) => line.id);
   const summary = computeCourseProgressSummary(lineIds, progressDoc);
-  const unlockedTier = computeUnlockedTier(course.lines, progressDoc);
-  const tierProgress = computeTierProgress(course.lines, progressDoc);
+  const unlockedTier = computeUnlockedTier(lines, progressDoc);
+  const tierProgress = computeTierProgress(lines, progressDoc);
 
-  const rows: LineProgressRow[] = course.lines.map((line) => {
+  const rows: LineProgressRow[] = lines.map((line) => {
     const lineProgress = progressDoc?.lines[line.id];
     return {
       id: line.id,
@@ -49,10 +58,12 @@ export default async function CourseProgressPage({ params }: CourseProgressPageP
     };
   });
 
+  const treeViewNodes = mapCourseTreeToViewNodes(course.root, course.startingFen, progressDoc);
+
   return (
     <div className="flex flex-1 flex-col">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-8 sm:px-6">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
         <Link
           href="/"
           className="text-sm text-stone-500 transition hover:text-amber-700 dark:text-stone-400 dark:hover:text-amber-500"
@@ -86,7 +97,11 @@ export default async function CourseProgressPage({ params }: CourseProgressPageP
         </div>
 
         <div className="mt-6">
-          <LineProgressTable rows={rows} />
+          <ProgressViewTabs
+            initialView={initialView}
+            tableContent={<LineProgressTable rows={rows} />}
+            treeContent={<CourseOpeningTreeSection courseId={course.id} nodes={treeViewNodes} />}
+          />
         </div>
       </main>
     </div>
