@@ -1,23 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import type { OpeningLine } from "@/lib/chess/openingTypes";
+import type { OpeningTrieNode } from "@/lib/chess/openingTypes";
 
-export function CourseLinesEditor({
+export function CourseTreeEditor({
   courseId,
-  initialLines,
+  initialRoot,
 }: {
   courseId: string;
-  initialLines: OpeningLine[];
+  initialRoot: OpeningTrieNode[];
 }) {
-  const [text, setText] = useState(() => JSON.stringify(initialLines, null, 2));
+  const [text, setText] = useState(() => JSON.stringify(initialRoot, null, 2));
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [message, setMessage] = useState<string | undefined>();
 
   async function handleSave() {
-    let parsedLines: unknown;
+    let parsedRoot: unknown;
     try {
-      parsedLines = JSON.parse(text);
+      parsedRoot = JSON.parse(text);
     } catch {
       setStatus("error");
       setMessage("Not valid JSON.");
@@ -30,7 +30,7 @@ export function CourseLinesEditor({
       const response = await fetch(`/api/admin/courses/${courseId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lines: parsedLines }),
+        body: JSON.stringify({ root: parsedRoot }),
       });
       const data = await response.json();
       if (!response.ok) {

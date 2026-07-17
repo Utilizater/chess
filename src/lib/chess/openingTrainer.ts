@@ -1,52 +1,79 @@
 // Pure, framework-agnostic trainer logic. Nothing here touches React; it
-// operates on plain data (Course, OpeningTree) and chess.js for legality and
-// FEN bookkeeping. UI components should call these functions rather than
+// operates on plain data (CourseTree, OpeningTree) and chess.js for legality
+// and FEN bookkeeping. UI components should call these functions rather than
 // re-implement tree-walking or move-matching themselves.
 
 import { Chess } from "chess.js";
 import { normalizeFen, resolveStartingFen } from "./fen";
 import type {
-  Course,
-  OpeningLine,
+  CourseTree,
+  OpeningLineSummary,
   OpeningTree,
   OpeningTreeMove,
   OpeningTreeNode,
+  OpeningTrieNode,
+  Tier,
 } from "./openingTypes";
 import type { LineStatus } from "./progress";
 
-/** Builds the in-memory opening tree from every line in a course. */
-export function buildOpeningTree(course: Course): OpeningTree {
+/**
+ * Builds the in-memory, position-keyed opening tree by walking the course's
+ * stored move tree (a Trie: shared prefixes are stored once, so no merging
+ * across lines is needed here — that's already been done at authoring
+ * time). Also collects the metadata for every named line found along the
+ * way, since walking the trie is the only place that naturally visits them.
+ */
+export function buildOpeningTree(
+  course: CourseTree,
+): { tree: OpeningTree; lines: OpeningLineSummary[] } {
   const tree: OpeningTree = new Map();
+  const lines: OpeningLineSummary[] = [];
   const startingFen = resolveStartingFen(course.startingFen);
+  const chess = new Chess(startingFen);
+  const rootFenKey = normalizeFen(chess.fen());
+  ensureNode(tree, rootFenKey);
 
-  for (const line of course.lines) {
-    const chess = new Chess(startingFen);
-    let fenKey = normalizeFen(chess.fen());
-    ensureNode(tree, fenKey);
-
-    for (const openingMove of line.moves) {
-      const played = chess.move(openingMove.san);
-      if (!played) {
-        throw new Error(
-          `Illegal move "${openingMove.san}" in line "${line.id}" of course "${course.id}"`,
-        );
-      }
-
-      const resultingFenKey = normalizeFen(chess.fen());
-      const node = ensureNode(tree, fenKey);
-      addOrMergeMove(node, {
-        san: played.san,
-        uci: `${played.from}${played.to}${played.promotion ?? ""}`,
-        resultingFenKey,
-        comment: openingMove.comment,
-        lineIds: [line.id],
-      });
-      ensureNode(tree, resultingFenKey);
-      fenKey = resultingFenKey;
+  /** Plays `node.san`, recurses into its children, then undoes the move so
+   * siblings and the caller see the board as they left it. Returns every
+   * line id reachable through this node (its own, plus its descendants'). */
+  function walkNode(node: OpeningTrieNode, fenKey: string): string[] {
+    const played = chess.move(node.san);
+    if (!played) {
+      throw new Error(
+        `Illegal move "${node.san}" in course "${course.id}" (from FEN "${fenKey}")`,
+      );
     }
+
+    const resultingFenKey = normalizeFen(chess.fen());
+    ensureNode(tree, resultingFenKey);
+
+    const descendantLineIds = (node.children ?? []).flatMap((child) =>
+      walkNode(child, resultingFenKey),
+    );
+    if (node.line) {
+      lines.push(node.line);
+    }
+    const lineIds = Array.from(
+      new Set(node.line ? [node.line.id, ...descendantLineIds] : descendantLineIds),
+    );
+
+    ensureNode(tree, fenKey).moves.push({
+      san: played.san,
+      uci: `${played.from}${played.to}${played.promotion ?? ""}`,
+      resultingFenKey,
+      comment: node.comment,
+      lineIds,
+    });
+
+    chess.undo();
+    return lineIds;
   }
 
-  return tree;
+  for (const node of course.root) {
+    walkNode(node, rootFenKey);
+  }
+
+  return { tree, lines };
 }
 
 function ensureNode(tree: OpeningTree, fenKey: string): OpeningTreeNode {
@@ -58,28 +85,46 @@ function ensureNode(tree: OpeningTree, fenKey: string): OpeningTreeNode {
   return node;
 }
 
-/**
- * Adds a move to a node, or merges into an existing edge if two lines share
- * the same move from the same position (a shared opening prefix).
- */
-function addOrMergeMove(node: OpeningTreeNode, move: OpeningTreeMove): void {
-  const existing = node.moves.find(
-    (candidate) =>
-      candidate.san === move.san &&
-      candidate.resultingFenKey === move.resultingFenKey,
-  );
-  if (!existing) {
-    node.moves.push(move);
-    return;
-  }
-  for (const lineId of move.lineIds) {
-    if (!existing.lineIds.includes(lineId)) {
-      existing.lineIds.push(lineId);
+/** Every named line's metadata found in the stored tree, without building
+ * the runtime engine tree — for callers that only need line/tier info. */
+export function collectLineSummaries(root: OpeningTrieNode[]): OpeningLineSummary[] {
+  const lines: OpeningLineSummary[] = [];
+  function walk(nodes: OpeningTrieNode[]): void {
+    for (const node of nodes) {
+      if (node.line) lines.push(node.line);
+      if (node.children) walk(node.children);
     }
   }
-  if (!existing.comment && move.comment) {
-    existing.comment = move.comment;
+  walk(root);
+  return lines;
+}
+
+/**
+ * Prunes the stored tree down to what a learner at `unlockedTier` may train
+ * on: a node's `line` marker is dropped if its tier is locked, and a node is
+ * dropped entirely once it has neither a kept `line` nor any surviving
+ * children. A node whose own line is locked but which leads to an unlocked
+ * line further down (a shared prefix) is kept without its `line` marker, so
+ * that shared prefix stays trainable via the unlocked line.
+ */
+export function filterTreeByTier(
+  root: OpeningTrieNode[],
+  unlockedTier: Tier,
+): OpeningTrieNode[] {
+  const result: OpeningTrieNode[] = [];
+  for (const node of root) {
+    const children = node.children
+      ? filterTreeByTier(node.children, unlockedTier)
+      : undefined;
+    const line = node.line && node.line.tier <= unlockedTier ? node.line : undefined;
+    if (!line && (!children || children.length === 0)) continue;
+    result.push({
+      ...node,
+      line,
+      children: children && children.length > 0 ? children : undefined,
+    });
   }
+  return result;
 }
 
 /** Every prepared continuation known for a given (normalized) position. */
@@ -135,10 +180,10 @@ export function narrowActiveLineIds(
 
 /** Names of every line still consistent with the current move history. */
 export function getActiveLineNames(
-  course: Course,
+  lines: OpeningLineSummary[],
   activeLineIds: string[],
 ): string[] {
-  return course.lines
+  return lines
     .filter((line) => activeLineIds.includes(line.id))
     .map((line) => line.name);
 }
@@ -177,7 +222,7 @@ function weightedPick<T>(items: T[], weights: number[], rng: () => number): T {
  * need review or haven't been started come up more often than mastered ones.
  */
 export function pickStartingLineId(
-  lines: OpeningLine[],
+  lines: OpeningLineSummary[],
   lineStatuses: Record<string, LineStatus> = {},
   rng: () => number = Math.random,
   excludeId?: string,

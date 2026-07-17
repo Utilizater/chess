@@ -1,6 +1,8 @@
-// Core data model for opening courses. These types describe the shape of
-// course data as it is authored (JSON today, potentially MongoDB documents
-// later) and are intentionally storage-agnostic.
+// Core data model for opening courses. Course content is authored as a move
+// tree (a Trie): shared prefixes between lines are stored once, and lines
+// diverge into separate branches. These types describe that shape as it is
+// authored (JSON today, MongoDB documents in the `opening_tree` collection)
+// and are intentionally storage-agnostic.
 
 export type PieceColor = "white" | "black";
 
@@ -19,15 +21,36 @@ export type OpeningMove = {
   tags?: string[];
 };
 
-export type OpeningLine = {
+/** Metadata marking a node as the end of a named, tiered prepared line. A node
+ * can carry this AND have children, when a shorter line's ending is also a
+ * prefix of a longer line branching further (see e.g. "accepted-bogoljubov"
+ * vs "accepted-teichmann-bxf3-classical" in the BDG course). */
+export type OpeningLineInfo = {
   id: string;
   name: string;
   description?: string;
   tier: Tier;
-  moves: OpeningMove[];
 };
 
-export type Course = {
+/** Lightweight view of a line's metadata without its move path — what tier
+ * and progress logic need, derived from wherever a `.line` marker sits in
+ * the stored opening tree. See collectLineSummaries in openingTrainer.ts. */
+export type OpeningLineSummary = OpeningLineInfo;
+
+/**
+ * A node in the *stored/authored* opening tree (a Trie over moves): playing
+ * `san` from the parent's position leads here. Shared prefixes between
+ * lines are stored once; lines diverge into separate `children`. This is
+ * the course's persistence/authoring shape (JSON + the `opening_tree`
+ * Mongo collection) — distinct from OpeningTree below, which is the
+ * position-keyed structure the trainer builds from this at runtime.
+ */
+export type OpeningTrieNode = OpeningMove & {
+  children?: OpeningTrieNode[];
+  line?: OpeningLineInfo;
+};
+
+export type CourseTree = {
   id: string;
   title: string;
   shortDescription?: string;
@@ -37,7 +60,7 @@ export type Course = {
   colorToTrain: PieceColor;
   /** "startpos" for the standard initial position, or a custom FEN. */
   startingFen: string;
-  lines: OpeningLine[];
+  root: OpeningTrieNode[];
 };
 
 /**

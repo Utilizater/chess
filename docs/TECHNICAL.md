@@ -38,13 +38,20 @@ MONGO_DB_URI=mongodb+srv://<user>:<password>@<cluster>/
 
 ```bash
 npm install
-npm run seed:courses   # uploads src/data/courses/*.json into MongoDB
+npm run seed:opening-tree   # uploads tree-shaped src/data/courses/*.json into MongoDB
 ```
 
-The seed script is idempotent — it upserts each course by its `id`, so
-re-running it is safe and just overwrites the seeded copy. It's the only
-supported way to get course JSON into the database; the running app never
-reads the JSON files directly (see [§3](#3-adding-a-new-course)).
+Course content is authored as a move tree (a Trie — see [§5](#5-data-model));
+`npm run seed:opening-tree` upserts every tree-shaped course JSON file (one
+with a `root` array) into the `opening_tree` collection, keyed by `id`, so
+re-running it is safe. It's the only supported way to get course JSON into
+the database; the running app never reads the JSON files directly (see
+[§3](#3-adding-a-new-course)).
+
+Courses not yet migrated to the tree shape (still a flat `lines` array) are
+skipped by `seed:opening-tree` and aren't part of the running app. The older
+`npm run seed:courses` / `courses` collection pairing still exists for that
+legacy shape but is no longer read by the app.
 
 ### 2.4 Run
 
@@ -57,16 +64,19 @@ npm run lint    # eslint
 
 ## 3. Adding a new course
 
-1. Add a new JSON file under `src/data/courses/`, matching the `Course`
-   shape in [§5](#5-data-model) — including a `tier` (1–3) on every line,
-   see [§7](#7-learning-stages-tiers).
-2. Run `npm run seed:courses` to upsert it into MongoDB.
+1. Add a new JSON file under `src/data/courses/`, matching the `CourseTree`
+   shape in [§5](#5-data-model) — a `root` array of move-tree nodes, with a
+   `line` marker (including a `tier`, 1–3, see [§7](#7-learning-stages-tiers))
+   on every node that ends a named line. `scripts/convertLinesToTree.mjs` can
+   generate this from a flat `lines` array if you'd rather author that way
+   first (see its header comment for usage).
+2. Run `npm run seed:opening-tree` to upsert it into MongoDB.
 3. It appears automatically on the home page and at `/courses/<id>` — no
    code changes needed. The course list and training page are both driven
    entirely by `courseRepository`, not by anything course-specific in the
    code.
 
-To edit an *existing* course's lines without touching JSON files or
+To edit an *existing* course's tree without touching JSON files or
 re-running the seed script, use the admin UI (see [§9](#9-admin-tooling))
 instead.
 
@@ -74,21 +84,21 @@ instead.
 
 ```
 UI (pages/components)
-        │  reads Course / CourseSummary, calls trainer hooks
+        │  reads CourseTree / CourseSummary, calls trainer hooks
         ▼
 useOpeningTrainer (React hook)         — session state, wires trainer logic to the board
         │  calls
         ▼
-openingTrainer.ts (pure functions)     — build tree, match moves, pick replies, hints
+openingTrainer.ts (pure functions)     — walk tree, match moves, pick replies, hints
         │  operates on
         ▼
-Course → OpeningTree (in-memory, built per page load from Course.lines)
+CourseTree.root (stored Trie) → OpeningTree (in-memory, position-keyed, built per page load)
         ▲
-        │  Course fetched via
+        │  CourseTree fetched via
 courseRepository (openingRepository.ts)  — the only thing that knows about MongoDB
         │
         ▼
-MongoDB (`chess_opening_trainer` DB, `courses` collection)
+MongoDB (`chess_opening_trainer` DB, `opening_tree` collection)
 ```
 
 The repository is the seam intended for future change: it's the only module
@@ -103,40 +113,50 @@ Defined in `src/lib/chess/openingTypes.ts`.
 ```ts
 type Tier = 1 | 2 | 3;   // 1 Foundation, 2 Advanced, 3 Master — see §7
 
-type Course = {
+type CourseTree = {
   id: string;
   title: string;
   shortDescription?: string;
   colorToTrain: "white" | "black";   // which side the trainee plays
   startingFen: string;               // "startpos" or a custom FEN
-  lines: OpeningLine[];
+  root: OpeningTrieNode[];
 };
 
-type OpeningLine = {
-  id: string;            // must be unique within the course
-  name: string;
-  description?: string;
-  tier: Tier;             // which learning stage this line belongs to
-  moves: OpeningMove[];  // SAN sequence from startingFen
-};
-
-type OpeningMove = {
+// A node in the *stored/authored* move tree (a Trie): playing `san` from
+// the parent's position leads here. Shared prefixes between lines are
+// stored once; lines diverge into separate `children`.
+type OpeningTrieNode = {
   san: string;
   uci?: string;
   comment?: string;      // shown as the "explanation" panel when this move is reached
   tags?: string[];       // unused today, reserved for future filtering
+  children?: OpeningTrieNode[];
+  // Present when a named, tiered line ends exactly at this node. A node can
+  // have both `line` and `children` — e.g. a shorter line's ending can also
+  // be a prefix of a longer line that keeps branching past it.
+  line?: {
+    id: string;           // must be unique within the course
+    name: string;
+    description?: string;
+    tier: Tier;            // which learning stage this line belongs to
+  };
 };
 ```
 
-Courses are stored and authored as flat SAN sequences per line — there's no
-manual tree-building involved in authoring. The tree itself is a derived,
-in-memory structure (`OpeningTree`, a `Map<normalizedFen, OpeningTreeNode>`)
-built fresh from `Course.lines` every time a training session starts
-(`buildOpeningTree` in `openingTrainer.ts`). Lines that share a prefix (e.g.
-two different lines both starting `1.d4 d5 2.e4`) automatically merge into
-shared tree edges, and each edge tracks every `lineId` that passes through
-it — that's how the app can tell you which named line(s) you're currently
-inside of as you play.
+Courses are stored and authored as an actual move tree — shared prefixes
+(e.g. every Blackmar-Diemer line starting `1.d4 d5 2.e4 dxe4 3.Nc3 Nf6
+4.f3`) are represented once, not repeated per line. The *runtime* engine
+tree is a separate, derived, in-memory structure (`OpeningTree`, a
+`Map<normalizedFen, OpeningTreeNode>`) built fresh from `CourseTree.root`
+every time a training session starts (`buildOpeningTree` in
+`openingTrainer.ts`), which walks the stored Trie and keys it by chess
+position instead of by move path. Each runtime edge tracks every `lineId`
+reachable through it (its own `line.id`, if any, plus every descendant's) —
+that's how the app can tell you which named line(s) you're currently inside
+of as you play. `collectLineSummaries` and `filterTreeByTier` (also in
+`openingTrainer.ts`) walk the stored Trie directly for callers that just
+need line metadata or a tier-pruned tree, without building the full runtime
+engine tree.
 
 **Position identity** uses a normalized FEN (`fen.ts`): piece placement,
 side to move, castling rights, and en-passant square, with the half-move
@@ -172,7 +192,7 @@ type LineProgress = {
 type UserCourseProgressDoc = {
   userId: string;
   courseId: string;
-  lines: Record<string, LineProgress>;  // keyed by OpeningLine.id
+  lines: Record<string, LineProgress>;  // keyed by a line marker's id in the opening tree
   createdAt: Date;
   updatedAt: Date;
 };
@@ -214,19 +234,23 @@ Defined in `src/lib/chess/tiers.ts`, pure and storage-agnostic like
 `progress.ts`.
 
 Every line belongs to one of three tiers — Foundation (1), Advanced (2),
-Master (3) — authored directly in the course JSON (`OpeningLine.tier`).
-Tier 2 unlocks once every Foundation line is mastered; Tier 3 unlocks once
-every Advanced line is mastered. Tier 1 is always unlocked, even with zero
-activity. `computeUnlockedTier` derives the current unlock ceiling from a
-`UserCourseProgressDoc`; `computeTierProgress` returns the full per-tier
-breakdown (mastered/total, locked/unlocked, which tier is "current") used
-to render stage UI.
+Master (3) — authored directly on that line's marker in the course tree
+(`OpeningTrieNode.line.tier`). Tier 2 unlocks once every Foundation line is
+mastered; Tier 3 unlocks once every Advanced line is mastered. Tier 1 is
+always unlocked, even with zero activity. `computeUnlockedTier` derives the
+current unlock ceiling from a `UserCourseProgressDoc`; `computeTierProgress`
+returns the full per-tier breakdown (mastered/total, locked/unlocked, which
+tier is "current") used to render stage UI.
 
-The unlock ceiling isn't just cosmetic: `useOpeningTrainer` filters
-`course.lines` down to the unlocked tiers *before* building the opening
-tree (`buildOpeningTree`), so a locked line's moves never appear as a
-prepared opponent reply, and "Next Line" can never land on one. The hook
-takes the unlocked tier as an explicit argument
+The unlock ceiling isn't just cosmetic: `useOpeningTrainer` prunes
+`course.root` down to the unlocked tiers (`filterTreeByTier`) *before*
+building the opening tree (`buildOpeningTree`), so a locked line's moves
+never appear as a prepared opponent reply, and "Next Line" can never land on
+one. Pruning drops a node's `line` marker if it's locked but keeps the node
+(and its position in the tree) if an unlocked line still branches from it
+further down — a locked line sharing a prefix with an unlocked one doesn't
+remove that shared prefix, it just stops being its own "line complete"
+stopping point. The hook takes the unlocked tier as an explicit argument
 (`useOpeningTrainer(course, unlockedTier)`), computed server-side in
 `app/courses/[courseId]/page.tsx` from that user's progress doc and passed
 down through `ChessTrainerBoardLoader` → `ChessTrainerBoard`.
@@ -253,15 +277,16 @@ tier's color on the row itself.
 
 ## 8. Data integrity & validation
 
-Every line is validated as legal chess before it can be persisted:
-`buildOpeningTree` replays each line's SAN sequence through a real
-`chess.js` `Chess` instance and throws on the first illegal move. This runs:
+Every stored move is validated as legal chess before it can be persisted:
+`buildOpeningTree` walks `course.root` depth-first through a real
+`chess.js` `Chess` instance (playing each node's move, recursing into its
+children, then undoing) and throws on the first illegal move. This runs:
 
-- On every page load of a training session (so a bad line fails loudly
-  instead of silently producing a broken tree).
-- On every admin save (`updateCourseLines` in `openingRepository.ts` rebuilds
-  the tree with the candidate lines *before* writing to MongoDB — an invalid
-  line is rejected with a 400 and the database is left untouched).
+- On every page load of a training session (so a bad tree fails loudly
+  instead of silently producing a broken runtime tree).
+- On every admin save (`updateCourseTree` in `openingRepository.ts` rebuilds
+  the tree with the candidate `root` *before* writing to MongoDB — an
+  invalid move is rejected with a 400 and the database is left untouched).
 
 ## 9. Admin tooling
 
@@ -271,12 +296,12 @@ auth first.**
 
 - `GET /admin` — lists courses, links to each editor.
 - `GET /admin/courses/[courseId]` — raw JSON textarea editor for that
-  course's `lines` array (`CourseLinesEditor.tsx`). Save does client-side
+  course's `root` move tree (`CourseTreeEditor.tsx`). Save does client-side
   `JSON.parse` first, then `PUT`s to the API route.
 - `GET/PUT /api/admin/courses/[courseId]` (`route.ts`) — `GET` returns the
-  full course document; `PUT` accepts `{ lines: OpeningLine[] }`, validates
-  via `buildOpeningTree`, and either persists or returns a 400 with the
-  validation error.
+  full course document; `PUT` accepts `{ root: OpeningTrieNode[] }`,
+  validates via `buildOpeningTree`, and either persists or returns a 400
+  with the validation error.
 
 ## 10. Trainer session logic
 
@@ -285,9 +310,10 @@ hook that touches game state; it's a thin adapter over the pure functions in
 `openingTrainer.ts` (tree building, move matching, opponent-reply selection,
 hint/answer text, line-completion detection — none of which import React).
 It also takes the caller-computed `unlockedTier` (see
-[§7](#7-learning-stages-tiers)) and narrows `course.lines` to it before
-building the tree — every downstream lookup in this hook operates on that
-narrowed set, not the full course.
+[§7](#7-learning-stages-tiers)) and prunes `course.root` to it (via
+`filterTreeByTier`) before building the runtime tree — every downstream
+lookup in this hook operates on that pruned tree and the line summaries
+`buildOpeningTree` returns alongside it, not the full course.
 
 Session state machine (`TrainerStatus`):
 
@@ -327,15 +353,15 @@ src/
     chess/                         Board, panel, move list, course card,
                                     status badge, tier badge/panel/overview,
                                     line progress table
-    admin/                         CourseLinesEditor
+    admin/                         CourseTreeEditor
     layout/                        SiteHeader
   lib/
     chess/
-      openingTypes.ts              Data model
+      openingTypes.ts              Data model (CourseTree, OpeningTrieNode, runtime OpeningTree)
       fen.ts                       Position-identity normalization
-      openingTrainer.ts            Pure trainer logic (tree, matching, hints)
+      openingTrainer.ts            Pure trainer logic (build/walk tree, matching, hints)
       useOpeningTrainer.ts         React hook wiring trainer logic to the board
-      openingRepository.ts         Data access layer (MongoDB-backed)
+      openingRepository.ts         Data access layer (MongoDB-backed, opening_tree collection)
       progressTypes.ts             Learner progress data shape
       progress.ts                  Pure status derivation (line/course mastery)
       progressRepository.ts        Progress data access layer (MongoDB-backed)
@@ -345,11 +371,13 @@ src/
     db/
       mongo.ts                     Cached MongoClient singleton
   data/
-    courses/*.json                 Seed data, consumed only by scripts/seedCourses.mjs
+    courses/*.json                 Seed data, consumed only by scripts/seedOpeningTree.mjs
 scripts/
-  seedCourses.mjs                  One-off upsert of seed JSON into MongoDB
-  addLineTiers.mjs                 Applies each line's tier to the seed JSON files
-  migrateCourseTiers.mjs           Backfills tier onto lines already in MongoDB
+  seedOpeningTree.mjs              Upserts tree-shaped seed JSON into the opening_tree collection
+  convertLinesToTree.mjs           Converts a flat-lines course JSON file into the tree shape
+  seedCourses.mjs                  Legacy: upserts flat-lines seed JSON into the (unused) courses collection
+  addLineTiers.mjs                 Legacy: applied each line's tier to the flat-lines seed JSON files
+  migrateCourseTiers.mjs           Legacy: backfilled tier onto flat lines already in MongoDB
 ```
 
 ## 12. Known simplifications (intentional, for a single-user MVP)

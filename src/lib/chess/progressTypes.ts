@@ -35,7 +35,7 @@ export type LineProgress = {
 export type UserCourseProgressDoc = {
   userId: string;
   courseId: string;
-  /** Keyed by OpeningLine.id. */
+  /** Keyed by the id of a line marker in the course's opening tree. */
   lines: Record<string, LineProgress>;
   /**
    * Highest tier ever unlocked, persisted so a tier never re-locks after a

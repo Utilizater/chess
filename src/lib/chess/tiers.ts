@@ -1,13 +1,13 @@
 // Pure, storage-agnostic logic for a course's three learning stages.
 // Mirrors progress.ts in spirit: nothing here touches MongoDB or React.
 
-import type { OpeningLine, Tier } from "./openingTypes";
+import type { OpeningLineSummary, Tier } from "./openingTypes";
 import { computeLineStatus } from "./progress";
 import type { UserCourseProgressDoc } from "./progressTypes";
 
-/** The only fields tier logic needs — satisfied by a full OpeningLine or by
- * the trimmed shape returned in CourseSummary.lines. */
-export type TieredLine = Pick<OpeningLine, "id" | "tier">;
+/** The only fields tier logic needs — satisfied by a full OpeningLineSummary
+ * or by the trimmed shape returned in CourseSummary.lines. */
+export type TieredLine = Pick<OpeningLineSummary, "id" | "tier">;
 
 /** Fraction of a tier's lines that must be mastered to unlock the next tier. */
 const TIER_UNLOCK_MASTERY_FRACTION = 0.8;

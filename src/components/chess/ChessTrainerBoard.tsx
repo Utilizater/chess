@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Chessboard } from "react-chessboard";
-import type { Course, Tier } from "@/lib/chess/openingTypes";
+import type { CourseTree, Tier } from "@/lib/chess/openingTypes";
 import type { LineStatus } from "@/lib/chess/progress";
 import { useOpeningTrainer } from "@/lib/chess/useOpeningTrainer";
 import { TrainingPanel } from "./TrainingPanel";
@@ -40,7 +40,7 @@ export function ChessTrainerBoard({
   unlockedTier,
   lineStatuses,
 }: {
-  course: Course;
+  course: CourseTree;
   unlockedTier: Tier;
   lineStatuses: Record<string, LineStatus>;
 }) {
