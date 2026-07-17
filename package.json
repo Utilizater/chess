@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed:courses": "node --env-file=.env scripts/seedCourses.mjs",
-    "seed:opening-tree": "node --env-file=.env scripts/seedOpeningTree.mjs"
+    "seed:opening-tree": "node --env-file=.env scripts/seedOpeningTree.mjs",
+    "admin:grant": "node --env-file=.env scripts/setAdminUsers.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.5.17",

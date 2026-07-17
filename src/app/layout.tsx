@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { syncCurrentUser } from "@/lib/auth/syncUser";
+import { isCurrentUserAdmin } from "@/lib/auth/isAdmin";
+import { AdminProvider } from "@/lib/auth/AdminContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,6 +55,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await syncCurrentUser();
+  const isAdmin = await isCurrentUserAdmin();
 
   return (
     <html
@@ -60,7 +63,9 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <ClerkProvider>{children}</ClerkProvider>
+        <ClerkProvider>
+          <AdminProvider isAdmin={isAdmin}>{children}</AdminProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

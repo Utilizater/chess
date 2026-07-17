@@ -1,10 +1,16 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { isCurrentUserAdmin } from "@/lib/auth/isAdmin";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminPage() {
+  if (!(await isCurrentUserAdmin())) {
+    redirect("/");
+  }
+
   const courses = await courseRepository.listCourses();
 
   return (

@@ -1,14 +1,19 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { CourseTreeEditor } from "@/components/admin/CourseTreeEditor";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { courseRepository } from "@/lib/chess/openingRepository";
+import { isCurrentUserAdmin } from "@/lib/auth/isAdmin";
 
 type AdminCoursePageProps = {
   params: Promise<{ courseId: string }>;
 };
 
 export default async function AdminCoursePage({ params }: AdminCoursePageProps) {
+  if (!(await isCurrentUserAdmin())) {
+    redirect("/");
+  }
+
   const { courseId } = await params;
   const course = await courseRepository.getCourseById(courseId);
 

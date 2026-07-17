@@ -1,14 +1,17 @@
-// Minimal admin API for editing a course's prepared move tree directly in
-// MongoDB. Not authenticated — this is a trusted, local/future-admin-only
-// tool, not a public endpoint. Add auth before exposing this beyond that.
+// Admin API for editing a course's prepared move tree directly in MongoDB.
 
 import { NextResponse } from "next/server";
 import { courseRepository } from "@/lib/chess/openingRepository";
 import type { OpeningTrieNode } from "@/lib/chess/openingTypes";
+import { isCurrentUserAdmin } from "@/lib/auth/isAdmin";
 
 type RouteParams = { params: Promise<{ courseId: string }> };
 
 export async function GET(_request: Request, { params }: RouteParams) {
+  if (!(await isCurrentUserAdmin())) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const { courseId } = await params;
   const course = await courseRepository.getCourseById(courseId);
   if (!course) {
@@ -18,6 +21,10 @@ export async function GET(_request: Request, { params }: RouteParams) {
 }
 
 export async function PUT(request: Request, { params }: RouteParams) {
+  if (!(await isCurrentUserAdmin())) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const { courseId } = await params;
 
   let body: unknown;

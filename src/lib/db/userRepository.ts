@@ -6,6 +6,7 @@ export type UserDoc = {
   firstName: string | null;
   lastName: string | null;
   imageUrl: string | null;
+  isAdmin: boolean;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -28,6 +29,9 @@ export const userRepository = {
     await users.updateOne(
       { clerkId: user.id },
       {
+        // isAdmin is deliberately excluded: it's granted out-of-band (see
+        // scripts/setAdminUsers.mjs), and this upsert runs on every
+        // signed-in request, so setting it here would clobber that grant.
         $set: {
           email: user.email,
           firstName: user.firstName,
@@ -35,7 +39,7 @@ export const userRepository = {
           imageUrl: user.imageUrl,
           updatedAt: now,
         },
-        $setOnInsert: { clerkId: user.id, createdAt: now },
+        $setOnInsert: { clerkId: user.id, createdAt: now, isAdmin: false },
       },
       { upsert: true },
     );
@@ -44,5 +48,11 @@ export const userRepository = {
   async deleteByClerkId(clerkId: string) {
     const users = await getUsersCollection();
     await users.deleteOne({ clerkId });
+  },
+
+  async isAdminByClerkId(clerkId: string): Promise<boolean> {
+    const users = await getUsersCollection();
+    const user = await users.findOne({ clerkId }, { projection: { isAdmin: 1 } });
+    return user?.isAdmin ?? false;
   },
 };
